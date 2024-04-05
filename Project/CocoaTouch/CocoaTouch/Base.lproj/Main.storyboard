@@ -15,9 +15,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="IlR-i5-tYB">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nbQ-ER-To6">
+                                    <rect key="frame" x="20" y="5" width="353" height="34"/>
+                                    <color key="backgroundColor" red="0.54526998810000005" green="0.73239899490000004" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="9kd-b2-XRs" id="SbK-Ia-SMV"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="nbQ-ER-To6" firstAttribute="centerY" secondItem="IlR-i5-tYB" secondAttribute="centerY" id="cf0-6L-Sfo"/>
+                                <constraint firstItem="nbQ-ER-To6" firstAttribute="leading" secondItem="IlR-i5-tYB" secondAttribute="leading" constant="20" id="u5h-kD-cCG"/>
+                                <constraint firstAttribute="trailing" secondItem="nbQ-ER-To6" secondAttribute="trailing" constant="20" id="xMD-zV-pxZ"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoCell" id="37N-SO-om3">
-                                <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
+                                <rect key="frame" x="0.0" y="94" width="393" height="44.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="37N-SO-om3" id="IWE-R7-m0G">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
@@ -30,7 +51,9 @@
                             <outlet property="delegate" destination="9kd-b2-XRs" id="Y4E-6S-sde"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="MLl-Ur-h8t"/>
+                    <navigationItem key="navigationItem" id="MLl-Ur-h8t">
+                        <nil key="title"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SK7-1U-K96" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 struct Repo: Codable {
     let name: String?
@@ -72,13 +73,13 @@ class ReposTableViewController: UITableViewController {
         fetchRepos(forUserName: "App-iOS5th") { [weak self] result in
             switch result {
             case .success(let repos):
-                self.repos = repos
+                self?.repos = repos
             case .failure(let error):
-                self.repos = []
+                self?.repos = []
                 print("에러 발생 : \(error)")
             }
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }
@@ -95,14 +96,25 @@ class ReposTableViewController: UITableViewController {
         return repos.count
     }
     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath)
-     
-         let repo = repos[indexPath.row]
-         cell.textLabel?.text = repo.name
-     
-     return cell
-     }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath)
+        
+        let repo = repos[indexPath.row]
+        cell.textLabel?.text = repo.name
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repo = repos[indexPath.row]
+        guard let repoURL = repo.url else {
+            return
+        }
+        print("\(repoURL) 레포지토리 웹뷰를 띄웁니다.")
+        
+        let webViewController = SFSafariViewController(url: repoURL)
+        show(webViewController, sender: nil)
+    }
     
     /*
      // Override to support conditional editing of the table view.

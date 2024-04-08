@@ -12,6 +12,19 @@ struct ContentView: View {
         VStack {
             Text("hi")
             Text("Swift")
+            HStack {
+                Text("hi")
+                Text("Swift")
+            }
+            ZStack {
+                Text("hi")
+                Text("Swift")
+            }
+            Button(action: {
+                print("clicked!")
+            }){
+                Text("This is button.")
+            }
         }
     }
 }

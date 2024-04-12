@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		589A083D2BC8BFAD00D0C2C0 /* TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589A083C2BC8BFAD00D0C2C0 /* TimerApp.swift */; };
-		589A083F2BC8BFAD00D0C2C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589A083E2BC8BFAD00D0C2C0 /* ContentView.swift */; };
-		589A08412BC8BFAE00D0C2C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589A08402BC8BFAE00D0C2C0 /* Assets.xcassets */; };
-		589A08442BC8BFAE00D0C2C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589A08432BC8BFAE00D0C2C0 /* Preview Assets.xcassets */; };
-		589A084C2BC8ECE100D0C2C0 /* alarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589A084B2BC8ECE100D0C2C0 /* alarmList.swift */; };
-		589A084E2BC8F32400D0C2C0 /* alarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589A084D2BC8F32400D0C2C0 /* alarmModel.swift */; };
+		37FC17AE2BC8BFA9006AC8A9 /* TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC17AD2BC8BFA9006AC8A9 /* TimerApp.swift */; };
+		37FC17B02BC8BFA9006AC8A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC17AF2BC8BFA9006AC8A9 /* ContentView.swift */; };
+		37FC17B22BC8BFAB006AC8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FC17B12BC8BFAB006AC8A9 /* Assets.xcassets */; };
+		37FC17B52BC8BFAB006AC8A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FC17B42BC8BFAB006AC8A9 /* Preview Assets.xcassets */; };
+		37FC17BD2BC8C8D7006AC8A9 /* Beep.mov in Resources */ = {isa = PBXBuildFile; fileRef = 37FC17BC2BC8C8D7006AC8A9 /* Beep.mov */; };
+		589A08512BC926A300D0C2C0 /* alarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589A084F2BC926A300D0C2C0 /* alarmModel.swift */; };
+		589A08522BC926A300D0C2C0 /* alarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589A08502BC926A300D0C2C0 /* alarmList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		589A08392BC8BFAC00D0C2C0 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		589A083C2BC8BFAD00D0C2C0 /* TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerApp.swift; sourceTree = "<group>"; };
-		589A083E2BC8BFAD00D0C2C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		589A08402BC8BFAE00D0C2C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		589A08432BC8BFAE00D0C2C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		589A08452BC8BFAE00D0C2C0 /* Timer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timer.entitlements; sourceTree = "<group>"; };
-		589A084B2BC8ECE100D0C2C0 /* alarmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmList.swift; sourceTree = "<group>"; };
-		589A084D2BC8F32400D0C2C0 /* alarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmModel.swift; sourceTree = "<group>"; };
+		37FC17AA2BC8BFA9006AC8A9 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FC17AD2BC8BFA9006AC8A9 /* TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerApp.swift; sourceTree = "<group>"; };
+		37FC17AF2BC8BFA9006AC8A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		37FC17B12BC8BFAB006AC8A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37FC17B42BC8BFAB006AC8A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		37FC17B62BC8BFAB006AC8A9 /* Timer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timer.entitlements; sourceTree = "<group>"; };
+		37FC17BC2BC8C8D7006AC8A9 /* Beep.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Beep.mov; sourceTree = "<group>"; };
+		589A084F2BC926A300D0C2C0 /* alarmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmModel.swift; sourceTree = "<group>"; };
+		589A08502BC926A300D0C2C0 /* alarmList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		589A08362BC8BFAC00D0C2C0 /* Frameworks */ = {
+		37FC17A72BC8BFA9006AC8A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,40 +39,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		589A08302BC8BFAC00D0C2C0 = {
+		37FC17A12BC8BFA9006AC8A9 = {
 			isa = PBXGroup;
 			children = (
-				589A083B2BC8BFAD00D0C2C0 /* Timer */,
-				589A083A2BC8BFAC00D0C2C0 /* Products */,
+				37FC17AC2BC8BFA9006AC8A9 /* Timer */,
+				37FC17AB2BC8BFA9006AC8A9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		589A083A2BC8BFAC00D0C2C0 /* Products */ = {
+		37FC17AB2BC8BFA9006AC8A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				589A08392BC8BFAC00D0C2C0 /* Timer.app */,
+				37FC17AA2BC8BFA9006AC8A9 /* Timer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		589A083B2BC8BFAD00D0C2C0 /* Timer */ = {
+		37FC17AC2BC8BFA9006AC8A9 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				589A083C2BC8BFAD00D0C2C0 /* TimerApp.swift */,
-				589A083E2BC8BFAD00D0C2C0 /* ContentView.swift */,
-				589A084D2BC8F32400D0C2C0 /* alarmModel.swift */,
-				589A084B2BC8ECE100D0C2C0 /* alarmList.swift */,
-				589A08402BC8BFAE00D0C2C0 /* Assets.xcassets */,
-				589A08452BC8BFAE00D0C2C0 /* Timer.entitlements */,
-				589A08422BC8BFAE00D0C2C0 /* Preview Content */,
+				37FC17AD2BC8BFA9006AC8A9 /* TimerApp.swift */,
+				37FC17AF2BC8BFA9006AC8A9 /* ContentView.swift */,
+				589A08502BC926A300D0C2C0 /* alarmList.swift */,
+				589A084F2BC926A300D0C2C0 /* alarmModel.swift */,
+				37FC17B12BC8BFAB006AC8A9 /* Assets.xcassets */,
+				37FC17B62BC8BFAB006AC8A9 /* Timer.entitlements */,
+				37FC17BC2BC8C8D7006AC8A9 /* Beep.mov */,
+				37FC17B32BC8BFAB006AC8A9 /* Preview Content */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
 		};
-		589A08422BC8BFAE00D0C2C0 /* Preview Content */ = {
+		37FC17B32BC8BFAB006AC8A9 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				589A08432BC8BFAE00D0C2C0 /* Preview Assets.xcassets */,
+				37FC17B42BC8BFAB006AC8A9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -78,13 +81,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		589A08382BC8BFAC00D0C2C0 /* Timer */ = {
+		37FC17A92BC8BFA9006AC8A9 /* Timer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 589A08482BC8BFAE00D0C2C0 /* Build configuration list for PBXNativeTarget "Timer" */;
+			buildConfigurationList = 37FC17B92BC8BFAB006AC8A9 /* Build configuration list for PBXNativeTarget "Timer" */;
 			buildPhases = (
-				589A08352BC8BFAC00D0C2C0 /* Sources */,
-				589A08362BC8BFAC00D0C2C0 /* Frameworks */,
-				589A08372BC8BFAC00D0C2C0 /* Resources */,
+				37FC17A62BC8BFA9006AC8A9 /* Sources */,
+				37FC17A72BC8BFA9006AC8A9 /* Frameworks */,
+				37FC17A82BC8BFA9006AC8A9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -92,25 +95,25 @@
 			);
 			name = Timer;
 			productName = Timer;
-			productReference = 589A08392BC8BFAC00D0C2C0 /* Timer.app */;
+			productReference = 37FC17AA2BC8BFA9006AC8A9 /* Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		589A08312BC8BFAC00D0C2C0 /* Project object */ = {
+		37FC17A22BC8BFA9006AC8A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					589A08382BC8BFAC00D0C2C0 = {
+					37FC17A92BC8BFA9006AC8A9 = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = 589A08342BC8BFAC00D0C2C0 /* Build configuration list for PBXProject "Timer" */;
+			buildConfigurationList = 37FC17A52BC8BFA9006AC8A9 /* Build configuration list for PBXProject "Timer" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,44 +121,45 @@
 				en,
 				Base,
 			);
-			mainGroup = 589A08302BC8BFAC00D0C2C0;
-			productRefGroup = 589A083A2BC8BFAC00D0C2C0 /* Products */;
+			mainGroup = 37FC17A12BC8BFA9006AC8A9;
+			productRefGroup = 37FC17AB2BC8BFA9006AC8A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				589A08382BC8BFAC00D0C2C0 /* Timer */,
+				37FC17A92BC8BFA9006AC8A9 /* Timer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		589A08372BC8BFAC00D0C2C0 /* Resources */ = {
+		37FC17A82BC8BFA9006AC8A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				589A08442BC8BFAE00D0C2C0 /* Preview Assets.xcassets in Resources */,
-				589A08412BC8BFAE00D0C2C0 /* Assets.xcassets in Resources */,
+				37FC17B52BC8BFAB006AC8A9 /* Preview Assets.xcassets in Resources */,
+				37FC17BD2BC8C8D7006AC8A9 /* Beep.mov in Resources */,
+				37FC17B22BC8BFAB006AC8A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		589A08352BC8BFAC00D0C2C0 /* Sources */ = {
+		37FC17A62BC8BFA9006AC8A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				589A083F2BC8BFAD00D0C2C0 /* ContentView.swift in Sources */,
-				589A084E2BC8F32400D0C2C0 /* alarmModel.swift in Sources */,
-				589A084C2BC8ECE100D0C2C0 /* alarmList.swift in Sources */,
-				589A083D2BC8BFAD00D0C2C0 /* TimerApp.swift in Sources */,
+				589A08512BC926A300D0C2C0 /* alarmModel.swift in Sources */,
+				37FC17B02BC8BFA9006AC8A9 /* ContentView.swift in Sources */,
+				37FC17AE2BC8BFA9006AC8A9 /* TimerApp.swift in Sources */,
+				589A08522BC926A300D0C2C0 /* alarmList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		589A08462BC8BFAE00D0C2C0 /* Debug */ = {
+		37FC17B72BC8BFAB006AC8A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -218,7 +222,7 @@
 			};
 			name = Debug;
 		};
-		589A08472BC8BFAE00D0C2C0 /* Release */ = {
+		37FC17B82BC8BFAB006AC8A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -273,7 +277,7 @@
 			};
 			name = Release;
 		};
-		589A08492BC8BFAE00D0C2C0 /* Debug */ = {
+		37FC17BA2BC8BFAB006AC8A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -283,8 +287,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Timer/Preview Content\"";
-				DEVELOPMENT_TEAM = P95R3MRRWK;
-				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -293,14 +295,14 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.Bin.Timer;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		589A084A2BC8BFAE00D0C2C0 /* Release */ = {
+		37FC17BB2BC8BFAB006AC8A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -310,8 +312,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Timer/Preview Content\"";
-				DEVELOPMENT_TEAM = P95R3MRRWK;
-				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -320,7 +320,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.Bin.Timer;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -330,25 +330,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		589A08342BC8BFAC00D0C2C0 /* Build configuration list for PBXProject "Timer" */ = {
+		37FC17A52BC8BFA9006AC8A9 /* Build configuration list for PBXProject "Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				589A08462BC8BFAE00D0C2C0 /* Debug */,
-				589A08472BC8BFAE00D0C2C0 /* Release */,
+				37FC17B72BC8BFAB006AC8A9 /* Debug */,
+				37FC17B82BC8BFAB006AC8A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		589A08482BC8BFAE00D0C2C0 /* Build configuration list for PBXNativeTarget "Timer" */ = {
+		37FC17B92BC8BFAB006AC8A9 /* Build configuration list for PBXNativeTarget "Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				589A08492BC8BFAE00D0C2C0 /* Debug */,
-				589A084A2BC8BFAE00D0C2C0 /* Release */,
+				37FC17BA2BC8BFAB006AC8A9 /* Debug */,
+				37FC17BB2BC8BFAB006AC8A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 589A08312BC8BFAC00D0C2C0 /* Project object */;
+	rootObject = 37FC17A22BC8BFA9006AC8A9 /* Project object */;
 }

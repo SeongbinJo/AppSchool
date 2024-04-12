@@ -2,7 +2,7 @@
 //  TimerApp.swift
 //  Timer
 //
-//  Created by 조성빈 on 4/12/24.
+//  Created by Jungman Bae on 4/12/24.
 //
 
 import SwiftUI

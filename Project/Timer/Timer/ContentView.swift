@@ -139,8 +139,3 @@ struct AlwaysOnTopView: NSViewRepresentable {
         }
     }
 }
-
-
-#Preview {
-    ContentView()
-}

@@ -20,9 +20,12 @@ struct CarListView: View {
             VStack {
                 List {
                     ForEach(carAry[carType == "내연기관" ? "oil" : carType == "전기" ? "electric" : "hybrid"]!) { car in
-                        VStack {
-                            Text(car.brand)
-                            Text(car.modelName)
+                        NavigationLink(destination: CarDetailView()) {
+                            VStack {
+                                Text(car.brand)
+                                Text(car.modelName)
+                                Text(car.getDetail())
+                            }
                         }
                     }
                 }

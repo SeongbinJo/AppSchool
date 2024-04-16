@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Car: Identifiable {
+class Car: Identifiable, CarDescriptionProtocol {
     let id = UUID()
     var brand: String
     var modelName: String
@@ -24,7 +24,10 @@ class Car: Identifiable {
         self.weight = weight
         self.height = height
     }
-
+    
+    func getDetail() -> String {
+        return "Brand: \(brand), Model: \(modelName), Year: \(year)"
+    }
 }
 
 class OilCar: Car, Fuel {
@@ -38,6 +41,10 @@ class OilCar: Car, Fuel {
         self.isGasoline = isGasoline
         super.init(brand: brand, modelName: modelName, year: year, doorCount: doorCount, weight: weight, height: height)
     }
+    
+    override func getDetail() -> String {
+        return super.getDetail() + "Automatic: \(isAutomatic), FuelEfficiency: \(fuelEfficiency), Gasoline: \(isGasoline)"
+    }
 }
 
 class ElectricCar: Car, Electric {
@@ -50,6 +57,10 @@ class ElectricCar: Car, Electric {
         self.fullChargeHours = fullChargeHours
         self.autoLevel = autoLevel
         super.init(brand: brand, modelName: modelName, year: year, doorCount: doorCount, weight: weight, height: height)
+    }
+    
+    override func getDetail() -> String {
+        return super.getDetail() + "ElectricEfficiency: \(electricEfficiency), ChargeHour: \(fullChargeHours), AutoLevel: \(autoLevel)"
     }
 }
 
@@ -66,5 +77,9 @@ class HybridCar: Car, Fuel, Electric {
         self.isGasoline = isGasoline
         self.autoLevel = autoLevel
         super.init(brand: brand, modelName: modelName, year: year, doorCount: doorCount, weight: weight, height: height)
+    }
+    
+    override func getDetail() -> String {
+        return super.getDetail() + "Automatic: \(isAutomatic), FuelEfficiency: \(fuelEfficiency), Gasoline: \(isGasoline)"
     }
 }

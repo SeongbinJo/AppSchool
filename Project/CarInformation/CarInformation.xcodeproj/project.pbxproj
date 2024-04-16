@@ -15,6 +15,7 @@
 		58B16A5F2BCE35800044D8F5 /* CarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B16A5E2BCE35800044D8F5 /* CarProtocol.swift */; };
 		58B16A612BCE36630044D8F5 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B16A602BCE36630044D8F5 /* CarListView.swift */; };
 		58B16A652BCE39920044D8F5 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B16A642BCE39920044D8F5 /* CarModel.swift */; };
+		58B16A672BCE6A820044D8F5 /* CarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B16A662BCE6A820044D8F5 /* CarDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		58B16A5E2BCE35800044D8F5 /* CarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarProtocol.swift; sourceTree = "<group>"; };
 		58B16A602BCE36630044D8F5 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
 		58B16A642BCE39920044D8F5 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		58B16A662BCE6A820044D8F5 /* CarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,6 @@
 			children = (
 				58B16A4E2BCE344C0044D8F5 /* CarInformationApp.swift */,
 				58B16A5C2BCE34D40044D8F5 /* CarData.swift */,
-				58B16A5E2BCE35800044D8F5 /* CarProtocol.swift */,
 				58B16A632BCE39840044D8F5 /* Model */,
 				58B16A622BCE36690044D8F5 /* View */,
 				58B16A522BCE344E0044D8F5 /* Assets.xcassets */,
@@ -82,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				58B16A602BCE36630044D8F5 /* CarListView.swift */,
+				58B16A662BCE6A820044D8F5 /* CarDetailView.swift */,
 				58B16A502BCE344C0044D8F5 /* ContentView.swift */,
 			);
 			path = View;
@@ -90,6 +92,7 @@
 		58B16A632BCE39840044D8F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				58B16A5E2BCE35800044D8F5 /* CarProtocol.swift */,
 				58B16A642BCE39920044D8F5 /* CarModel.swift */,
 			);
 			path = Model;
@@ -167,6 +170,7 @@
 			files = (
 				58B16A5F2BCE35800044D8F5 /* CarProtocol.swift in Sources */,
 				58B16A612BCE36630044D8F5 /* CarListView.swift in Sources */,
+				58B16A672BCE6A820044D8F5 /* CarDetailView.swift in Sources */,
 				58B16A652BCE39920044D8F5 /* CarModel.swift in Sources */,
 				58B16A512BCE344C0044D8F5 /* ContentView.swift in Sources */,
 				58B16A4F2BCE344C0044D8F5 /* CarInformationApp.swift in Sources */,

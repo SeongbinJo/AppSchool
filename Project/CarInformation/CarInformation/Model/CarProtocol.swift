@@ -70,3 +70,18 @@ extension Electric {
         String(format: "%.2f", autoLevel)
     }
 }
+
+
+protocol CarDescriptionProtocol {
+    var brand: String { get }
+    var modelName: String { get }
+    var year: Int { get }
+    
+    // 프로토콜 안에서는 내용을 구현할 수 없다!
+    func getDetail() -> String
+}
+
+// 프로토콜 안에서 내용을 구현할 수 없기 때문에 extension으로 내용을 구현해준다!
+extension CarDescriptionProtocol {
+
+}

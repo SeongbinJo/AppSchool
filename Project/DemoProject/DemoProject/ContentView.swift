@@ -7,26 +7,23 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    
-    @State var fileOpen: Bool = true
-    
-    var body: some View {
-        VStack {
-            VStack {
-                Text("Text 1")
-                Text("Text 2")
-            }
-            MyHStackView()
-        }
+// 모디파이어 커스텀 구현
+struct StandardTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+        // 모디파이어의 순서에 따라 뷰가 달라짐!
+            .font(.custom("Copperplate", size: 58))
+            .padding()
+            .border(.blue, width: 5)
+            .shadow(color: .yellow, radius: 10, x: 5, y: 5)
     }
 }
 
-struct MyHStackView: View {
+struct ContentView: View {
     var body: some View {
-        HStack {
-            Text("Text 3")
-            Text("Text 4")
+        VStack {
+            Text("Sample Text")
+                .modifier(StandardTitle())
         }
     }
 }

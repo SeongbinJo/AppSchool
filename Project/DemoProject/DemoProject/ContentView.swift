@@ -12,16 +12,21 @@ struct ContentView: View {
     @State var fileOpen: Bool = true
     
     var body: some View {
-        var myString: String = "File closed"
-        if fileOpen {
-            myString = "File open"
-        }
-        return VStack {
-            HStack {
-                Text(myString)
-                    .padding()
-                Text("Goodbye, world")
+        VStack {
+            VStack {
+                Text("Text 1")
+                Text("Text 2")
             }
+            MyHStackView()
+        }
+    }
+}
+
+struct MyHStackView: View {
+    var body: some View {
+        HStack {
+            Text("Text 3")
+            Text("Text 4")
         }
     }
 }

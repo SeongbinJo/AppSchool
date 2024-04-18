@@ -14,6 +14,7 @@
 		58B761502BD09EDE00897606 /* CreateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7614F2BD09EDE00897606 /* CreateModifier.swift */; };
 		58B761562BD09FEA00897606 /* CustomStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B761552BD09FEA00897606 /* CustomStack.swift */; };
 		58B761592BD0A88D00897606 /* DynamicStackWithAnyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B761582BD0A88D00897606 /* DynamicStackWithAnyLayout.swift */; };
+		58B7615B2BD0BDBF00897606 /* StateProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7615A2BD0BDBF00897606 /* StateProperty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		58B7614F2BD09EDE00897606 /* CreateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateModifier.swift; sourceTree = "<group>"; };
 		58B761552BD09FEA00897606 /* CustomStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStack.swift; sourceTree = "<group>"; };
 		58B761582BD0A88D00897606 /* DynamicStackWithAnyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStackWithAnyLayout.swift; sourceTree = "<group>"; };
+		58B7615A2BD0BDBF00897606 /* StateProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProperty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				58B761552BD09FEA00897606 /* CustomStack.swift */,
 				58B761582BD0A88D00897606 /* DynamicStackWithAnyLayout.swift */,
 				58B7614F2BD09EDE00897606 /* CreateModifier.swift */,
+				58B7615A2BD0BDBF00897606 /* StateProperty.swift */,
 			);
 			path = StudyView;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B7615B2BD0BDBF00897606 /* StateProperty.swift in Sources */,
 				58B761592BD0A88D00897606 /* DynamicStackWithAnyLayout.swift in Sources */,
 				5867D5FC2BCF83BE00A7DC7E /* ContentView.swift in Sources */,
 				58B761562BD09FEA00897606 /* CustomStack.swift in Sources */,

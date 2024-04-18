@@ -1,14 +1,14 @@
 //
-//  ContentView.swift
+//  StudyView.swift
 //  DemoProject
 //
-//  Created by 조성빈 on 4/17/24.
+//  Created by 조성빈 on 4/18/24.
 //
 
 import SwiftUI
 
 
-struct ContentView: View {
+struct StudyView: View {
     var body: some View {
         VStack {
             

@@ -23,12 +23,13 @@ struct ContentView: View {
                 }) {
                     Text("Reset Count Button")
                 }
-                NavigationLink(destination: SecondView(timerVM: timerVM)) {
+                NavigationLink(destination: SecondView()) {
                     Text("Next Screen")
                 }
                 .padding()
             }
         }
+        .environmentObject(timerVM)
     }
     
 }

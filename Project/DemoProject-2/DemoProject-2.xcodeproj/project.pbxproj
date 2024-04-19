@@ -11,6 +11,7 @@
 		581087E82BD22A40000A3F85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581087E72BD22A40000A3F85 /* ContentView.swift */; };
 		581087EA2BD22A42000A3F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581087E92BD22A42000A3F85 /* Assets.xcassets */; };
 		581087ED2BD22A42000A3F85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581087EC2BD22A42000A3F85 /* Preview Assets.xcassets */; };
+		581087F42BD23674000A3F85 /* ActorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581087F32BD23674000A3F85 /* ActorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		581087E72BD22A40000A3F85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		581087E92BD22A42000A3F85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		581087EC2BD22A42000A3F85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		581087F32BD23674000A3F85 /* ActorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				581087E52BD22A40000A3F85 /* DemoProject_2App.swift */,
 				581087E72BD22A40000A3F85 /* ContentView.swift */,
+				581087F32BD23674000A3F85 /* ActorView.swift */,
 				581087E92BD22A42000A3F85 /* Assets.xcassets */,
 				581087EB2BD22A42000A3F85 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581087F42BD23674000A3F85 /* ActorView.swift in Sources */,
 				581087E82BD22A40000A3F85 /* ContentView.swift in Sources */,
 				581087E62BD22A40000A3F85 /* DemoProject_2App.swift in Sources */,
 			);

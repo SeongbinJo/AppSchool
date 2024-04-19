@@ -13,10 +13,34 @@ struct Repository: Codable, Identifiable {
     let description: String?
 }
 
+struct User: Codable {
+    let login: String
+    let avatar_url: URL
+}
+
 struct ContentView: View {
     
     @State var userName: String = "SeongbinJo"
     @State var repositories: [Repository] = []
+    @State var user: User?
+    
+    let githubServices = GithubService()
+    
+    // 여러개의 비동기 처리를 한번에 처리하는 방법 -> actor
+    // Fact : 한번에 처리한다고 하지만 순차는 있음.
+    actor GithubService {
+        func fetchUser(userName: String) async throws -> User {
+            let url = URL(string: "https://api.github.com/users/\(userName)")!
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return try JSONDecoder().decode(User.self, from: data)
+        }
+        
+        func fetchRepos(userName: String) async throws -> [Repository] {
+            let url = URL(string: "https://api.github.com/users/\(userName)/repos")!
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return try JSONDecoder().decode([Repository].self, from: data)
+        }
+    }
     
     var body: some View {
         VStack {
@@ -26,7 +50,9 @@ struct ContentView: View {
             Button(action: {
                 Task {
                     do {
-                        async let fetchRepositories = fetchRepos(userName: userName)
+                        async let fetchUsers = githubServices.fetchUser(userName: userName)
+                        async let fetchRepositories = githubServices.fetchRepos(userName: userName)
+                        user = try await fetchUsers
                         repositories = try await fetchRepositories
                     } catch {
                         print("Error : \(error)")
@@ -35,6 +61,20 @@ struct ContentView: View {
             }) {
                 Text("레포지토리 가져오기")
             }
+            
+            if let user = user {
+                AsyncImage(url: user.avatar_url) { image in
+                    image.resizable()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
+                
+                Text(user.login)
+                    .font(.title)
+            }
+            
             List(repositories) { repo in
                 VStack(alignment: .leading) {
                     Text(repo.name)
@@ -46,11 +86,7 @@ struct ContentView: View {
         }
     }
     
-    func fetchRepos(userName: String) async throws -> [Repository] {
-        let url = URL(string: "https://api.github.com/users/\(userName)/repos")!
-        let (data, _) = try await URLSession.shared.data(from: url)
-        return try JSONDecoder().decode([Repository].self, from: data)
-    }
+    
     
 }
 

@@ -11,7 +11,7 @@ struct AsyncAwait: View {
     
     func doSomething() {
         print("Start : \(Date())")
-        Task {
+        Task(priority: .background) {
             async let result: () = takesTooLong()
             print("\(await result)")
         }

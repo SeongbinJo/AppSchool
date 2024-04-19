@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class TimerData: ObservableObject {
+class TimerViewModel: ObservableObject {
     @Published var timeCount = 0
     var timer: Timer?
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		581087D42BD1F28C000A3F85 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581087D32BD1F28C000A3F85 /* Observable.swift */; };
+		581087D82BD20EC9000A3F85 /* AsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581087D72BD20EC9000A3F85 /* AsyncAwait.swift */; };
 		5867D5FA2BCF83BE00A7DC7E /* DemoProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867D5F92BCF83BE00A7DC7E /* DemoProjectApp.swift */; };
 		5867D5FC2BCF83BE00A7DC7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867D5FB2BCF83BE00A7DC7E /* ContentView.swift */; };
 		5867D5FE2BCF83BF00A7DC7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5867D5FD2BCF83BF00A7DC7E /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		581087D32BD1F28C000A3F85 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		581087D72BD20EC9000A3F85 /* AsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwait.swift; sourceTree = "<group>"; };
 		5867D5F62BCF83BE00A7DC7E /* DemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5867D5F92BCF83BE00A7DC7E /* DemoProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoProjectApp.swift; sourceTree = "<group>"; };
 		5867D5FB2BCF83BE00A7DC7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				58B761582BD0A88D00897606 /* DynamicStackWithAnyLayout.swift */,
 				58B7614F2BD09EDE00897606 /* CreateModifier.swift */,
 				581087D32BD1F28C000A3F85 /* Observable.swift */,
+				581087D72BD20EC9000A3F85 /* AsyncAwait.swift */,
 				58B7615A2BD0BDBF00897606 /* StateProperty.swift */,
 			);
 			path = StudyView;
@@ -167,6 +170,7 @@
 				58B761562BD09FEA00897606 /* CustomStack.swift in Sources */,
 				58B761502BD09EDE00897606 /* CreateModifier.swift in Sources */,
 				5867D5FA2BCF83BE00A7DC7E /* DemoProjectApp.swift in Sources */,
+				581087D82BD20EC9000A3F85 /* AsyncAwait.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

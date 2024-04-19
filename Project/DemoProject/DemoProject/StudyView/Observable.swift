@@ -9,14 +9,10 @@ import SwiftUI
 
 class DemoViewModel: ObservableObject {
     @Published var userCount = 0
-    @Published var currentUser = "Bin"
-    
-    init() {
-        updateData()
-    }
+    @Published var currentUser = "Bins"
     
     func updateData() {
-        
+        userCount += 1
     }
 }
 
@@ -27,6 +23,11 @@ struct Observable: View {
     
     var body: some View {
         Text("\(demoVM.currentUser), you are user number \(demoVM.userCount)")
+        Button(action: {
+            demoVM.updateData()
+        }) {
+            Text("Plus!")
+        }
     }
 }
 

@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct SecondTabView: View {
+    
+    @State var text: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TextEditor(text: $text)
+            .padding()
+            .onChange(of: text) { oldValue, newValue in
+                print("onChange triggered \(oldValue) : \(newValue)")
+            }
     }
 }
 

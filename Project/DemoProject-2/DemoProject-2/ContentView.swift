@@ -23,6 +23,7 @@ struct ContentView: View {
     @State var userName: String = "SeongbinJo"
     @State var repositories: [Repository] = []
     @State var user: User?
+    @State var error: Error?
     
     let githubServices = GithubService()
     
@@ -49,6 +50,7 @@ struct ContentView: View {
                 .padding()
             Button(action: {
                 Task {
+                    // 메인 스레드에서 비동기 처리.
                     do {
                         async let fetchUsers = githubServices.fetchUser(userName: userName)
                         async let fetchRepositories = githubServices.fetchRepos(userName: userName)
@@ -82,6 +84,34 @@ struct ContentView: View {
                     Text(repo.description ?? "No Description")
                         .font(.subheadline)
                 }
+            }
+            
+            if let error = error {
+                Text("Error : \(error.localizedDescription)")
+                    .foregroundColor(.red)
+            }
+            
+            Button(action: {
+                Task.detached {
+                    do {
+                        let service = GithubService()
+                        try await withThrowingTaskGroup(of: Void.self) { group in
+                            group.addTask {
+                                repositories = try await githubServices.fetchRepos(userName: userName)
+                            }
+                            group.addTask {
+                                user = try await githubServices.fetchUser(userName: userName)
+                            }
+                            try await group.waitForAll()
+                        }
+                    } catch {
+                        DispatchQueue.main.async {
+                            self.error = error
+                        }
+                    }
+                }
+            }) {
+                Text("Fetch Data in Background")
             }
         }
     }

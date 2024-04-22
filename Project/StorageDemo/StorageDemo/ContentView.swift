@@ -17,8 +17,8 @@ struct ContentView: View {
                 }
             AppStorageView()
                 .tabItem {
-                    Image(systemName: "circle.fill")
-                    Text("씬 스토리지")
+                    Image(systemName: "square.fill")
+                    Text("앱 스토리지")
                 }
         }
     }

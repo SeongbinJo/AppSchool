@@ -1,0 +1,3 @@
+[submodule "Kingclab"]
+	path = Kingclab
+	url = https://github.com/APP-iOS5th/kingcLab.git

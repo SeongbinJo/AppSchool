@@ -2,7 +2,7 @@
 //  UsingModifierApp.swift
 //  UsingModifier
 //
-//  Created by 조성빈 on 4/23/24.
+//  Created by Jungman Bae on 4/23/24.
 //
 
 import SwiftUI

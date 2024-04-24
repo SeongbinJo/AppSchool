@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  UsingModifier
 //
-//  Created by 조성빈 on 4/23/24.
+//  Created by Jungman Bae on 4/23/24.
 //
 
 import SwiftUI
@@ -30,8 +30,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Perfect")
-                .customBackgroundStyle(color: .red)
+                .customBackgroundStyle(color: .green)
         }
+        .padding()
     }
 }
 

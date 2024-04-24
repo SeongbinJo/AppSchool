@@ -2,7 +2,7 @@
 //  MenuButtonView.swift
 //  Buttons
 //
-//  Created by 조성빈 on 4/23/24.
+//  Created by Jungman Bae on 4/23/24.
 //
 
 import SwiftUI
@@ -14,6 +14,7 @@ struct MenuButtonView: View {
             Button("Mexico") { print("Select Mexico") }
             Button("USA") { print("Select USA") }
         }
+        .navigationTitle("MenuButton")
     }
 }
 

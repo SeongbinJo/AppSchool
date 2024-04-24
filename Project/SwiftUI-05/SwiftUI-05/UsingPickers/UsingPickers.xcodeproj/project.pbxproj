@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		58A754162BD78ECF00F96762 /* UsingPickersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A754152BD78ECF00F96762 /* UsingPickersApp.swift */; };
-		58A754182BD78ECF00F96762 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A754172BD78ECF00F96762 /* ContentView.swift */; };
-		58A7541A2BD78ED100F96762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A754192BD78ED100F96762 /* Assets.xcassets */; };
-		58A7541D2BD78ED100F96762 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A7541C2BD78ED100F96762 /* Preview Assets.xcassets */; };
+		37E927A22BD78EB70054ECDA /* UsingPickersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E927A12BD78EB70054ECDA /* UsingPickersApp.swift */; };
+		37E927A42BD78EB70054ECDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E927A32BD78EB70054ECDA /* ContentView.swift */; };
+		37E927A62BD78EB90054ECDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E927A52BD78EB90054ECDA /* Assets.xcassets */; };
+		37E927A92BD78EB90054ECDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E927A82BD78EB90054ECDA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		58A754122BD78ECF00F96762 /* UsingPickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsingPickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		58A754152BD78ECF00F96762 /* UsingPickersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingPickersApp.swift; sourceTree = "<group>"; };
-		58A754172BD78ECF00F96762 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		58A754192BD78ED100F96762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		58A7541C2BD78ED100F96762 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		37E9279E2BD78EB70054ECDA /* UsingPickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsingPickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37E927A12BD78EB70054ECDA /* UsingPickersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingPickersApp.swift; sourceTree = "<group>"; };
+		37E927A32BD78EB70054ECDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		37E927A52BD78EB90054ECDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37E927A82BD78EB90054ECDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		58A7540F2BD78ECF00F96762 /* Frameworks */ = {
+		37E9279B2BD78EB70054ECDA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,37 +32,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		58A754092BD78ECF00F96762 = {
+		37E927952BD78EB70054ECDA = {
 			isa = PBXGroup;
 			children = (
-				58A754142BD78ECF00F96762 /* UsingPickers */,
-				58A754132BD78ECF00F96762 /* Products */,
+				37E927A02BD78EB70054ECDA /* UsingPickers */,
+				37E9279F2BD78EB70054ECDA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		58A754132BD78ECF00F96762 /* Products */ = {
+		37E9279F2BD78EB70054ECDA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				58A754122BD78ECF00F96762 /* UsingPickers.app */,
+				37E9279E2BD78EB70054ECDA /* UsingPickers.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		58A754142BD78ECF00F96762 /* UsingPickers */ = {
+		37E927A02BD78EB70054ECDA /* UsingPickers */ = {
 			isa = PBXGroup;
 			children = (
-				58A754152BD78ECF00F96762 /* UsingPickersApp.swift */,
-				58A754172BD78ECF00F96762 /* ContentView.swift */,
-				58A754192BD78ED100F96762 /* Assets.xcassets */,
-				58A7541B2BD78ED100F96762 /* Preview Content */,
+				37E927A12BD78EB70054ECDA /* UsingPickersApp.swift */,
+				37E927A32BD78EB70054ECDA /* ContentView.swift */,
+				37E927A52BD78EB90054ECDA /* Assets.xcassets */,
+				37E927A72BD78EB90054ECDA /* Preview Content */,
 			);
 			path = UsingPickers;
 			sourceTree = "<group>";
 		};
-		58A7541B2BD78ED100F96762 /* Preview Content */ = {
+		37E927A72BD78EB90054ECDA /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				58A7541C2BD78ED100F96762 /* Preview Assets.xcassets */,
+				37E927A82BD78EB90054ECDA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -70,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58A754112BD78ECF00F96762 /* UsingPickers */ = {
+		37E9279D2BD78EB70054ECDA /* UsingPickers */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58A754202BD78ED100F96762 /* Build configuration list for PBXNativeTarget "UsingPickers" */;
+			buildConfigurationList = 37E927AC2BD78EB90054ECDA /* Build configuration list for PBXNativeTarget "UsingPickers" */;
 			buildPhases = (
-				58A7540E2BD78ECF00F96762 /* Sources */,
-				58A7540F2BD78ECF00F96762 /* Frameworks */,
-				58A754102BD78ECF00F96762 /* Resources */,
+				37E9279A2BD78EB70054ECDA /* Sources */,
+				37E9279B2BD78EB70054ECDA /* Frameworks */,
+				37E9279C2BD78EB70054ECDA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,25 +84,25 @@
 			);
 			name = UsingPickers;
 			productName = UsingPickers;
-			productReference = 58A754122BD78ECF00F96762 /* UsingPickers.app */;
+			productReference = 37E9279E2BD78EB70054ECDA /* UsingPickers.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		58A7540A2BD78ECF00F96762 /* Project object */ = {
+		37E927962BD78EB70054ECDA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					58A754112BD78ECF00F96762 = {
+					37E9279D2BD78EB70054ECDA = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = 58A7540D2BD78ECF00F96762 /* Build configuration list for PBXProject "UsingPickers" */;
+			buildConfigurationList = 37E927992BD78EB70054ECDA /* Build configuration list for PBXProject "UsingPickers" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,42 +110,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 58A754092BD78ECF00F96762;
-			productRefGroup = 58A754132BD78ECF00F96762 /* Products */;
+			mainGroup = 37E927952BD78EB70054ECDA;
+			productRefGroup = 37E9279F2BD78EB70054ECDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58A754112BD78ECF00F96762 /* UsingPickers */,
+				37E9279D2BD78EB70054ECDA /* UsingPickers */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		58A754102BD78ECF00F96762 /* Resources */ = {
+		37E9279C2BD78EB70054ECDA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58A7541D2BD78ED100F96762 /* Preview Assets.xcassets in Resources */,
-				58A7541A2BD78ED100F96762 /* Assets.xcassets in Resources */,
+				37E927A92BD78EB90054ECDA /* Preview Assets.xcassets in Resources */,
+				37E927A62BD78EB90054ECDA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		58A7540E2BD78ECF00F96762 /* Sources */ = {
+		37E9279A2BD78EB70054ECDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58A754182BD78ECF00F96762 /* ContentView.swift in Sources */,
-				58A754162BD78ECF00F96762 /* UsingPickersApp.swift in Sources */,
+				37E927A42BD78EB70054ECDA /* ContentView.swift in Sources */,
+				37E927A22BD78EB70054ECDA /* UsingPickersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		58A7541E2BD78ED100F96762 /* Debug */ = {
+		37E927AA2BD78EB90054ECDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,7 +208,7 @@
 			};
 			name = Debug;
 		};
-		58A7541F2BD78ED100F96762 /* Release */ = {
+		37E927AB2BD78EB90054ECDA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,7 +264,7 @@
 			};
 			name = Release;
 		};
-		58A754212BD78ED100F96762 /* Debug */ = {
+		37E927AD2BD78EB90054ECDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -272,7 +272,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UsingPickers/Preview Content\"";
-				DEVELOPMENT_TEAM = P95R3MRRWK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -285,7 +284,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.Bin.UsingPickers;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.UsingPickers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -293,7 +292,7 @@
 			};
 			name = Debug;
 		};
-		58A754222BD78ED100F96762 /* Release */ = {
+		37E927AE2BD78EB90054ECDA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -301,7 +300,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UsingPickers/Preview Content\"";
-				DEVELOPMENT_TEAM = P95R3MRRWK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -314,7 +312,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.Bin.UsingPickers;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.UsingPickers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -325,25 +323,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58A7540D2BD78ECF00F96762 /* Build configuration list for PBXProject "UsingPickers" */ = {
+		37E927992BD78EB70054ECDA /* Build configuration list for PBXProject "UsingPickers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				58A7541E2BD78ED100F96762 /* Debug */,
-				58A7541F2BD78ED100F96762 /* Release */,
+				37E927AA2BD78EB90054ECDA /* Debug */,
+				37E927AB2BD78EB90054ECDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58A754202BD78ED100F96762 /* Build configuration list for PBXNativeTarget "UsingPickers" */ = {
+		37E927AC2BD78EB90054ECDA /* Build configuration list for PBXNativeTarget "UsingPickers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				58A754212BD78ED100F96762 /* Debug */,
-				58A754222BD78ED100F96762 /* Release */,
+				37E927AD2BD78EB90054ECDA /* Debug */,
+				37E927AE2BD78EB90054ECDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 58A7540A2BD78ECF00F96762 /* Project object */;
+	rootObject = 37E927962BD78EB70054ECDA /* Project object */;
 }

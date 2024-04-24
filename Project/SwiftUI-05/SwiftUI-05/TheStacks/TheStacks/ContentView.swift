@@ -18,26 +18,23 @@ struct ContentView: View {
             Text("VStack Item 3")
             HStack {
                 Text("HStack Item 1")
-                Divider()
-                    .background(.black)
-                Spacer()
                 Text("HStack Item 2")
-                Divider()
-                    .background(.black)
-                Spacer()
                 Text("HStack Item 3")
             }
             .background(.red)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             ZStack {
                 Text("ZStack Item 1")
                     .padding()
                     .background(.green)
                     .opacity(0.8)
+//                    .offset(x: -80, y: -400)
                 Text("ZStack Item 2")
                     .padding()
                     .background(.green)
-                    .offset(x: 80, y: -400)
+//                    .offset(x: 80, y: -400)
             }
+            .padding()
         }
         .background(.blue)
     }

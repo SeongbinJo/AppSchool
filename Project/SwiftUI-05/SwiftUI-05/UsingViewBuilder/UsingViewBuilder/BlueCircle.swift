@@ -2,13 +2,12 @@
 //  BlueCircle.swift
 //  UsingViewBuilder
 //
-//  Created by 조성빈 on 4/23/24.
+//  Created by Jungman Bae on 4/23/24.
 //
 
 import SwiftUI
 
-// Content라는 제네릭 타입을 가짐.
-struct BlueCircle<Content: View>: View {
+struct BlueCircle<Content:View>: View {
     let content: Content
     
     init(@ViewBuilder content: () -> Content) {

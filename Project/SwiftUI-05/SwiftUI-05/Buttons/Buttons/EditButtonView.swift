@@ -2,13 +2,13 @@
 //  EditButtonView.swift
 //  Buttons
 //
-//  Created by 조성빈 on 4/23/24.
+//  Created by Jungman Bae on 4/23/24.
 //
 
 import SwiftUI
 
 struct EditButtonView: View {
-    @State var animals = ["Cat", "Dog", "Gecko"]
+    @State var animals = ["Cats", "Dogs", "Goats"]
     
     var body: some View {
         List {
@@ -20,13 +20,12 @@ struct EditButtonView: View {
         .toolbar {
             EditButton()
         }
-        .navigationTitle("Edit Button View")
+        .navigationTitle("EditButton View")
     }
     
     func removeAnimal(at offsets: IndexSet) {
         animals.remove(atOffsets: offsets)
     }
-    
 }
 
 #Preview {

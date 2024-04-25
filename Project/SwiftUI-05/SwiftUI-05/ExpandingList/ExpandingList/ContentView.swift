@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    let bagContent: [Backpack] = [currencies, tools]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(bagContent, children: \.content) { row in
+            Label(row.name, systemImage: row.icon)
         }
-        .padding()
     }
 }
 

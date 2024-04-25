@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58586ABC2BD9D76300145DF8 /* LazyGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58586ABB2BD9D76300145DF8 /* LazyGrid.swift */; };
 		58999DA32BD8D1A0000518B3 /* LazyStacksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58999DA22BD8D1A0000518B3 /* LazyStacksApp.swift */; };
 		58999DA52BD8D1A0000518B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58999DA42BD8D1A0000518B3 /* ContentView.swift */; };
 		58999DA72BD8D1A2000518B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58999DA62BD8D1A2000518B3 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58586ABB2BD9D76300145DF8 /* LazyGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGrid.swift; sourceTree = "<group>"; };
 		58999D9F2BD8D1A0000518B3 /* LazyStacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyStacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58999DA22BD8D1A0000518B3 /* LazyStacksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyStacksApp.swift; sourceTree = "<group>"; };
 		58999DA42BD8D1A0000518B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				58999DA22BD8D1A0000518B3 /* LazyStacksApp.swift */,
 				58999DA42BD8D1A0000518B3 /* ContentView.swift */,
+				58586ABB2BD9D76300145DF8 /* LazyGrid.swift */,
 				58999DB02BD8D1F0000518B3 /* ListRow.swift */,
 				58999DA62BD8D1A2000518B3 /* Assets.xcassets */,
 				58999DA82BD8D1A2000518B3 /* Preview Content */,
@@ -143,6 +146,7 @@
 				58999DA52BD8D1A0000518B3 /* ContentView.swift in Sources */,
 				58999DA32BD8D1A0000518B3 /* LazyStacksApp.swift in Sources */,
 				58999DB12BD8D1F0000518B3 /* ListRow.swift in Sources */,
+				58586ABC2BD9D76300145DF8 /* LazyGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

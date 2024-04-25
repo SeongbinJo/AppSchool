@@ -42,6 +42,9 @@ struct ContentView: View {
                     }) {
                         Text("Go to letter G")
                     }
+                    .padding()
+                    .background(.blue)
+                    .tint(.yellow)
                 }
                 .scrollPosition(id: $scrolledID)
             }
@@ -50,9 +53,35 @@ struct ContentView: View {
                     .foregroundStyle(.blue)
                     .font(.title)
                 ScrollView {
-                    
+                    ScrollViewReader { proxy in
+                        Button("Go to letter Q") {
+                            proxy.scrollTo(16)
+                        }
+                        .padding()
+                        .background(.yellow)
+                        .tint(.blue)
+                        
+                        ForEach(CharacterInfo.charArray, id: \.id) { image in
+                            Image(systemName: image.name)
+                                .font(.largeTitle)
+                                .foregroundStyle(.yellow)
+                                .frame(width: 90, height: 90)
+                                .background(.blue)
+                                .padding()
+                        }
+                        
+                        Button("Go to letter G") {
+                            withAnimation {
+                                proxy.scrollTo(6, anchor: .top)
+                            }
+                        }
+                        .padding()
+                        .background(.yellow)
+                        .tint(.blue)
+                    }
                 }
             }
+            
         }
     }
 }

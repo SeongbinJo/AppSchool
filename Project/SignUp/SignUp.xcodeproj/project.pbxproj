@@ -11,6 +11,7 @@
 		587CE12D2BDB8DD700C37FF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE12C2BDB8DD700C37FF1 /* ContentView.swift */; };
 		587CE12F2BDB8DD900C37FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587CE12E2BDB8DD900C37FF1 /* Assets.xcassets */; };
 		587CE1322BDB8DD900C37FF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587CE1312BDB8DD900C37FF1 /* Preview Assets.xcassets */; };
+		587CE1392BDB8E0100C37FF1 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE1382BDB8E0100C37FF1 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		587CE12C2BDB8DD700C37FF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		587CE12E2BDB8DD900C37FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		587CE1312BDB8DD900C37FF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		587CE1382BDB8E0100C37FF1 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				587CE12A2BDB8DD700C37FF1 /* SignUpApp.swift */,
 				587CE12C2BDB8DD700C37FF1 /* ContentView.swift */,
+				587CE13A2BDB8E0300C37FF1 /* View */,
 				587CE12E2BDB8DD900C37FF1 /* Assets.xcassets */,
 				587CE1302BDB8DD900C37FF1 /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				587CE1312BDB8DD900C37FF1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		587CE13A2BDB8E0300C37FF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				587CE1382BDB8E0100C37FF1 /* SignUpView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				587CE12D2BDB8DD700C37FF1 /* ContentView.swift in Sources */,
+				587CE1392BDB8E0100C37FF1 /* SignUpView.swift in Sources */,
 				587CE12B2BDB8DD700C37FF1 /* SignUpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,8 @@ struct Backpack: Identifiable {
 
 let dollar = Backpack(name: "Dollar", icon: "dollarsign.circle")
 let yen = Backpack(name: "Yen", icon: "yensign.circle")
-let currencies = Backpack(name: "Currencies", icon: "coloncurrencysign.circle", content: [dollar, yen])
+let won = Backpack(name: "Won", icon: "wonsign.circle")
+let currencies = Backpack(name: "Currencies", icon: "coloncurrencysign.circle", content: [dollar, yen, won])
 
 let pencil = Backpack(name: "Pencil",icon: "pencil.circle")
 let hammer = Backpack(name: "Hammer",icon: "hammer")

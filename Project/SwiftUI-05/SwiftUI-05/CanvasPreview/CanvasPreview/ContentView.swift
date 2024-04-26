@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    // 기기의 라이트/다크 모드를 감지
+    @Environment(\.colorScheme) var deviceColorScheme
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            if deviceColorScheme == .light {
+                PostView(title: "일반 모드", text: "현재는 다크모드가 아닙니다.", imageName: "sun.max.fill")
+            }else {
+                PostView(title: "다크 모드", text: "현재는 다크모드입니다.", imageName: "moon.stars.fill")
+            }
         }
-        .padding()
     }
 }
 

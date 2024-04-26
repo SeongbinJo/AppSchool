@@ -7,28 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		587CE0F12BDB3B6C00C37FF1 /* CanvasPreviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE0F02BDB3B6C00C37FF1 /* CanvasPreviewApp.swift */; };
-		587CE0F32BDB3B6C00C37FF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE0F22BDB3B6C00C37FF1 /* ContentView.swift */; };
-		587CE0F52BDB3B6E00C37FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587CE0F42BDB3B6E00C37FF1 /* Assets.xcassets */; };
-		587CE0F82BDB3B6E00C37FF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587CE0F72BDB3B6E00C37FF1 /* Preview Assets.xcassets */; };
-		587CE0FF2BDB3BA200C37FF1 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE0FE2BDB3BA200C37FF1 /* PostView.swift */; };
-		587CE1012BDB46C400C37FF1 /* PreviewInNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE1002BDB46C400C37FF1 /* PreviewInNavigationStack.swift */; };
-		587CE1032BDB472100C37FF1 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE1022BDB472100C37FF1 /* SecondView.swift */; };
+		587CE1112BDB49C500C37FF1 /* PreviewWithTraitsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE1102BDB49C500C37FF1 /* PreviewWithTraitsApp.swift */; };
+		587CE1132BDB49C500C37FF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE1122BDB49C500C37FF1 /* ContentView.swift */; };
+		587CE1152BDB49C700C37FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587CE1142BDB49C700C37FF1 /* Assets.xcassets */; };
+		587CE1182BDB49C700C37FF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587CE1172BDB49C700C37FF1 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		587CE0ED2BDB3B6C00C37FF1 /* CanvasPreview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanvasPreview.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		587CE0F02BDB3B6C00C37FF1 /* CanvasPreviewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasPreviewApp.swift; sourceTree = "<group>"; };
-		587CE0F22BDB3B6C00C37FF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		587CE0F42BDB3B6E00C37FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		587CE0F72BDB3B6E00C37FF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		587CE0FE2BDB3BA200C37FF1 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
-		587CE1002BDB46C400C37FF1 /* PreviewInNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewInNavigationStack.swift; sourceTree = "<group>"; };
-		587CE1022BDB472100C37FF1 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		587CE10D2BDB49C500C37FF1 /* PreviewWithTraits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreviewWithTraits.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		587CE1102BDB49C500C37FF1 /* PreviewWithTraitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWithTraitsApp.swift; sourceTree = "<group>"; };
+		587CE1122BDB49C500C37FF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		587CE1142BDB49C700C37FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		587CE1172BDB49C700C37FF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		587CE0EA2BDB3B6C00C37FF1 /* Frameworks */ = {
+		587CE10A2BDB49C500C37FF1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,40 +32,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		587CE0E42BDB3B6C00C37FF1 = {
+		587CE1042BDB49C500C37FF1 = {
 			isa = PBXGroup;
 			children = (
-				587CE0EF2BDB3B6C00C37FF1 /* CanvasPreview */,
-				587CE0EE2BDB3B6C00C37FF1 /* Products */,
+				587CE10F2BDB49C500C37FF1 /* PreviewWithTraits */,
+				587CE10E2BDB49C500C37FF1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		587CE0EE2BDB3B6C00C37FF1 /* Products */ = {
+		587CE10E2BDB49C500C37FF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				587CE0ED2BDB3B6C00C37FF1 /* CanvasPreview.app */,
+				587CE10D2BDB49C500C37FF1 /* PreviewWithTraits.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		587CE0EF2BDB3B6C00C37FF1 /* CanvasPreview */ = {
+		587CE10F2BDB49C500C37FF1 /* PreviewWithTraits */ = {
 			isa = PBXGroup;
 			children = (
-				587CE0F02BDB3B6C00C37FF1 /* CanvasPreviewApp.swift */,
-				587CE0F22BDB3B6C00C37FF1 /* ContentView.swift */,
-				587CE0FE2BDB3BA200C37FF1 /* PostView.swift */,
-				587CE1002BDB46C400C37FF1 /* PreviewInNavigationStack.swift */,
-				587CE1022BDB472100C37FF1 /* SecondView.swift */,
-				587CE0F42BDB3B6E00C37FF1 /* Assets.xcassets */,
-				587CE0F62BDB3B6E00C37FF1 /* Preview Content */,
+				587CE1102BDB49C500C37FF1 /* PreviewWithTraitsApp.swift */,
+				587CE1122BDB49C500C37FF1 /* ContentView.swift */,
+				587CE1142BDB49C700C37FF1 /* Assets.xcassets */,
+				587CE1162BDB49C700C37FF1 /* Preview Content */,
 			);
-			path = CanvasPreview;
+			path = PreviewWithTraits;
 			sourceTree = "<group>";
 		};
-		587CE0F62BDB3B6E00C37FF1 /* Preview Content */ = {
+		587CE1162BDB49C700C37FF1 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				587CE0F72BDB3B6E00C37FF1 /* Preview Assets.xcassets */,
+				587CE1172BDB49C700C37FF1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -79,39 +70,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		587CE0EC2BDB3B6C00C37FF1 /* CanvasPreview */ = {
+		587CE10C2BDB49C500C37FF1 /* PreviewWithTraits */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 587CE0FB2BDB3B6E00C37FF1 /* Build configuration list for PBXNativeTarget "CanvasPreview" */;
+			buildConfigurationList = 587CE11B2BDB49C700C37FF1 /* Build configuration list for PBXNativeTarget "PreviewWithTraits" */;
 			buildPhases = (
-				587CE0E92BDB3B6C00C37FF1 /* Sources */,
-				587CE0EA2BDB3B6C00C37FF1 /* Frameworks */,
-				587CE0EB2BDB3B6C00C37FF1 /* Resources */,
+				587CE1092BDB49C500C37FF1 /* Sources */,
+				587CE10A2BDB49C500C37FF1 /* Frameworks */,
+				587CE10B2BDB49C500C37FF1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CanvasPreview;
-			productName = CanvasPreview;
-			productReference = 587CE0ED2BDB3B6C00C37FF1 /* CanvasPreview.app */;
+			name = PreviewWithTraits;
+			productName = PreviewWithTraits;
+			productReference = 587CE10D2BDB49C500C37FF1 /* PreviewWithTraits.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		587CE0E52BDB3B6C00C37FF1 /* Project object */ = {
+		587CE1052BDB49C500C37FF1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					587CE0EC2BDB3B6C00C37FF1 = {
+					587CE10C2BDB49C500C37FF1 = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = 587CE0E82BDB3B6C00C37FF1 /* Build configuration list for PBXProject "CanvasPreview" */;
+			buildConfigurationList = 587CE1082BDB49C500C37FF1 /* Build configuration list for PBXProject "PreviewWithTraits" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,45 +110,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 587CE0E42BDB3B6C00C37FF1;
-			productRefGroup = 587CE0EE2BDB3B6C00C37FF1 /* Products */;
+			mainGroup = 587CE1042BDB49C500C37FF1;
+			productRefGroup = 587CE10E2BDB49C500C37FF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				587CE0EC2BDB3B6C00C37FF1 /* CanvasPreview */,
+				587CE10C2BDB49C500C37FF1 /* PreviewWithTraits */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		587CE0EB2BDB3B6C00C37FF1 /* Resources */ = {
+		587CE10B2BDB49C500C37FF1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				587CE0F82BDB3B6E00C37FF1 /* Preview Assets.xcassets in Resources */,
-				587CE0F52BDB3B6E00C37FF1 /* Assets.xcassets in Resources */,
+				587CE1182BDB49C700C37FF1 /* Preview Assets.xcassets in Resources */,
+				587CE1152BDB49C700C37FF1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		587CE0E92BDB3B6C00C37FF1 /* Sources */ = {
+		587CE1092BDB49C500C37FF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				587CE1012BDB46C400C37FF1 /* PreviewInNavigationStack.swift in Sources */,
-				587CE1032BDB472100C37FF1 /* SecondView.swift in Sources */,
-				587CE0F32BDB3B6C00C37FF1 /* ContentView.swift in Sources */,
-				587CE0FF2BDB3BA200C37FF1 /* PostView.swift in Sources */,
-				587CE0F12BDB3B6C00C37FF1 /* CanvasPreviewApp.swift in Sources */,
+				587CE1132BDB49C500C37FF1 /* ContentView.swift in Sources */,
+				587CE1112BDB49C500C37FF1 /* PreviewWithTraitsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		587CE0F92BDB3B6E00C37FF1 /* Debug */ = {
+		587CE1192BDB49C700C37FF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -220,7 +208,7 @@
 			};
 			name = Debug;
 		};
-		587CE0FA2BDB3B6E00C37FF1 /* Release */ = {
+		587CE11A2BDB49C700C37FF1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -276,14 +264,14 @@
 			};
 			name = Release;
 		};
-		587CE0FC2BDB3B6E00C37FF1 /* Debug */ = {
+		587CE11C2BDB49C700C37FF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CanvasPreview/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PreviewWithTraits/Preview Content\"";
 				DEVELOPMENT_TEAM = P95R3MRRWK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -297,7 +285,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.Bin.CanvasPreview;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.Bin.PreviewWithTraits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -305,14 +293,14 @@
 			};
 			name = Debug;
 		};
-		587CE0FD2BDB3B6E00C37FF1 /* Release */ = {
+		587CE11D2BDB49C700C37FF1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CanvasPreview/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PreviewWithTraits/Preview Content\"";
 				DEVELOPMENT_TEAM = P95R3MRRWK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -326,7 +314,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.Bin.CanvasPreview;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.Bin.PreviewWithTraits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -337,25 +325,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		587CE0E82BDB3B6C00C37FF1 /* Build configuration list for PBXProject "CanvasPreview" */ = {
+		587CE1082BDB49C500C37FF1 /* Build configuration list for PBXProject "PreviewWithTraits" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				587CE0F92BDB3B6E00C37FF1 /* Debug */,
-				587CE0FA2BDB3B6E00C37FF1 /* Release */,
+				587CE1192BDB49C700C37FF1 /* Debug */,
+				587CE11A2BDB49C700C37FF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		587CE0FB2BDB3B6E00C37FF1 /* Build configuration list for PBXNativeTarget "CanvasPreview" */ = {
+		587CE11B2BDB49C700C37FF1 /* Build configuration list for PBXNativeTarget "PreviewWithTraits" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				587CE0FC2BDB3B6E00C37FF1 /* Debug */,
-				587CE0FD2BDB3B6E00C37FF1 /* Release */,
+				587CE11C2BDB49C700C37FF1 /* Debug */,
+				587CE11D2BDB49C700C37FF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 587CE0E52BDB3B6C00C37FF1 /* Project object */;
+	rootObject = 587CE1052BDB49C500C37FF1 /* Project object */;
 }

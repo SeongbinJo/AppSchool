@@ -21,6 +21,7 @@ struct SignUpView: View {
     @State private var lessThenTwo: Bool = false
     @State private var userName: String = ""
     @State private var password: String = ""
+    @State private var userNameErrorMessage: String = ""
     
     var body: some View {
         NavigationStack {
@@ -49,10 +50,16 @@ struct SignUpView: View {
                 
                 Section {
                     TextField("사용할 이름을 입력하세요.", text: $userName)
+                    if !userNameErrorMessage.isEmpty {
+                        Text(userNameErrorMessage)
+                            .font(.caption)
+                            
+                    }
                     SecureField("사용할 비밀번호를 입력하세요.", text: $password)
                 }
                 
                 Button(action: {
+                    userNameErrorMessage = "사용할 이름을 입력하세요."
                     print("가입하기 -> 클릭")
                 }) {
                     Text("가입하기")

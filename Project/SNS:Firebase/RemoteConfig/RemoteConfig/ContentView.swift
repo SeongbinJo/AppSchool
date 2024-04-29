@@ -61,7 +61,7 @@ struct ContentView: View {
         }else if screenType == "screenB" {
             ("b.square", .blue)
         }else {
-            ("questinomark.square", .red)
+            ("questionmark.square", .red)
         }
     }
     
@@ -81,8 +81,4 @@ struct ContentView: View {
             config.registerForRealTimeUpdates()
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

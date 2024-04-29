@@ -6,19 +6,30 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
 
 struct ContentView: View {
+    @State var authenticationVM: AuthenticationViewModel = AuthenticationViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color.white.ignoresSafeArea()
+            switch authenticationVM.state {
+            case .busy:
+                ProgressView() // 로딩.
+            case .signedIn:
+                ProfileView(authenticationVM: authenticationVM)
+            case .signedOut:
+                GoogleSignInButton(action: authenticationVM.login)
+                    .frame(width: 150, height: 30, alignment: .center)
+            }
         }
-        .padding()
+        .task {
+            authenticationVM.restorePreviousSignIn()
+        }
     }
 }
 
-//#Preview {
-//    ContentView()
-//}
+#Preview {
+    ContentView()
+}

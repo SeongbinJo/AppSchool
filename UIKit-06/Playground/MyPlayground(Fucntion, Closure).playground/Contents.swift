@@ -62,4 +62,38 @@ func oddNumber(number: Int) -> Bool {
 let numbersList = [2,4,6,7]
 isThereAMatch(listOfNumbers: numbersList, condition: oddNumber)
 
+
+func buySomething(itemValueEntered itemValueField: String, cardBalance: Int) -> Int {
+    guard let itemValue = Int(itemValueField) else {
+        print("error in item value")
+        return cardBalance
+    }
+    let remainingBalance = cardBalance - itemValue
+    return remainingBalance
+}
+print(buySomething(itemValueEntered: "10", cardBalance: 50))
+
 print("--------------------------")
+
+
+print("----------Closure----------")
+
+var numbersArray = [2, 4, 6, 7]
+let myClosure = { (number: Int) -> Int in
+    let result = number * number
+    return result
+}
+let mappedNumbers = numbersArray.map(myClosure)
+let mappedNumbers2 = numbersArray.map({ (number: Int) -> Int in
+    let result = number * number
+    return result
+})
+let mappedNumbers3 = numbersArray.map({ number in
+    number * number
+})
+let mappedNumber4 = numbersArray.map{ number in
+    number * number
+}
+let mappedNumber5 = numbersArray.map{ $0 * $0 }
+
+print("---------------------------")

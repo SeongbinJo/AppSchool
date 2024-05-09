@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -95,8 +96,20 @@
                     <view key="view" contentMode="scaleToFill" id="7Rr-Er-QzW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MT-4H-Pbs">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ng2-uC-8ia"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3MT-4H-Pbs" firstAttribute="top" secondItem="ng2-uC-8ia" secondAttribute="top" id="1Ix-lX-uge"/>
+                            <constraint firstItem="3MT-4H-Pbs" firstAttribute="leading" secondItem="ng2-uC-8ia" secondAttribute="leading" id="ArZ-W9-mwA"/>
+                            <constraint firstItem="ng2-uC-8ia" firstAttribute="bottom" secondItem="3MT-4H-Pbs" secondAttribute="bottom" id="R5D-sh-Nxr"/>
+                            <constraint firstItem="ng2-uC-8ia" firstAttribute="trailing" secondItem="3MT-4H-Pbs" secondAttribute="trailing" id="jCg-7T-UE5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Svu-Ad-THf"/>
                 </viewController>
@@ -151,7 +164,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uhg-t1-zLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2827" y="711"/>
+            <point key="canvasLocation" x="2827" y="-660"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ziu-Wp-rLM">

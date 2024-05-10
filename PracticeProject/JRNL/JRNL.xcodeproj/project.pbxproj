@@ -16,6 +16,7 @@
 		585507092BEC900C00C222D3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 585507082BEC900C00C222D3 /* Base */; };
 		5855070B2BEC900D00C222D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5855070A2BEC900D00C222D3 /* Assets.xcassets */; };
 		5855070E2BEC900D00C222D3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5855070D2BEC900D00C222D3 /* Base */; };
+		58B5E4242BEE01D800B23644 /* JournalEntryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5E4232BEE01D800B23644 /* JournalEntryDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5855070A2BEC900D00C222D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5855070D2BEC900D00C222D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5855070F2BEC900D00C222D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58B5E4232BEE01D800B23644 /* JournalEntryDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		585507002BEC900C00C222D3 /* JRNL */ = {
 			isa = PBXGroup;
 			children = (
+				58B5E4222BEE018500B23644 /* Entry Detail Screen */,
 				584BBA122BEDDCCB0019474E /* Add new Journal Screen */,
 				585507012BEC900C00C222D3 /* AppDelegate.swift */,
 				585507032BEC900C00C222D3 /* SceneDelegate.swift */,
@@ -106,6 +109,14 @@
 				5855070F2BEC900D00C222D3 /* Info.plist */,
 			);
 			path = JRNL;
+			sourceTree = "<group>";
+		};
+		58B5E4222BEE018500B23644 /* Entry Detail Screen */ = {
+			isa = PBXGroup;
+			children = (
+				58B5E4232BEE01D800B23644 /* JournalEntryDetailTableViewController.swift */,
+			);
+			path = "Entry Detail Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				585507022BEC900C00C222D3 /* AppDelegate.swift in Sources */,
 				584BBA0F2BEDB8E50019474E /* JournalEntry.swift in Sources */,
 				584BBA112BEDC0CD0019474E /* JournalListTableViewCell.swift in Sources */,
+				58B5E4242BEE01D800B23644 /* JournalEntryDetailTableViewController.swift in Sources */,
 				585507042BEC900C00C222D3 /* SceneDelegate.swift in Sources */,
 				584BBA162BEDDD5A0019474E /* AddJournalEntryViewController.swift in Sources */,
 			);

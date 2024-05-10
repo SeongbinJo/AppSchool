@@ -29,7 +29,6 @@ class JournalListViewController: UIViewController {
             journalTableView.reloadData()
         }
     }
-    
 
 }
 
@@ -58,6 +57,26 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
             sampleJournalEntryData.journalEntries.remove(at: indexPath.row)
             journalTableView.reloadData()
         }
+    }
+    
+    
+    // MARK: - 세그웨이 값 전달
+    // prepare -> 세그웨이가 작동하여 뷰 이동하기 전에 불림
+    // 트리거(현재는 셀-JournalListCell)가 작동하여 지정한 세그웨이(현재는 entryDetail)에 값을 전달하는 부분.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "entryDetail" else {
+            return
+        }
+        // 목적지 설정
+        guard let journalEntryDetailViewController = segue.destination as? JournalEntryDetailTableViewController,
+              let selectedJournalEntryCell = sender as? JournalListTableViewCell,
+              let indexPath = journalTableView.indexPath(for: selectedJournalEntryCell) else {
+            fatalError("Could not get indexPath")
+        }
+        // 해당 목적지 뷰컨트롤러의 프로퍼티에 전달할 값을 담아줌.
+        let selectedJournalEntry = sampleJournalEntryData.journalEntries[indexPath.row]
+        journalEntryDetailViewController.selectedJournalEntry = selectedJournalEntry
     }
     
 }

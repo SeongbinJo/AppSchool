@@ -11,6 +11,7 @@ class AddJournalEntryViewController: UIViewController {
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var bodyTextView: UITextView!
     @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var saveButton: UIBarButtonItem!
     
     var newJournalEntry: JournalEntry?
 
@@ -18,8 +19,17 @@ class AddJournalEntryViewController: UIViewController {
         super.viewDidLoad()
         titleTextField.delegate = self
         bodyTextView.delegate = self
+        updateSaveButtonState()
     }
     
+    
+    
+    //MARD: - Methods
+    private func updateSaveButtonState() {
+        let textFieldText = titleTextField.text ?? ""
+        let textViewText = bodyTextView.text ?? ""
+        saveButton.isEnabled = !textFieldText.isEmpty && !textViewText.isEmpty
+    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,6 +51,16 @@ extension AddJournalEntryViewController: UITextViewDelegate, UITextFieldDelegate
         return true
     }
     
+    // 텍스트 입력 종료시 확인 한 번 하는 것
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        updateSaveButtonState()
+    }
+    
+    // 텍스트 입력할때마다 불림
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        
+//    }
+    
     //MARK: - UITextViewDelegate
     // shouldChangeTextIn -> 텍스트가 입력될때 불림
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -48,5 +68,10 @@ extension AddJournalEntryViewController: UITextViewDelegate, UITextFieldDelegate
             textView.resignFirstResponder() // 키보드를 내려줌
         }
         return true
+    }
+    
+    // 텍스트 입력 종료시 확인 한 번 하는 것
+    func textViewDidEndEditing(_ textView: UITextView) {
+        updateSaveButtonState()
     }
 }

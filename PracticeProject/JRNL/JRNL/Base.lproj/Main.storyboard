@@ -63,7 +63,7 @@
                                             <outlet property="dateLabel" destination="pjc-in-Odo" id="gvL-G0-abV"/>
                                             <outlet property="photoImageView" destination="dQS-kb-6n0" id="pJt-Tj-KPu"/>
                                             <outlet property="titleLabel" destination="sCW-QT-Z6k" id="vfC-JJ-mL1"/>
-                                            <segue destination="3Mf-d2-B3A" kind="show" id="tnc-6d-VoT"/>
+                                            <segue destination="3Mf-d2-B3A" kind="show" identifier="entryDetail" id="tnc-6d-VoT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993.1297709923663" y="4.9295774647887329"/>
+            <point key="canvasLocation" x="1992" y="5"/>
         </scene>
         <!--New Entry-->
         <scene sceneID="mHl-JJ-EF3">
@@ -184,6 +184,7 @@
                     <connections>
                         <outlet property="bodyTextView" destination="fRv-ez-7sP" id="zPL-7L-M2y"/>
                         <outlet property="photoImageView" destination="slZ-eB-xL8" id="XTC-CG-wyt"/>
+                        <outlet property="saveButton" destination="dnP-v0-2Hy" id="TPi-7L-I3c"/>
                         <outlet property="titleTextField" destination="yIN-kY-YcU" id="ipK-YR-s0v"/>
                     </connections>
                 </viewController>
@@ -220,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="1991.6030534351144" y="710.56338028169023"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Journal Entry Detail Table View Controller-->
         <scene sceneID="BGv-Du-xRT">
             <objects>
-                <tableViewController id="3Mf-d2-B3A" sceneMemberID="viewController">
+                <tableViewController id="3Mf-d2-B3A" customClass="JournalEntryDetailTableViewController" customModule="JRNL" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hdc-u7-GEp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,10 +388,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="cUp-aU-F4T"/>
+                    <connections>
+                        <outlet property="bodyTextView" destination="CWx-Z2-lWO" id="a1p-eg-uIk"/>
+                        <outlet property="dateLabel" destination="JDz-Vs-vfu" id="AYh-AM-eFc"/>
+                        <outlet property="photoImageView" destination="HNH-xo-nGX" id="IzR-zC-hgd"/>
+                        <outlet property="titleLabel" destination="UJc-Tr-b8H" id="jAE-1K-s37"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uhg-t1-zLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2827" y="-660"/>
+            <point key="canvasLocation" x="2827" y="477"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ziu-Wp-rLM">
@@ -465,7 +472,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9KM-Du-4Zj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2827" y="5"/>
+            <point key="canvasLocation" x="2827" y="-327"/>
         </scene>
     </scenes>
     <resources>

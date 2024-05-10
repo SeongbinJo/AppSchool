@@ -27,5 +27,16 @@ extension TableViewExampleController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let selectedJournalEntry = journalEntries[indexPath.row]
+        print(selectedJournalEntry)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            journalEntries.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
     
 }

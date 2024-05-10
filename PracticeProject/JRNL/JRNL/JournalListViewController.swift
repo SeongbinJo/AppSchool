@@ -35,5 +35,4 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
-    
 }

@@ -8,10 +8,26 @@ class TableViewExampleController: UIViewController {
     ["cloud.rain", "10 Apr 2023", "Heavy rain today"],
     ["cloud.sun", "11 Apr 2023", "It's cloudy out"],
     ]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.bounds = CGRect(x: 0, y: 0, width: 375, height: 667)
+        createTableView()
+    }
+    
+    func createTableView() {
+        self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        self.tableView?.dataSource = self
+        self.tableView?.delegate = self
+        self.tableView?.backgroundColor = .white
+        self.tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.view.addSubview(self.tableView!)
+    }
+    
 }
 
 
-extension TableViewExampleController: UITableViewDataSource {
+extension TableViewExampleController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         journalEntries.count
     }
@@ -40,3 +56,5 @@ extension TableViewExampleController: UITableViewDataSource {
     }
     
 }
+
+PlaygroundPage.current.liveView = TableViewExampleController()

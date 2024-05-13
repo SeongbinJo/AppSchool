@@ -18,10 +18,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         
-        // 스토리보드 없이 실행하기위한 코드
+        // 스토리보드 없이 실행하기위한 코드-1
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = JournalListViewController()
+        
+        // JournalListViewController로 넘겨주는 네비게이션 컨트롤러 생성
+        let journalListViewController = JournalListViewController()
+        let firstNavigationController = UINavigationController(rootViewController: journalListViewController)
+        
+        // MapViewController로 넘겨주는 네비게이션 컨트롤러 생성
+        let mapViewController = MapViewController()
+        let secondNavigationController = UINavigationController(rootViewController: mapViewController)
+        
+        // JournalListViewController, MapViewController를 아이템으로하는 탭바 생성
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [firstNavigationController, secondNavigationController]
+        
+        // 스토리보드 없이 실행하기위한 코드-2
+        self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
     }
 

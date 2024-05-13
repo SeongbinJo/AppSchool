@@ -13,12 +13,15 @@ class JournalListViewController: UIViewController {
         return tableView
     }()
     
+    var sampleJournalEntryData = SampleJournalEntryData()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(JournalListTableViewCell.self, forCellReuseIdentifier: "journalCell") // Cell 등록
         
+        sampleJournalEntryData.createSampleJournalEntryData()
         
 //        let safeArea = safeAreaLayoutGuide // 전체화면에 대한 가이드
         // tableView 오토레이아웃
@@ -59,11 +62,13 @@ class JournalListViewController: UIViewController {
 
 extension JournalListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        sampleJournalEntryData.journalEntries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath) as! JournalListTableViewCell
+        let journalEntry = sampleJournalEntryData.journalEntries[indexPath.row]
+        cell.configureCell(journalEntry: journalEntry)
         return cell
     }
     

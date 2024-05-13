@@ -65,4 +65,12 @@ class JournalListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    //MARK: - configure Cell
+    func configureCell(journalEntry: JournalEntry) {
+        thumbnailView.image = journalEntry.photo
+        dateLabel.text = journalEntry.date.formatted(.dateTime.year().month().day())
+        titleLabel.text = journalEntry.title
+    }
+    
 }

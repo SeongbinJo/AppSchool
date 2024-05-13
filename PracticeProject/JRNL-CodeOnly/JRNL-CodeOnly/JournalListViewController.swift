@@ -15,6 +15,9 @@ class JournalListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "journalCell") // 기본 UICell 추가
         
         // tableView 오토레이아웃
         view.addSubview(tableView)
@@ -33,6 +36,7 @@ class JournalListViewController: UIViewController {
         navigationItem.rightBarButtonItems = [addButton]
     }
     
+    //MARK: - AddJournalVC로 이동하는 함수
     @objc private func addJournal() {
         // 이동할 뷰를 선언하고 네비게이션 컨트롤러에 등록
         let addJournalViewController = AddJournalViewController()
@@ -44,3 +48,15 @@ class JournalListViewController: UIViewController {
     
 }
 
+extension JournalListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath)
+        return cell
+    }
+    
+    
+}

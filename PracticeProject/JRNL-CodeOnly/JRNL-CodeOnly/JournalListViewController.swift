@@ -36,10 +36,10 @@ class JournalListViewController: UIViewController {
     @objc private func addJournal() {
         // 이동할 뷰를 선언하고 네비게이션 컨트롤러에 등록
         let addJournalViewController = AddJournalViewController()
-        let navigationController  = UINavigationController(rootViewController: addJournalViewController)
+        let navController  = UINavigationController(rootViewController: addJournalViewController)
         
         // 네비게이션 하는 뷰 띄우기
-        present(navigationController, animated: true)
+        present(navController, animated: true)
     }
     
 }

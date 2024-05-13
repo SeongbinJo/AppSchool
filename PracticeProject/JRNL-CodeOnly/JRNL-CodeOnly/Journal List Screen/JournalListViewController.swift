@@ -17,8 +17,10 @@ class JournalListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "journalCell") // 기본 UICell 추가
+        tableView.register(JournalListTableViewCell.self, forCellReuseIdentifier: "journalCell") // Cell 등록
         
+        
+//        let safeArea = safeAreaLayoutGuide // 전체화면에 대한 가이드
         // tableView 오토레이아웃
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false // 컨스트레인트 수동으로 작성한다고 알려줌
@@ -42,8 +44,15 @@ class JournalListViewController: UIViewController {
         let addJournalViewController = AddJournalViewController()
         let navController  = UINavigationController(rootViewController: addJournalViewController)
         
-        // 네비게이션 하는 뷰 띄우기
+        // 네비게이션 하는 뷰 띄우기(모달 형식)
         present(navController, animated: true)
+    }
+    
+    @objc private func detailJournal() {
+        let journalDetailViewController = JournalDetailTableViewController()
+        
+        // 네비게이션 뷰 띄우기(네비게이션 형식)
+        show(journalDetailViewController, sender: self)
     }
     
 }
@@ -58,5 +67,13 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
+    //MARK: - UITableViewDelegate 기능 함수
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        detailJournal()
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        90
+    }
     
 }

@@ -65,6 +65,7 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
     // 트리거(현재는 셀-JournalListCell)가 작동하여 지정한 세그웨이(현재는 entryDetail)에 값을 전달하는 부분.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        // 세그웨이 Id 지정
         guard segue.identifier == "entryDetail" else {
             return
         }

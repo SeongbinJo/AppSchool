@@ -7,7 +7,8 @@
 
 import UIKit
 
-class JournalListViewController: UIViewController {
+class JournalListViewController: UIViewController, AddJournalControllerDelegate {
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         return tableView
@@ -47,8 +48,17 @@ class JournalListViewController: UIViewController {
         let addJournalViewController = AddJournalViewController()
         let navController  = UINavigationController(rootViewController: addJournalViewController)
         
+        addJournalViewController.delegate = self
+        
         // 네비게이션 하는 뷰 띄우기(모달 형식)
         present(navController, animated: true)
+    }
+    
+    // AddJournalControllerDelegate 프로토콜을 사용하면 따라와야하는 함수.
+    public func saveJournalEntry(_ journalEntry: JournalEntry) {
+        print("TEST \(journalEntry.title)")
+        sampleJournalEntryData.journalEntries.append(journalEntry)
+        tableView.reloadData()
     }
     
     @objc private func detailJournal() {

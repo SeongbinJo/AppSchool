@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol AddJournalControllerDelegate: NSObject {
+    func saveJournalEntry(_ journalEntry: JournalEntry)
+}
+
 class AddJournalViewController: UIViewController {
+    weak var delegate: AddJournalControllerDelegate?
+    
     private lazy var mainContainer: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -79,12 +85,11 @@ class AddJournalViewController: UIViewController {
         
         let safeArea = view.safeAreaLayoutGuide
         
-        mainContainer.translatesAutoresizingMaskIntoConstraints = false
-        ratingView.translatesAutoresizingMaskIntoConstraints = false
-        toggleView.translatesAutoresizingMaskIntoConstraints = false
-        titleTextField.translatesAutoresizingMaskIntoConstraints = false
-        bodyTextView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let components = [mainContainer, ratingView, toggleView, titleTextField, bodyTextView, imageView]
+        for component in components {
+            component.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         NSLayoutConstraint.activate([
             mainContainer.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
@@ -106,9 +111,15 @@ class AddJournalViewController: UIViewController {
         ])
     }
 
-    @objc private func saveEntry() {
-        
-    }
+    @objc func saveEntry() {
+           guard let title = titleTextField.text, !title.isEmpty,
+                 let body = bodyTextView.text, !body.isEmpty else {
+               return
+           }
+           let journalEntry = JournalEntry(rating: 3, title: title, body: body, photo: UIImage(systemName: "face.smiling"))!
+           delegate?.saveJournalEntry(journalEntry)
+           dismiss(animated: true)
+       }
     
     @objc private func cancelEntry() {
         dismiss(animated: true)

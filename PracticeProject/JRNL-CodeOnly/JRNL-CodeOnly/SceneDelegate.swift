@@ -25,10 +25,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // JournalListViewController로 넘겨주는 네비게이션 컨트롤러 생성
         let journalListViewController = JournalListViewController()
         let firstNavigationController = UINavigationController(rootViewController: journalListViewController)
+        firstNavigationController.tabBarItem = UITabBarItem(title: "Journal",
+                                                                    image: UIImage(systemName: "person.fill"),
+                                                                    tag: 0)
         
         // MapViewController로 넘겨주는 네비게이션 컨트롤러 생성
         let mapViewController = MapViewController()
         let secondNavigationController = UINavigationController(rootViewController: mapViewController)
+        secondNavigationController.tabBarItem = UITabBarItem(title: "Map",
+                                                                    image: UIImage(systemName: "map"),
+                                                                    tag: 1)
         
         // JournalListViewController, MapViewController를 아이템으로하는 탭바 생성
         let tabBarController = UITabBarController()

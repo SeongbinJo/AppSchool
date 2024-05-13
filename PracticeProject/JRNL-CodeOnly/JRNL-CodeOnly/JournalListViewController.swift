@@ -25,6 +25,21 @@ class JournalListViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        navigationItem.title = "Journal"
+        
+        // 네비게이션 아이템 이용한 뷰 이동
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addJournal)) // #selector에 들어가는 함수는 objc
+        navigationItem.rightBarButtonItems = [addButton]
+    }
+    
+    @objc private func addJournal() {
+        // 이동할 뷰를 선언하고 네비게이션 컨트롤러에 등록
+        let addJournalViewController = AddJournalViewController()
+        let navigationController  = UINavigationController(rootViewController: addJournalViewController)
+        
+        // 네비게이션 하는 뷰 띄우기
+        present(navigationController, animated: true)
     }
     
 }

@@ -14,15 +14,20 @@ class MapViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
+    
+    var sampleJournalEntryData = SampleJournalEntryData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
-        
         self.navigationItem.title = "Loading..."
+        locationManager.requestLocation()
+    
+        mapView.delegate = self
+        sampleJournalEntryData.createSampleJournalEntryData()
+        mapView.addAnnotations(sampleJournalEntryData.journalEntries)
     }
     
     
@@ -47,5 +52,25 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    //MARK: - MKMapViewDelegate
+    func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {
+        let identifier = "mapAnnotation"
+        if annotation is JournalEntry {
+            if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
+                annotationView.annotation = annotation
+                return annotationView
+            }else {
+                let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView.canShowCallout = true // 눌렀을때 불러줄까?
+                let callOutButton = UIButton(type: .detailDisclosure)
+                annotationView.rightCalloutAccessoryView = callOutButton
+                return annotationView
+            }
+        }
+        return nil
     }
 }

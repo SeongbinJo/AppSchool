@@ -21,6 +21,7 @@ class JournalDetailTableViewController: UITableViewController {
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.text = "title Label"
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         titleLabel.textAlignment = .left
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -84,15 +85,48 @@ class JournalDetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+        let marginGuide = cell.layoutMarginsGuide
         switch indexPath.row {
-        case 1:
+        case 0:
             cell.contentView.addSubview(dateLabel)
-            let marginGuide = cell.layoutMarginsGuide
+//            let marginGuide = cell.layoutMarginsGuide
             NSLayoutConstraint.activate([
                 dateLabel.centerYAnchor.constraint(equalTo: marginGuide.centerYAnchor),
                 dateLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 16),
                 dateLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: -16),
+            ])
+        case 2:
+//            cell.contentView.addSubview(titleLabel)
+            cell.addSubview(titleLabel)
+            NSLayoutConstraint.activate([
+                titleLabel.centerYAnchor.constraint(equalTo: marginGuide.centerYAnchor),
+                titleLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 16),
+                titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: -16),
+            ])
+        case 3:
+            cell.contentView.addSubview(bodyTextView)
+            bodyTextView.text = journalEntry.title
+            NSLayoutConstraint.activate([
+                bodyTextView.topAnchor.constraint(equalTo: marginGuide.topAnchor),
+                bodyTextView.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor),
+                bodyTextView.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor),
+                bodyTextView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor),
+            ])
+        case 4:
+            cell.contentView.addSubview(imageView)
+            NSLayoutConstraint.activate([
+                imageView.centerXAnchor.constraint(equalTo: marginGuide.centerXAnchor),
+                imageView.centerYAnchor.constraint(equalTo: marginGuide.centerYAnchor),
+                imageView.widthAnchor.constraint(equalToConstant: 300),
+                imageView.heightAnchor.constraint(equalToConstant: 300),
+            ])
+        case 5:
+            cell.contentView.addSubview(mapView)
+            NSLayoutConstraint.activate([
+                mapView.centerXAnchor.constraint(equalTo: marginGuide.centerXAnchor),
+                mapView.centerYAnchor.constraint(equalTo: marginGuide.centerYAnchor),
+                mapView.widthAnchor.constraint(equalToConstant: 300),
+                mapView.heightAnchor.constraint(equalToConstant: 300),
             ])
         default: break
         }

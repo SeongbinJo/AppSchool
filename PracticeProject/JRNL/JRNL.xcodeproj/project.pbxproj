@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		582634682BF3283100F27C3D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582634672BF3283100F27C3D /* MapViewController.swift */; };
 		584BBA0F2BEDB8E50019474E /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BBA0E2BEDB8E50019474E /* JournalEntry.swift */; };
 		584BBA112BEDC0CD0019474E /* JournalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BBA102BEDC0CD0019474E /* JournalListTableViewCell.swift */; };
 		584BBA162BEDDD5A0019474E /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BBA152BEDDD5A0019474E /* AddJournalEntryViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		582634672BF3283100F27C3D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		584BBA0E2BEDB8E50019474E /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		584BBA102BEDC0CD0019474E /* JournalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListTableViewCell.swift; sourceTree = "<group>"; };
 		584BBA152BEDDD5A0019474E /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		582634662BF327F800F27C3D /* Map Screen */ = {
+			isa = PBXGroup;
+			children = (
+				582634672BF3283100F27C3D /* MapViewController.swift */,
+			);
+			path = "Map Screen";
+			sourceTree = "<group>";
+		};
 		584BBA0B2BEDB7BA0019474E /* Journal List Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,9 +110,10 @@
 			children = (
 				58B5E4222BEE018500B23644 /* Entry Detail Screen */,
 				584BBA122BEDDCCB0019474E /* Add new Journal Screen */,
-				585507012BEC900C00C222D3 /* AppDelegate.swift */,
-				585507032BEC900C00C222D3 /* SceneDelegate.swift */,
 				584BBA0B2BEDB7BA0019474E /* Journal List Screen */,
+				585507032BEC900C00C222D3 /* SceneDelegate.swift */,
+				582634662BF327F800F27C3D /* Map Screen */,
+				585507012BEC900C00C222D3 /* AppDelegate.swift */,
 				585507072BEC900C00C222D3 /* Main.storyboard */,
 				5855070A2BEC900D00C222D3 /* Assets.xcassets */,
 				5855070C2BEC900D00C222D3 /* LaunchScreen.storyboard */,
@@ -197,6 +208,7 @@
 				58B5E4242BEE01D800B23644 /* JournalEntryDetailTableViewController.swift in Sources */,
 				585507042BEC900C00C222D3 /* SceneDelegate.swift in Sources */,
 				584BBA162BEDDD5A0019474E /* AddJournalEntryViewController.swift in Sources */,
+				582634682BF3283100F27C3D /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +363,8 @@
 				DEVELOPMENT_TEAM = P95R3MRRWK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JRNL/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 위치정보를 항상 확인합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치정보를 사용 중에만 확인합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -379,6 +393,8 @@
 				DEVELOPMENT_TEAM = P95R3MRRWK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JRNL/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 위치정보를 항상 확인합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치정보를 사용 중에만 확인합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

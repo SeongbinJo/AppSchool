@@ -119,8 +119,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Lm-j2-AmY">
                                         <rect key="frame" x="127.33333333333334" y="52" width="98.333333333333343" height="31"/>
                                         <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eec-kY-HK1">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eec-kY-HK1">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="getLocationSwitchValueChanged:" destination="7pH-Ej-OP8" eventType="valueChanged" id="W3F-I6-i3B"/>
+                                                </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yH-st-ReK">
                                                 <rect key="frame" x="57" y="0.0" width="41.333333333333343" height="31"/>
@@ -183,6 +186,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bodyTextView" destination="fRv-ez-7sP" id="zPL-7L-M2y"/>
+                        <outlet property="getLocationSwitch" destination="eec-kY-HK1" id="RLc-jd-bYV"/>
+                        <outlet property="getLocationSwitchLabel" destination="4yH-st-ReK" id="yLq-RK-fTf"/>
                         <outlet property="photoImageView" destination="slZ-eB-xL8" id="XTC-CG-wyt"/>
                         <outlet property="saveButton" destination="dnP-v0-2Hy" id="TPi-7L-I3c"/>
                         <outlet property="titleTextField" destination="yIN-kY-YcU" id="ipK-YR-s0v"/>
@@ -193,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="3659" y="5"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="f6J-TG-Gwf">
             <objects>
-                <viewController id="QxE-9O-2e0" sceneMemberID="viewController">
+                <viewController id="QxE-9O-2e0" customClass="MapViewController" customModule="JRNL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Rr-Er-QzW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,6 +221,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Svu-Ad-THf"/>
+                    <connections>
+                        <outlet property="mapView" destination="3MT-4H-Pbs" id="Oyb-Jo-M1v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgH-3S-FbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,7 +495,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

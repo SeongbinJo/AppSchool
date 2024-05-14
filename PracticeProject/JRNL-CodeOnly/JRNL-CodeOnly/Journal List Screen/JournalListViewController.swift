@@ -24,7 +24,7 @@ class JournalListViewController: UIViewController, AddJournalControllerDelegate 
         
         sampleJournalEntryData.createSampleJournalEntryData()
         
-//        let safeArea = safeAreaLayoutGuide // 전체화면에 대한 가이드
+        //        let safeArea = safeAreaLayoutGuide // 전체화면에 대한 가이드
         // tableView 오토레이아웃
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false // 컨스트레인트 수동으로 작성한다고 알려줌
@@ -61,13 +61,6 @@ class JournalListViewController: UIViewController, AddJournalControllerDelegate 
         tableView.reloadData()
     }
     
-    @objc private func detailJournal() {
-        let journalDetailViewController = JournalDetailTableViewController()
-        
-        // 네비게이션 뷰 띄우기(네비게이션 형식)
-        show(journalDetailViewController, sender: self)
-    }
-    
 }
 
 extension JournalListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -84,8 +77,11 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
     
     //MARK: - UITableViewDelegate 기능 함수
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        detailJournal()
+        let journalEntry = sampleJournalEntryData.journalEntries[indexPath.row]
+        let journalDetailViewController = JournalDetailTableViewController(journalEntry: journalEntry)
+        
+        // 네비게이션 뷰 띄우기(네비게이션 형식)
+        show(journalDetailViewController, sender: self)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         90

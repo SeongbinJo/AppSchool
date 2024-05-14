@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AddJournalEntryViewController: UIViewController {
     @IBOutlet var titleTextField: UITextField!
@@ -13,22 +14,43 @@ class AddJournalEntryViewController: UIViewController {
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var saveButton: UIBarButtonItem!
     
+    @IBOutlet var getLocationSwitch: UISwitch!
+    @IBOutlet var getLocationSwitchLabel: UILabel!
+    
     var newJournalEntry: JournalEntry?
+    
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.delegate = self
         bodyTextView.delegate = self
         updateSaveButtonState()
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
     }
     
+    @IBAction func getLocationSwitchValueChanged(_ sender: UISwitch) {
+        if getLocationSwitch.isOn {
+            getLocationSwitchLabel.text = "Getting location..."
+            locationManager.requestLocation() // 위치 요청
+        }else {
+            currentLocation = nil
+            getLocationSwitchLabel.text = "Get location"
+        }
+    }
     
-    
-    //MARD: - Methods
+    //MARK: - Methods
     private func updateSaveButtonState() {
         let textFieldText = titleTextField.text ?? ""
         let textViewText = bodyTextView.text ?? ""
-        saveButton.isEnabled = !textFieldText.isEmpty && !textViewText.isEmpty
+        if getLocationSwitch.isOn {
+            saveButton.isEnabled = !textFieldText.isEmpty && !textViewText.isEmpty && currentLocation != nil
+        }else {
+            saveButton.isEnabled = !textFieldText.isEmpty && !textViewText.isEmpty
+        }
     }
     
     // MARK: - Navigation
@@ -37,6 +59,8 @@ class AddJournalEntryViewController: UIViewController {
         let body = bodyTextView.text ?? ""
         let photo = photoImageView.image
         let rating = 3
+        let lat = currentLocation?.coordinate.latitude
+        let long = currentLocation?.coordinate.longitude
         newJournalEntry = JournalEntry(rating: rating, title: title, body: body, photo: photo)
     }
 
@@ -73,5 +97,20 @@ extension AddJournalEntryViewController: UITextViewDelegate, UITextFieldDelegate
     // 텍스트 입력 종료시 확인 한 번 하는 것
     func textViewDidEndEditing(_ textView: UITextView) {
         updateSaveButtonState()
+    }
+}
+
+
+extension AddJournalEntryViewController: CLLocationManagerDelegate {
+    //MARK: - CLLocationManagerDelegate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let myCurrentLocation = locations.first {
+            currentLocation = myCurrentLocation
+            getLocationSwitchLabel.text = "Done"
+            updateSaveButtonState()
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        print("Failed to find user's location : \(error.localizedDescription)")
     }
 }

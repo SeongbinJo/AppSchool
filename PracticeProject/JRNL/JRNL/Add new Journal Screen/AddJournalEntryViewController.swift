@@ -61,7 +61,7 @@ class AddJournalEntryViewController: UIViewController {
         let rating = 3
         let lat = currentLocation?.coordinate.latitude
         let long = currentLocation?.coordinate.longitude
-        newJournalEntry = JournalEntry(rating: rating, title: title, body: body, photo: photo)
+        newJournalEntry = JournalEntry(rating: rating, title: title, body: body, photo: photo, latitude: lat, longitude: long)
     }
 
 }

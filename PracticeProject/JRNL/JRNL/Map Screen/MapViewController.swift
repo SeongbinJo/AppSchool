@@ -44,4 +44,8 @@ extension MapViewController: CLLocationManagerDelegate {
             mapView.region = setInitialRegion(lat: lat, long: long)
         }
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
 }

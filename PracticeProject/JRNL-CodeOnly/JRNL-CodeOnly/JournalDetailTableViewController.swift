@@ -10,6 +10,50 @@ import UIKit
 class JournalDetailTableViewController: UITableViewController {
     let journalEntry: JournalEntry
     
+    private lazy var dateLabel: UILabel = {
+        let dateLabel = UILabel()
+        dateLabel.text = "text label"
+        dateLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        dateLabel.textAlignment = .right
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        return dateLabel
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        titleLabel.textAlignment = .left
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return titleLabel
+    }()
+    
+    private lazy var bodyTextView: UITextView = {
+        let bodyTextView = UITextView()
+        bodyTextView.isEditable = false
+        bodyTextView.isSelectable = false
+        bodyTextView.backgroundColor = .systemBackground
+        bodyTextView.textColor = .label
+        bodyTextView.font = UIFont.systemFont(ofSize: 14)
+        bodyTextView.translatesAutoresizingMaskIntoConstraints = false
+        return bodyTextView
+    }()
+    
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "face.smiling")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private lazy var mapView: UIImageView = {
+        let mapView = UIImageView()
+        mapView.image = UIImage(systemName: "map.fill")
+        mapView.contentMode = .scaleAspectFit
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        return mapView
+    }()
+    
     init(journalEntry: JournalEntry) {
         self.journalEntry = journalEntry
         super.init(nibName: nil, bundle: nil)
@@ -40,6 +84,18 @@ class JournalDetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        switch indexPath.row {
+        case 1:
+            cell.contentView.addSubview(dateLabel)
+            let marginGuide = cell.layoutMarginsGuide
+            NSLayoutConstraint.activate([
+                dateLabel.centerYAnchor.constraint(equalTo: marginGuide.centerYAnchor),
+                dateLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 16),
+                dateLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: -16),
+            ])
+        default: break
+        }
         
         return cell
     }

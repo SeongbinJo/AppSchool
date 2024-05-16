@@ -108,7 +108,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xUH-GI-xBZ">
                                 <rect key="frame" x="20" y="75.999999999999972" width="353" height="470.33333333333326"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdC-ln-xWd" customClass="RatingView" customModule="JRNL" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QdC-ln-xWd" customClass="RatingView" customModule="JRNL" customModuleProvider="target">
                                         <rect key="frame" x="50.666666666666686" y="0.0" width="252" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="oAs-wJ-e8M"/>
@@ -148,12 +148,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face.smiling" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="slZ-eB-xL8">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face.smiling" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="slZ-eB-xL8">
                                         <rect key="frame" x="76.666666666666686" y="270" width="200" height="200"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="201.33000000000001" id="D6P-Pw-FTa"/>
                                             <constraint firstAttribute="width" constant="200" id="QFa-rK-Wvn"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="sL3-MS-stc" appends="YES" id="8sr-7J-g0L"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -195,6 +199,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7t-zG-whG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="eBE-Se-CdW" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="sL3-MS-stc">
+                    <connections>
+                        <action selector="getPhotof:" destination="7pH-Ej-OP8" id="PSJ-iu-8Hk"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3610" y="-327"/>
         </scene>
@@ -269,9 +278,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="60.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="elh-tY-H3Z">
+                                                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="elh-tY-H3Z" customClass="RatingView" customModule="JRNL" customModuleProvider="target">
                                                     <rect key="frame" x="70.666666666666686" y="8" width="252" height="44.333333333333336"/>
-                                                    <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="252" id="eEY-qV-AcK"/>
                                                         <constraint firstAttribute="height" constant="44" id="lTa-oQ-rlu"/>
@@ -402,6 +410,7 @@
                         <outlet property="dateLabel" destination="JDz-Vs-vfu" id="AYh-AM-eFc"/>
                         <outlet property="mapImageView" destination="TFe-XE-Hbi" id="ce9-P8-7jp"/>
                         <outlet property="photoImageView" destination="HNH-xo-nGX" id="IzR-zC-hgd"/>
+                        <outlet property="ratingView" destination="elh-tY-H3Z" id="26U-6W-f0z"/>
                         <outlet property="titleLabel" destination="UJc-Tr-b8H" id="jAE-1K-s37"/>
                     </connections>
                 </tableViewController>
@@ -498,9 +507,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

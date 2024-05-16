@@ -45,6 +45,14 @@ class AddJournalEntryViewController: UIViewController {
         }
     }
     
+    @IBAction func getPhotof(_ sender: UITapGestureRecognizer) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true)
+    }
+    
+    
     //MARK: - Methods
     private func updateSaveButtonState() {
         let textFieldText = titleTextField.text ?? ""
@@ -116,4 +124,14 @@ extension AddJournalEntryViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
         print("Failed to find user's location : \(error.localizedDescription)")
     }
+}
+
+
+extension AddJournalEntryViewController: UIImagePickerControllerDelegate {
+    
+}
+
+
+extension AddJournalEntryViewController: UINavigationControllerDelegate {
+    
 }

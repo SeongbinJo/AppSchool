@@ -15,6 +15,9 @@ class JournalEntryDetailTableViewController: UITableViewController {
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var mapImageView: UIImageView!
     
+    @IBOutlet var ratingView: RatingView!
+    
+    
     var selectedJournalEntry: JournalEntry?
     
     override func viewDidLoad() {
@@ -22,6 +25,7 @@ class JournalEntryDetailTableViewController: UITableViewController {
         dateLabel.text = selectedJournalEntry?.dateString
         titleLabel.text = selectedJournalEntry?.title
         bodyTextView.text = selectedJournalEntry?.body
+        ratingView.rating = selectedJournalEntry?.rating ?? 0
         if let photoData = selectedJournalEntry?.photoData {
             photoImageView.image = UIImage(data: photoData)
         }

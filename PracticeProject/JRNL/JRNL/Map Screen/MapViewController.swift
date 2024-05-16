@@ -22,8 +22,6 @@ class MapViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer // 위치 정보 설정
-//        locationManager.requestLocation()
-
     
         mapView.delegate = self
     }

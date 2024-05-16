@@ -9,11 +9,9 @@ import UIKit
 
 class JournalListViewController: UIViewController {
     @IBOutlet var journalTableView: UITableView!
-    var sampleJournalEntryData = SampleJournalEntryData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sampleJournalEntryData.createSampleJournalEntryData()
     }
 
     
@@ -25,7 +23,7 @@ class JournalListViewController: UIViewController {
     @IBAction func unwindNewEntrySave(segue: UIStoryboardSegue) {
         if let sourceViewController = segue.source as? AddJournalEntryViewController,
            let newJournalEntry = sourceViewController.newJournalEntry {
-            sampleJournalEntryData.journalEntries.append(newJournalEntry)
+            SharedData.shared.addJournalEntry(newJournalEntry: newJournalEntry)
             journalTableView.reloadData()
         }
     }
@@ -37,13 +35,13 @@ class JournalListViewController: UIViewController {
 extension JournalListViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - UITableView 셀 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sampleJournalEntryData.journalEntries.count
+        SharedData.shared.numberOfJournalEntries()
     }
     
     // MARK: - UITableView 셀 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = journalTableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath) as! JournalListTableViewCell // 셀 생성
-        let journalEntry = sampleJournalEntryData.journalEntries[indexPath.row] // 데이터 프로퍼티 생성
+        let journalEntry = SharedData.shared.getJournalEntry(index: indexPath.row) // 데이터 프로퍼티 생성
         cell.photoImageView.image = journalEntry.photo
         cell.dateLabel.text = journalEntry.date.formatted(.dateTime.year().month().day())
         cell.titleLabel.text = journalEntry.title
@@ -54,7 +52,7 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
     // MARK: - UITableView Delegate
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            sampleJournalEntryData.journalEntries.remove(at: indexPath.row)
+            SharedData.shared.removeJournalEntry(index: indexPath.row)
             journalTableView.reloadData()
         }
     }
@@ -76,7 +74,7 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
             fatalError("Could not get indexPath")
         }
         // 해당 목적지 뷰컨트롤러의 프로퍼티에 전달할 값을 담아줌.
-        let selectedJournalEntry = sampleJournalEntryData.journalEntries[indexPath.row]
+        let selectedJournalEntry = SharedData.shared.getJournalEntry(index: indexPath.row)
         journalEntryDetailViewController.selectedJournalEntry = selectedJournalEntry
     }
     

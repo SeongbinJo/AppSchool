@@ -14,20 +14,23 @@ class MapViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    
-    var sampleJournalEntryData = SampleJournalEntryData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "Loading..."
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        self.navigationItem.title = "Loading..."
-        locationManager.requestLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer // 위치 정보 설정
+//        locationManager.requestLocation()
+
     
         mapView.delegate = self
-        sampleJournalEntryData.createSampleJournalEntryData()
-        mapView.addAnnotations(sampleJournalEntryData.journalEntries)
+    }
+    
+    override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        locationManager.requestLocation()
     }
     
     
@@ -47,6 +50,7 @@ extension MapViewController: CLLocationManagerDelegate {
             let long = myLocation.coordinate.longitude
             self.navigationItem.title = "Loaded Map"
             mapView.region = setInitialRegion(lat: lat, long: long)
+            mapView.addAnnotations(SharedData.shared.getAllJournalEntries())
         }
     }
     

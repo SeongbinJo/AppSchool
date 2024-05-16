@@ -23,7 +23,7 @@ class SharedData {
         return journalEntries[index]
     }
     
-    func getAllJournalEntries(index: Int) -> [JournalEntry] {
+    func getAllJournalEntries() -> [JournalEntry] {
         let readOnlyJournalEntries = journalEntries
         return readOnlyJournalEntries
     }

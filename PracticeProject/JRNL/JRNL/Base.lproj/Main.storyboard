@@ -223,11 +223,12 @@
                     <navigationItem key="navigationItem" id="Svu-Ad-THf"/>
                     <connections>
                         <outlet property="mapView" destination="3MT-4H-Pbs" id="Oyb-Jo-M1v"/>
+                        <segue destination="3Mf-d2-B3A" kind="show" identifier="showMapDetail" id="Uqg-30-37O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgH-3S-FbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991.6030534351144" y="710.56338028169023"/>
+            <point key="canvasLocation" x="1992" y="689"/>
         </scene>
         <!--Journal Entry Detail Table View Controller-->
         <scene sceneID="BGv-Du-xRT">
@@ -399,6 +400,7 @@
                     <connections>
                         <outlet property="bodyTextView" destination="CWx-Z2-lWO" id="a1p-eg-uIk"/>
                         <outlet property="dateLabel" destination="JDz-Vs-vfu" id="AYh-AM-eFc"/>
+                        <outlet property="mapImageView" destination="TFe-XE-Hbi" id="ce9-P8-7jp"/>
                         <outlet property="photoImageView" destination="HNH-xo-nGX" id="IzR-zC-hgd"/>
                         <outlet property="titleLabel" destination="UJc-Tr-b8H" id="jAE-1K-s37"/>
                     </connections>
@@ -483,6 +485,9 @@
             <point key="canvasLocation" x="2827" y="-327"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Uqg-30-37O"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="face.smiling" width="128" height="128"/>
         <image name="face.smiling" catalog="system" width="128" height="123"/>

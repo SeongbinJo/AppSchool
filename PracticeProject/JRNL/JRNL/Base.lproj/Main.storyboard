@@ -201,7 +201,7 @@
                 <exit id="eBE-Se-CdW" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="sL3-MS-stc">
                     <connections>
-                        <action selector="getPhotof:" destination="7pH-Ej-OP8" id="PSJ-iu-8Hk"/>
+                        <action selector="getPhoto:" destination="7pH-Ej-OP8" id="PSJ-iu-8Hk"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -498,8 +498,8 @@
         <segue reference="tnc-6d-VoT"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="face.smiling" width="128" height="128"/>
         <image name="face.smiling" catalog="system" width="128" height="123"/>
+        <image name="face.smiling" width="128" height="128"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">

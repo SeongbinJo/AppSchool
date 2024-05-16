@@ -68,8 +68,10 @@ class JournalListTableViewCell: UITableViewCell {
     
     //MARK: - configure Cell
     func configureCell(journalEntry: JournalEntry) {
-        thumbnailView.image = journalEntry.photo
-        dateLabel.text = journalEntry.date.formatted(.dateTime.year().month().day())
+        if let photoData = journalEntry.photoData {
+            thumbnailView.image = UIImage(data: photoData)
+        }
+        dateLabel.text = journalEntry.dateString
         titleLabel.text = journalEntry.title
     }
     

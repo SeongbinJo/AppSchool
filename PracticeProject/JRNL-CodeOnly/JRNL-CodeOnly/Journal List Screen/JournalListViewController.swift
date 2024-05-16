@@ -13,18 +13,14 @@ class JournalListViewController: UIViewController, AddJournalControllerDelegate 
         let tableView = UITableView()
         return tableView
     }()
-    
-    var sampleJournalEntryData = SampleJournalEntryData()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(JournalListTableViewCell.self, forCellReuseIdentifier: "journalCell") // Cell 등록
-        
-        sampleJournalEntryData.createSampleJournalEntryData()
-        
-        //        let safeArea = safeAreaLayoutGuide // 전체화면에 대한 가이드
+
         // tableView 오토레이아웃
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false // 컨스트레인트 수동으로 작성한다고 알려줌
@@ -44,20 +40,19 @@ class JournalListViewController: UIViewController, AddJournalControllerDelegate 
     
     //MARK: - AddJournalVC로 이동하는 함수
     @objc private func addJournal() {
-        // 이동할 뷰를 선언하고 네비게이션 컨트롤러에 등록
-        let addJournalViewController = AddJournalViewController()
-        let navController  = UINavigationController(rootViewController: addJournalViewController)
-        
-        addJournalViewController.delegate = self
-        
-        // 네비게이션 하는 뷰 띄우기(모달 형식)
-        present(navController, animated: true)
-    }
+            // 이동할 뷰를 선언하고 네비게이션 컨트롤러에 등록
+            let addJournalViewController = AddJournalViewController()
+            let navController  = UINavigationController(rootViewController: addJournalViewController)
+            
+            addJournalViewController.delegate = self
+            
+            // 네비게이션 하는 뷰 띄우기(모달 형식)
+            present(navController, animated: true)
+        }
     
     // AddJournalControllerDelegate 프로토콜을 사용하면 따라와야하는 함수.
     public func saveJournalEntry(_ journalEntry: JournalEntry) {
-        print("TEST \(journalEntry.title)")
-        sampleJournalEntryData.journalEntries.append(journalEntry)
+        SharedData.shared.addJournalEntry(newJournalEntry: journalEntry)
         tableView.reloadData()
     }
     
@@ -65,24 +60,32 @@ class JournalListViewController: UIViewController, AddJournalControllerDelegate 
 
 extension JournalListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sampleJournalEntryData.journalEntries.count
+        SharedData.shared.numberOfJournalEntries()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath) as! JournalListTableViewCell
-        let journalEntry = sampleJournalEntryData.journalEntries[indexPath.row]
+        let journalEntry = SharedData.shared.getJournalEntry(index: indexPath.row)
         cell.configureCell(journalEntry: journalEntry)
         return cell
     }
     
     //MARK: - UITableViewDelegate 기능 함수
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let journalEntry = sampleJournalEntryData.journalEntries[indexPath.row]
+        let journalEntry = SharedData.shared.getJournalEntry(index: indexPath.row)
         let journalDetailViewController = JournalDetailTableViewController(journalEntry: journalEntry)
         
         // 네비게이션 뷰 띄우기(네비게이션 형식)
         show(journalDetailViewController, sender: self)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            SharedData.shared.removeJournalEntry(index: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         90
     }

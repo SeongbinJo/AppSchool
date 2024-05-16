@@ -45,7 +45,7 @@ class AddJournalEntryViewController: UIViewController {
         }
     }
     
-    @IBAction func getPhotof(_ sender: UITapGestureRecognizer) {
+    @IBAction func getPhoto(_ sender: UITapGestureRecognizer) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary

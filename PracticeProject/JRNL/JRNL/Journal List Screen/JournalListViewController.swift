@@ -12,6 +12,7 @@ class JournalListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SharedData.shared.loadJournalEntriesData()
     }
 
     
@@ -20,10 +21,12 @@ class JournalListViewController: UIViewController {
         
     }
     
+    // MARK: - save 버튼
     @IBAction func unwindNewEntrySave(segue: UIStoryboardSegue) {
         if let sourceViewController = segue.source as? AddJournalEntryViewController,
            let newJournalEntry = sourceViewController.newJournalEntry {
             SharedData.shared.addJournalEntry(newJournalEntry: newJournalEntry)
+            SharedData.shared.saveJournalEntriesData()
             journalTableView.reloadData()
         }
     }
@@ -55,6 +58,7 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             SharedData.shared.removeJournalEntry(index: indexPath.row)
+            SharedData.shared.saveJournalEntriesData()
             journalTableView.reloadData()
         }
     }

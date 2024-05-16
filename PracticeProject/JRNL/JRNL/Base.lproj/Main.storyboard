@@ -196,7 +196,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7t-zG-whG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="eBE-Se-CdW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3659" y="5"/>
+            <point key="canvasLocation" x="3610" y="-327"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="f6J-TG-Gwf">
@@ -486,7 +486,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Uqg-30-37O"/>
+        <segue reference="tnc-6d-VoT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="face.smiling" width="128" height="128"/>

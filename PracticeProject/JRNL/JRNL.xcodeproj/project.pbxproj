@@ -18,6 +18,7 @@
 		58A6327D2BF588C20058BB37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6327B2BF588C20058BB37 /* MapViewController.swift */; };
 		58A632802BF588C90058BB37 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6327E2BF588C90058BB37 /* JournalEntry.swift */; };
 		58A632822BF588D40058BB37 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A632812BF588D40058BB37 /* SharedData.swift */; };
+		58A632842BF5BDBD0058BB37 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A632832BF5BDBD0058BB37 /* RatingView.swift */; };
 		58B5E4242BEE01D800B23644 /* JournalEntryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5E4232BEE01D800B23644 /* JournalEntryDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		58A6327B2BF588C20058BB37 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		58A6327E2BF588C90058BB37 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		58A632812BF588D40058BB37 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		58A632832BF5BDBD0058BB37 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		58B5E4232BEE01D800B23644 /* JournalEntryDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +54,6 @@
 		584BBA0B2BEDB7BA0019474E /* Journal List Screen */ = {
 			isa = PBXGroup;
 			children = (
-				584BBA0D2BEDB8710019474E /* View */,
 				585507052BEC900C00C222D3 /* JournalListViewController.swift */,
 			);
 			path = "Journal List Screen";
@@ -62,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				584BBA102BEDC0CD0019474E /* JournalListTableViewCell.swift */,
+				58A632832BF5BDBD0058BB37 /* RatingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +95,7 @@
 		585507002BEC900C00C222D3 /* JRNL */ = {
 			isa = PBXGroup;
 			children = (
+				584BBA0D2BEDB8710019474E /* View */,
 				58A6327F2BF588C90058BB37 /* Model */,
 				58A6327C2BF588C20058BB37 /* Map Screen */,
 				58B5E4222BEE018500B23644 /* Entry Detail Screen */,
@@ -207,6 +210,7 @@
 				58A632822BF588D40058BB37 /* SharedData.swift in Sources */,
 				585507062BEC900C00C222D3 /* JournalListViewController.swift in Sources */,
 				585507022BEC900C00C222D3 /* AppDelegate.swift in Sources */,
+				58A632842BF5BDBD0058BB37 /* RatingView.swift in Sources */,
 				58A632802BF588C90058BB37 /* JournalEntry.swift in Sources */,
 				584BBA112BEDC0CD0019474E /* JournalListTableViewCell.swift in Sources */,
 				58B5E4242BEE01D800B23644 /* JournalEntryDetailTableViewController.swift in Sources */,

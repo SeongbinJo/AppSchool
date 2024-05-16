@@ -42,8 +42,10 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = journalTableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath) as! JournalListTableViewCell // 셀 생성
         let journalEntry = SharedData.shared.getJournalEntry(index: indexPath.row) // 데이터 프로퍼티 생성
-        cell.photoImageView.image = journalEntry.photo
-        cell.dateLabel.text = journalEntry.date.formatted(.dateTime.year().month().day())
+        if let photoData = journalEntry.photoData {
+            cell.photoImageView.image = UIImage(data: photoData)
+        }
+        cell.dateLabel.text = journalEntry.dateString
         cell.titleLabel.text = journalEntry.title
         
         return cell

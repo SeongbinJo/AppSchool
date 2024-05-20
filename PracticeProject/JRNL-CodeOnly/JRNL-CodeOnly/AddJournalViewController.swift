@@ -12,15 +12,21 @@ protocol AddJournalControllerDelegate: NSObject {
     func saveJournalEntry(_ journalEntry: JournalEntry)
 }
 
-class AddJournalViewController: UIViewController {
+class AddJournalViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate,
+                                UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     weak var delegate: AddJournalControllerDelegate?
+//    의존 분리를 위해 직접 뷰 컨트롤러를 담기보다, 델리게이트 프로토콜을 이용한다.
+//    weak var journalListViewController: JournalListViewController?
     
+    final let LABEL_VIEW_TAG = 1001
+    
+    var locationSwitchIsOn = false {
+        didSet {
+            updateSaveButtonState()
+        }
+    }
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
-    
-    
-    var saveButton: UIBarButtonItem?
-    var cancelButton: UIBarButtonItem?
     
     private lazy var mainContainer: UIStackView = {
         let stackView = UIStackView()
@@ -31,96 +37,97 @@ class AddJournalViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var ratingView: UIStackView = {
-        let stackView = UIStackView(frame: CGRect(x: 0, y: 0, width: 252, height: 44))
-        stackView.axis = .horizontal
-        stackView.backgroundColor = .systemCyan
-        return stackView
+    private lazy var ratingView: RatingView = {
+        let ratingView = RatingView(frame: CGRect(x: 0, y: 0, width: 252, height: 44))
+        ratingView.distribution = .fillEqually
+        return ratingView
     }()
     
-    private lazy var getLocationSwitch = UISwitch()
-    private lazy var getLocationSwitchLabel: UILabel = {
-        let label = UILabel()
-        label.text = "현위치 가져오기"
-        return label
-    }()
-    
-    private lazy var toggleStackView: UIStackView = {
+    private lazy var toggleView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fill
         stackView.alignment = .fill
+        stackView.distribution = .fill
         stackView.spacing = 8
+        
+        let switchComponent = UISwitch()
+        switchComponent.isOn = false
+        switchComponent.addTarget(self, action: #selector(valueChanged(sender:)), for: .valueChanged)
 
-        stackView.addArrangedSubview(getLocationSwitch)
-        stackView.addArrangedSubview(getLocationSwitchLabel)
+        let labelComponent = UILabel()
+        labelComponent.text = "Get Location"
+        labelComponent.tag = LABEL_VIEW_TAG
+        
+        stackView.addArrangedSubview(switchComponent)
+        stackView.addArrangedSubview(labelComponent)
+        
         return stackView
     }()
     
-    private lazy var  titleTextField: UITextField = {
+    private lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Journal Title"
+        textField.addTarget(self, action: #selector(textChanged(textField:)), for: .editingChanged)
         return textField
     }()
     
     private lazy var bodyTextView: UITextView = {
         let textView = UITextView()
         textView.text = "Journal Body"
+        textView.delegate = self
         return textView
     }()
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.isUserInteractionEnabled = true
         imageView.image = UIImage(systemName: "face.smiling")
+        imageView.isUserInteractionEnabled = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        imageView.addGestureRecognizer(tapGestureRecognizer)
         return imageView
     }()
     
+    private lazy var saveButton: UIBarButtonItem = {
+        return UIBarButtonItem(barButtonSystemItem: .save,
+                               target: self,
+                               action: #selector(save))
+    }()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "New Entry"
         view.backgroundColor = .white
         
-        titleTextField.delegate = self
-        bodyTextView.delegate = self
-        locationManager.delegate = self
+        navigationItem.rightBarButtonItem = saveButton
         
-        // 탭 제스처 정의
-        let imageViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(openImagePicker(_:)))
-        // 추가
-        imageView.addGestureRecognizer(imageViewTapGesture)
+        saveButton.isEnabled = false
         
-        // 위치 가져오는 스위치 액션
-        getLocationSwitch.addTarget(self, action: #selector(getLocationSwitchValueChanged(_:)), for: .valueChanged)
-
-        saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveEntry))
-        cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelEntry))
-        
-        saveButton?.isEnabled = false
-        
-        navigationItem.leftBarButtonItems = [cancelButton!]
-        navigationItem.rightBarButtonItems = [saveButton!]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                                           target: self,
+                                                           action: #selector(cancel))
         
         mainContainer.addArrangedSubview(ratingView)
-        mainContainer.addArrangedSubview(toggleStackView)
+        mainContainer.addArrangedSubview(toggleView)
         mainContainer.addArrangedSubview(titleTextField)
         mainContainer.addArrangedSubview(bodyTextView)
         mainContainer.addArrangedSubview(imageView)
+        
         view.addSubview(mainContainer)
         
         let safeArea = view.safeAreaLayoutGuide
         
-        
-        let components = [mainContainer, ratingView, toggleStackView, titleTextField, bodyTextView, imageView]
-        for component in components {
-            component.translatesAutoresizingMaskIntoConstraints = false
-        }
+        mainContainer.translatesAutoresizingMaskIntoConstraints = false
+        ratingView.translatesAutoresizingMaskIntoConstraints = false
+        toggleView.translatesAutoresizingMaskIntoConstraints = false
+        titleTextField.translatesAutoresizingMaskIntoConstraints = false
+        bodyTextView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             mainContainer.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
-            mainContainer.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            mainContainer.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            mainContainer.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
+            mainContainer.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20),
             
             ratingView.widthAnchor.constraint(equalToConstant: 252),
             ratingView.heightAnchor.constraint(equalToConstant: 44),
@@ -133,97 +140,117 @@ class AddJournalViewController: UIViewController {
             bodyTextView.heightAnchor.constraint(equalToConstant: 128),
             
             imageView.widthAnchor.constraint(equalToConstant: 200),
-            imageView.heightAnchor.constraint(equalToConstant: 200),
-        ])
-    }
-    
-    //MARK: - 함수
-    private func updateSaveButtonState() {
-        let textFieldText = titleTextField.text ?? ""
-        let textViewText = bodyTextView.text ?? ""
-        if getLocationSwitch.isOn {
-            saveButton!.isEnabled = !textFieldText.isEmpty && !textViewText.isEmpty && currentLocation != nil
-        }else {
-            saveButton!.isEnabled = !textFieldText.isEmpty && !textViewText.isEmpty
-        }
-    }
-    
-    @objc func saveEntry() {
-        guard let title = titleTextField.text, !title.isEmpty,
-              let body = bodyTextView.text, !body.isEmpty else {
-            return
-        }
-        let journalEntry = JournalEntry(rating: 3, title: title, body: body, photo: imageView.image)!
-        delegate?.saveJournalEntry(journalEntry)
-        dismiss(animated: true)
-    }
-    
-    @objc func cancelEntry() {
-        dismiss(animated: true)
-    }
-    
-    @objc private func openImagePicker(_ sender: UITapGestureRecognizer) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .photoLibrary
-        present(imagePickerController, animated: true)
-    }
-    
-    @objc private func getLocationSwitchValueChanged(_ sender: UISwitch) {
-        if getLocationSwitch.isOn {
-            getLocationSwitchLabel.text = "위치 가져오는 중.."
-            locationManager.requestLocation()
-        }else {
-            currentLocation = nil
-            getLocationSwitchLabel.text = "다시 가져오기"
-        }
-    }
-}
+            imageView.heightAnchor.constraint(equalToConstant: 200)
 
-extension AddJournalViewController: UITextViewDelegate, UITextFieldDelegate {
-    //MARK: - UITextFieldDelegate
-    // shouldReturn -> 키보드의 리턴 키를 탭할때 불림
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder() // 키보드를 내려줌
-        return true
+        ])
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        
     }
     
-    // 텍스트 입력 종료시 확인 한 번 하는 것
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    // MARK: - UITextViewDelegate
+    func textViewDidChange(_ textView: UITextView) {
         updateSaveButtonState()
     }
-}
-
-
-extension AddJournalViewController: UIImagePickerControllerDelegate {
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true)
-    }
     
+    // MARK: - UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+            fatalError("Expected a dictionary containing an image: \(info)")
         }
         let smallerImage = selectedImage.preparingThumbnail(of: CGSize(width: 300, height: 300))
         imageView.image = smallerImage
         dismiss(animated: true)
     }
-}
-
-extension AddJournalViewController: UINavigationControllerDelegate {
     
-}
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    
+    
+    // MARK: - Methods
+    @objc func imageTapped() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true)
+    }
 
-extension AddJournalViewController: CLLocationManagerDelegate {
+    func updateSaveButtonState() {
+        if locationSwitchIsOn {
+            guard let title = titleTextField.text, !title.isEmpty,
+                  let body = bodyTextView.text, !body.isEmpty,
+                  let _ = currentLocation else {
+                saveButton.isEnabled = false
+                return
+            }
+            saveButton.isEnabled = true
+        } else {
+            guard let title = titleTextField.text, !title.isEmpty,
+                  let body = bodyTextView.text, !body.isEmpty else {
+                saveButton.isEnabled = false
+                return
+            }
+            saveButton.isEnabled = true
+        }
+    }
+    
+    @objc func textChanged(textField: UITextField) {
+        updateSaveButtonState()
+    }
+    
+    @objc func save() {
+        guard let title = titleTextField.text, !title.isEmpty,
+              let body = bodyTextView.text, !body.isEmpty else {
+            return
+        }
+        
+        let rating = ratingView.rating
+        let lat = currentLocation?.coordinate.latitude
+        let long = currentLocation?.coordinate.longitude
+        
+        let journalEntry = JournalEntry(rating: rating, title: title, body: body,
+                                        photo: imageView.image,
+                                        latitude: lat,
+                                        longitude: long)!
+        delegate?.saveJournalEntry(journalEntry)
+        dismiss(animated: true)
+    }
+    
+    @objc func cancel() {
+        dismiss(animated: true)
+    }
+    
+    @objc func valueChanged(sender: UISwitch) {
+        locationSwitchIsOn = sender.isOn
+        if sender.isOn {
+            if let label = toggleView.viewWithTag(LABEL_VIEW_TAG) as? UILabel {
+                label.text = "Getting location..."
+            }
+            locationManager.requestLocation()
+        } else {
+            currentLocation = nil
+            if let label = toggleView.viewWithTag(LABEL_VIEW_TAG) as? UILabel {
+                label.text = "Get location"
+            }
+        }
+    }
+    
+    
+    // MARK: - CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let myCurrentLocation = locations.first {
             currentLocation = myCurrentLocation
-            getLocationSwitchLabel.text = "위치를 가져왔습니다."
+            if let label = toggleView.viewWithTag(LABEL_VIEW_TAG) as? UILabel {
+                label.text = "Done"
+            }
             updateSaveButtonState()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
-        print("Failed to find user's location : \(error.localizedDescription)")
+        print("Failed to find user's location: \(error.localizedDescription)")
     }
+        
 }

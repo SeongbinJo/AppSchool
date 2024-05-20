@@ -7,28 +7,28 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController {
-    private lazy var mapView: MKMapView = {
-       let mapView = MKMapView()
-        mapView.translatesAutoresizingMaskIntoConstraints = false
-        return mapView
-    }()
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     let locationManager = CLLocationManager()
     
-    
+    private lazy var mapView: MKMapView = {
+        let mapView = MKMapView()
+        mapView.delegate = self
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        return mapView
+    }()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.title = "Map"
-        
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer // 위치 정보를 1Km 단위로 끊는다.
-        
-        mapView.delegate = self
 
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        self.navigationItem.title = "Loading..."
+        
         view.addSubview(mapView)
         
         let safeArea = view.safeAreaLayoutGuide
@@ -40,56 +40,61 @@ class MapViewController: UIViewController {
         ])
     }
     
-    override func viewIsAppearing(_ animated: Bool) {
-        super.viewIsAppearing(animated)
-        locationManager.requestLocation() // 현위치 정보 요청
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SharedData.shared.loadJournalEntriesData()
     }
     
-    func setInitialRegion(lat: CLLocationDegrees, long: CLLocationDegrees) -> MKCoordinateRegion {
-        // MKCoordinatRegion 타입은 특정 영역을 나타냄
-        // center: 위도, 경도를 담아냄, span: 영역의 크기를 나타냄
-        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat, longitude: long), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        return region
+    override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        locationManager.requestLocation()
     }
-
-}
-
-extension MapViewController: CLLocationManagerDelegate {
-    // 위치 정보 업데이트 되었을 때
+    
+    // MARK: - CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let myLocation = locations.first {
-            let lat = myLocation.coordinate.latitude
-            let long = myLocation.coordinate.longitude
+        if let myCurrentLocation = locations.first {
+            let lat = myCurrentLocation.coordinate.latitude
+            let long = myCurrentLocation.coordinate.longitude
+            self.navigationItem.title = "Map"
             mapView.region = setInitialRegion(lat: lat, long: long)
-            print(lat)
-            print(long)
             mapView.addAnnotations(SharedData.shared.getAllJournalEntries())
         }
     }
     
-    // 위치 정보 읽기 실패했을 때
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
-        fatalError("Failed to find user's location: \(error.localizedDescription)")
+        print("Failed to find user's location: \(error.localizedDescription)")
     }
-}
-
-
-extension MapViewController: MKMapViewDelegate {
-    // didSelected가 클릭시 액션을 부여한다면 viewFor는 핀을 눌렀을때, 나타날 annotationView를 보여준다.
+    
+    // MARK: - MKMapViewDelegate
     func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {
         let identifier = "mapAnnotation"
         if annotation is JournalEntry {
             if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
                 annotationView.annotation = annotation
                 return annotationView
-            }else {
+            } else {
                 let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                annotationView.canShowCallout = true // 눌렀을때 불러줄까?
-                let callOutButton = UIButton(type: .detailDisclosure)
-                annotationView.leftCalloutAccessoryView = callOutButton
+                annotationView.canShowCallout = true
+                let calloutButton = UIButton(type: .detailDisclosure)
+                annotationView.rightCalloutAccessoryView = calloutButton
                 return annotationView
             }
         }
         return nil
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let journalEntry = view.annotation as? JournalEntry {
+            let journalDetailViewController = JournalDetailViewController(journalEntry: journalEntry)
+            show(journalDetailViewController, sender: nil)
+        }
+    }
+    
+    
+    // MARK: - Methods
+    func setInitialRegion(lat: CLLocationDegrees, long: CLLocationDegrees) -> MKCoordinateRegion {
+        MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat, longitude: long),
+                           span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    }
+
 }

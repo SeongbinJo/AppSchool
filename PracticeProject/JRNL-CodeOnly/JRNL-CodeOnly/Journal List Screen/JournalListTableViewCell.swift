@@ -8,6 +8,7 @@
 import UIKit
 
 class JournalListTableViewCell: UITableViewCell {
+    
     private lazy var thumbnailView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "face.smiling")
@@ -17,23 +18,21 @@ class JournalListTableViewCell: UITableViewCell {
     
     private lazy var dateLabel: UILabel = {
         let dateLabel = UILabel()
+        dateLabel.text = "Date"
         dateLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        dateLabel.text = "TEST"
         return dateLabel
     }()
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.text = "Title"
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        titleLabel.text = "test"
         return titleLabel
     }()
 
-    
-    // Cell 생성자
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        // 셀이 생성될 때마다 불림
+        
         addSubview(thumbnailView)
         addSubview(dateLabel)
         addSubview(titleLabel)
@@ -42,8 +41,8 @@ class JournalListTableViewCell: UITableViewCell {
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        let safeArea = safeAreaLayoutGuide // 전체화면에 대한 가이드
-        let marginGuide = layoutMarginsGuide // 기본여백 설정 가이드
+        let safeArea = self.safeAreaLayoutGuide
+        let marginGuide = self.layoutMarginsGuide
         
         NSLayoutConstraint.activate([
             thumbnailView.topAnchor.constraint(equalTo: safeArea.topAnchor),
@@ -53,26 +52,24 @@ class JournalListTableViewCell: UITableViewCell {
             
             dateLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor),
             dateLabel.leadingAnchor.constraint(equalTo: thumbnailView.trailingAnchor, constant: 8),
-            dateLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor),
-            
+            dateLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: -8),
+
             titleLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: thumbnailView.trailingAnchor, constant: 8),
-            dateLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor)
+            titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: -8)
+            
         ])
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    //MARK: - configure Cell
+    // MARK: - configureCell
     func configureCell(journalEntry: JournalEntry) {
-        if let photoData = journalEntry.photoData {
-            thumbnailView.image = UIImage(data: photoData)
-        }
-        dateLabel.text = journalEntry.dateString
-        titleLabel.text = journalEntry.title
+        thumbnailView.image = journalEntry.photo
+        dateLabel.text  = journalEntry.date.formatted(.dateTime.year().month().day())
+        titleLabel.text = journalEntry.entryTitle
     }
-    
 }

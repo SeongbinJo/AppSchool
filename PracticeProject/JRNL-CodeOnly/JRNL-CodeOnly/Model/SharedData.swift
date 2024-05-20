@@ -11,22 +11,21 @@ class SharedData {
     static let shared = SharedData()
     private var journalEntries: [JournalEntry]
     
-    // 생성자에 private을 사용함으로 외부에서 SharedData() 생성 불가.
     private init() {
         journalEntries = []
     }
     
     func numberOfJournalEntries() -> Int {
-        return journalEntries.count
+        journalEntries.count
     }
     
     func getJournalEntry(index: Int) -> JournalEntry {
-        return journalEntries[index]
+        journalEntries[index]
     }
     
     func getAllJournalEntries() -> [JournalEntry] {
-        let wholeJournalEntries = journalEntries
-        return wholeJournalEntries
+        let readOnlyJournalEntries = journalEntries
+        return readOnlyJournalEntries
     }
     
     func addJournalEntry(newJournalEntry: JournalEntry) {
@@ -37,5 +36,32 @@ class SharedData {
         journalEntries.remove(at: index)
     }
     
+    func getDocumentDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
     
+    func loadJournalEntriesData() {
+        let fileURL = getDocumentDirectory().appendingPathComponent("journalEntriesData.json")
+        do {
+            let data = try Data(contentsOf: fileURL)
+            let journalEntriesData = try JSONDecoder().decode([JournalEntry].self, from: data)
+            journalEntries = journalEntriesData
+        } catch {
+            print("Failed to read JSON data: \(error.localizedDescription)")
+        }
+    }
+    
+    func saveJournalEntriesData() {
+        let pathDirectory = getDocumentDirectory()
+        try? FileManager.default.createDirectory(at: pathDirectory, withIntermediateDirectories: true)
+        let fileURL = pathDirectory.appendingPathComponent("journalEntriesData.json")
+        let json = try? JSONEncoder().encode(journalEntries)
+        do {
+            try json!.write(to: fileURL)
+        } catch {
+            print("Failed to write JSON data: \(error.localizedDescription)")
+        }
+    }
+
 }

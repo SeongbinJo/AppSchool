@@ -6,37 +6,9 @@
 //
 
 import UIKit
+import MapKit
 
-class CustomTableViewCell: UITableViewCell {
-    var stackView: UIStackView!
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupUI() {
-        stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.backgroundColor = .systemCyan
-        stackView.spacing = 8
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(stackView)
-        
-        NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            stackView.widthAnchor.constraint(equalToConstant: 252),
-            stackView.heightAnchor.constraint(equalToConstant: 44)
-        ])
-    }
-}
-
-class JournalDetailTableViewController: UITableViewController {
+class JournalDetailViewController: UITableViewController {
     let journalEntry: JournalEntry
     
     private lazy var dateLabel: UILabel = {
@@ -46,6 +18,14 @@ class JournalDetailTableViewController: UITableViewController {
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private lazy var ratingView: RatingView = {
+        let ratingView = RatingView(frame: CGRect(x: 0, y: 0, width: 252, height: 44))
+        ratingView.distribution = .equalSpacing
+        ratingView.isUserInteractionEnabled = false
+        ratingView.translatesAutoresizingMaskIntoConstraints = false
+        return ratingView
     }()
     
     private lazy var titleLabel: UILabel = {
@@ -79,6 +59,25 @@ class JournalDetailTableViewController: UITableViewController {
         imageView.image = UIImage(systemName: "map")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        guard let latitude = journalEntry.latitude,
+              let longitude = journalEntry.longitude else {
+            return imageView
+        }
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        let options = MKMapSnapshotter.Options()
+        options.region = region
+        options.size = CGSize(width: 300, height: 300)
+        
+        let shotter = MKMapSnapshotter(options: options)
+        shotter.start { result, error in
+            guard let snapshot = result else {
+                print("Snapshot error: \(error?.localizedDescription ?? "")")
+                return
+            }
+            imageView.image = snapshot.image
+        }
         return imageView
     }()
     
@@ -95,7 +94,6 @@ class JournalDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell")
         navigationItem.title = "Detail"
     }
 
@@ -112,12 +110,11 @@ class JournalDetailTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.contentView.addSubview(dateLabel)
-            dateLabel.text = journalEntry.dateString
+            dateLabel.text = journalEntry.date.formatted(.dateTime.year().month().day())
 
             let marginGuide = cell.contentView.layoutMarginsGuide
             NSLayoutConstraint.activate([
@@ -127,12 +124,19 @@ class JournalDetailTableViewController: UITableViewController {
             ])
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            ratingView.rating = journalEntry.rating
+            cell.contentView.addSubview(ratingView)
+            
+            ratingView.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor).isActive = true
+            ratingView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+            ratingView.widthAnchor.constraint(equalToConstant: 252).isActive = true
+            ratingView.heightAnchor.constraint(equalToConstant: 44).isActive = true
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.contentView.addSubview(titleLabel)
-            titleLabel.text = journalEntry.title
+            titleLabel.text = journalEntry.entryTitle
             let marginGuide = cell.contentView.layoutMarginsGuide
             NSLayoutConstraint.activate([
                 titleLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
@@ -143,7 +147,7 @@ class JournalDetailTableViewController: UITableViewController {
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.contentView.addSubview(bodyTextView)
-            bodyTextView.text = journalEntry.body
+            bodyTextView.text = journalEntry.entryBody
             let marginGuide = cell.contentView.layoutMarginsGuide
             NSLayoutConstraint.activate([
                 bodyTextView.topAnchor.constraint(equalTo: marginGuide.topAnchor),
@@ -155,9 +159,7 @@ class JournalDetailTableViewController: UITableViewController {
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.contentView.addSubview(imageView)
-            if let photoData = journalEntry.photoData {
-                imageView.image = UIImage(data: photoData)
-            }
+            imageView.image = journalEntry.photo
             NSLayoutConstraint.activate([
                 imageView.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor),
                 imageView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),

@@ -11,6 +11,9 @@ class seventhVC: UIViewController {
     let stepper = UIStepper()
     let label = UILabel()
     
+    let slider = UISlider()
+    let sliderLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +39,29 @@ class seventhVC: UIViewController {
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+        
+        sliderLabel.text = "값: 0"
+        
+        slider.minimumValue = 0
+        slider.maximumValue = 1
+        slider.value = 0.5
+        
+        slider.addAction(UIAction { [weak self] _ in
+            self?.sliderLabel.text = "값: \(String(format: "%.1f", self?.slider.value ?? 0))"
+        }, for: .valueChanged)
+        
+        let stackView2 = UIStackView(arrangedSubviews: [sliderLabel, slider])
+        stackView2.axis = .vertical
+        stackView2.spacing = 10
+        stackView2.alignment = .center
+        
+        view.addSubview(stackView2)
+        
+        stackView2.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView2.topAnchor.constraint(equalTo: stackView.bottomAnchor),
+            stackView2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
 }

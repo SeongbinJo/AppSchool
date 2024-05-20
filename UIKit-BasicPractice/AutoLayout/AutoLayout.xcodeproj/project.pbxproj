@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5829298E2BFAEB6400353D6B /* FifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829298D2BFAEB6400353D6B /* FifthVC.swift */; };
 		584364F42BFAD186001D1EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584364F32BFAD186001D1EDE /* AppDelegate.swift */; };
 		584364F62BFAD186001D1EDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584364F52BFAD186001D1EDE /* SceneDelegate.swift */; };
 		584364F82BFAD186001D1EDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584364F72BFAD186001D1EDE /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5829298D2BFAEB6400353D6B /* FifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthVC.swift; sourceTree = "<group>"; };
 		584364F02BFAD186001D1EDE /* AutoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584364F32BFAD186001D1EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		584364F52BFAD186001D1EDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		58E9FA072BFAE89D007CAE95 /* Chapter 02 */ = {
 			isa = PBXGroup;
 			children = (
+				5829298D2BFAEB6400353D6B /* FifthVC.swift */,
 			);
 			path = "Chapter 02";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			files = (
 				58E9FA042BFADB00007CAE95 /* ThirdVC.swift in Sources */,
 				584364F82BFAD186001D1EDE /* ViewController.swift in Sources */,
+				5829298E2BFAEB6400353D6B /* FifthVC.swift in Sources */,
 				58E9FA022BFADA71007CAE95 /* SecondVC.swift in Sources */,
 				58E9FA002BFADA1A007CAE95 /* FirstVC.swift in Sources */,
 				584364F42BFAD186001D1EDE /* AppDelegate.swift in Sources */,

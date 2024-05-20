@@ -48,6 +48,7 @@ class SixthVC: UIViewController {
         // addAction을 사용한 예제 (iOS 14+)
         toggleSwitch2.addAction(
             UIAction { [weak self] _ in // [weak self] -> 이스케이핑 클로저는 클로저 스코프 밖에서 도는 클로저이므로 메모리 해제가 안될 수 있어서 메모리 누수가 일어날 수 있기 때문에 사용한다.
+                //
                 if let isOn = self?.toggleSwitch2.isOn, isOn {
                     self?.label2.text = "Switch2 is ON"
                 }else {

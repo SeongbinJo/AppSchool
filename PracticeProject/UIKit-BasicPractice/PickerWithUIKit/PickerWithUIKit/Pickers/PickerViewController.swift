@@ -17,6 +17,7 @@ class PickerViewController: UIViewController {
     }()
     
     let options = ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5"]
+    let options2 = ["옵션 1", "옵션 2", "옵션 3", "옵션 4", "옵션 5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,25 +29,39 @@ class PickerViewController: UIViewController {
             pickerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
-
+    
 }
 
 extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
+        2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        options.count
+        switch component {
+        case 0:
+            return options.count
+        case 1:
+            return options2.count
+        default:
+            return 0
+        }
     }
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return options[row]
+        switch component {
+        case 0:
+            return options[row]
+        case 1:
+            return options2[row]
+        default:
+            return ""
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("selected row: \(row)")
+        print("selected row: \(row), component: \(component), value: \(component == 0 ? options[row] : options2[row])")
     }
     
 }

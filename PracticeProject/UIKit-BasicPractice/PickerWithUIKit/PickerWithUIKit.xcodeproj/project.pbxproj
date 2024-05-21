@@ -14,6 +14,7 @@
 		581EA8762BFC544F008EDC76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581EA8752BFC544F008EDC76 /* Assets.xcassets */; };
 		581EA8792BFC544F008EDC76 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 581EA8782BFC544F008EDC76 /* Base */; };
 		581EA8822BFC54E2008EDC76 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EA8812BFC54E2008EDC76 /* PickerViewController.swift */; };
+		581EA8842BFC5C8C008EDC76 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EA8832BFC5C8C008EDC76 /* DatePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		581EA8782BFC544F008EDC76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		581EA87A2BFC544F008EDC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581EA8812BFC54E2008EDC76 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		581EA8832BFC5C8C008EDC76 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				581EA8812BFC54E2008EDC76 /* PickerViewController.swift */,
+				581EA8832BFC5C8C008EDC76 /* DatePickerViewController.swift */,
 			);
 			path = Pickers;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				581EA8712BFC544D008EDC76 /* ViewController.swift in Sources */,
+				581EA8842BFC5C8C008EDC76 /* DatePickerViewController.swift in Sources */,
 				581EA86D2BFC544D008EDC76 /* AppDelegate.swift in Sources */,
 				581EA8822BFC54E2008EDC76 /* PickerViewController.swift in Sources */,
 				581EA86F2BFC544D008EDC76 /* SceneDelegate.swift in Sources */,

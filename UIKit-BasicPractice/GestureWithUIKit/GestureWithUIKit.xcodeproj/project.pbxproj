@@ -16,6 +16,7 @@
 		581EA8CC2BFC8465008EDC76 /* TouchGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EA8CB2BFC8465008EDC76 /* TouchGestureViewController.swift */; };
 		58989E8A2BFD715E00E66295 /* TapGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58989E892BFD715E00E66295 /* TapGestureViewController.swift */; };
 		58989E8F2BFD81CD00E66295 /* RotationGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58989E8E2BFD81CD00E66295 /* RotationGestureViewController.swift */; };
+		58989E912BFD89BD00E66295 /* PanGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58989E902BFD89BD00E66295 /* PanGestureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		581EA8CB2BFC8465008EDC76 /* TouchGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureViewController.swift; sourceTree = "<group>"; };
 		58989E892BFD715E00E66295 /* TapGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureViewController.swift; sourceTree = "<group>"; };
 		58989E8E2BFD81CD00E66295 /* RotationGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureViewController.swift; sourceTree = "<group>"; };
+		58989E902BFD89BD00E66295 /* PanGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				581EA8CB2BFC8465008EDC76 /* TouchGestureViewController.swift */,
 				58989E892BFD715E00E66295 /* TapGestureViewController.swift */,
 				58989E8E2BFD81CD00E66295 /* RotationGestureViewController.swift */,
+				58989E902BFD89BD00E66295 /* PanGestureViewController.swift */,
 			);
 			path = Gesture;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58989E8F2BFD81CD00E66295 /* RotationGestureViewController.swift in Sources */,
+				58989E912BFD89BD00E66295 /* PanGestureViewController.swift in Sources */,
 				581EA8CC2BFC8465008EDC76 /* TouchGestureViewController.swift in Sources */,
 				58989E8A2BFD715E00E66295 /* TapGestureViewController.swift in Sources */,
 				581EA8BB2BFC83FC008EDC76 /* ViewController.swift in Sources */,

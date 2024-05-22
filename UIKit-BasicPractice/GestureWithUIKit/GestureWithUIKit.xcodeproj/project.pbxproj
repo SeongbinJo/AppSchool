@@ -14,6 +14,8 @@
 		581EA8C02BFC83FE008EDC76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581EA8BF2BFC83FE008EDC76 /* Assets.xcassets */; };
 		581EA8C32BFC83FE008EDC76 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 581EA8C22BFC83FE008EDC76 /* Base */; };
 		581EA8CC2BFC8465008EDC76 /* TouchGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EA8CB2BFC8465008EDC76 /* TouchGestureViewController.swift */; };
+		58989E8A2BFD715E00E66295 /* TapGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58989E892BFD715E00E66295 /* TapGestureViewController.swift */; };
+		58989E8F2BFD81CD00E66295 /* RotationGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58989E8E2BFD81CD00E66295 /* RotationGestureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		581EA8C22BFC83FE008EDC76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		581EA8C42BFC83FE008EDC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581EA8CB2BFC8465008EDC76 /* TouchGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureViewController.swift; sourceTree = "<group>"; };
+		58989E892BFD715E00E66295 /* TapGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureViewController.swift; sourceTree = "<group>"; };
+		58989E8E2BFD81CD00E66295 /* RotationGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				581EA8CB2BFC8465008EDC76 /* TouchGestureViewController.swift */,
+				58989E892BFD715E00E66295 /* TapGestureViewController.swift */,
+				58989E8E2BFD81CD00E66295 /* RotationGestureViewController.swift */,
 			);
 			path = Gesture;
 			sourceTree = "<group>";
@@ -149,7 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58989E8F2BFD81CD00E66295 /* RotationGestureViewController.swift in Sources */,
 				581EA8CC2BFC8465008EDC76 /* TouchGestureViewController.swift in Sources */,
+				58989E8A2BFD715E00E66295 /* TapGestureViewController.swift in Sources */,
 				581EA8BB2BFC83FC008EDC76 /* ViewController.swift in Sources */,
 				581EA8B72BFC83FC008EDC76 /* AppDelegate.swift in Sources */,
 				581EA8B92BFC83FC008EDC76 /* SceneDelegate.swift in Sources */,

@@ -47,7 +47,7 @@ extension PanGestureViewController: UIGestureRecognizerDelegate {
     }
     
     // 여러개의 제스쳐를 동시 제어가 가능한지에 대한 여부 "ex) 회전하면서 줌"
-    // 복합 제스처 허용 여부
+    // 복합 제스처 허용 여부 
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }

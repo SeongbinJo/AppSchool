@@ -39,13 +39,18 @@ class CustomCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configure(item: AnimalStruct) {
+        animalImageView.image = item.image
+        nameLabel.text = item.name
+    }
 }
 
 class CustomCellViewController: UIViewController {
     let animals = [
         AnimalStruct(name: "강아지", image: UIImage(systemName: "dog")!),
         AnimalStruct(name: "고양이", image: UIImage(systemName: "cat")!),
-        AnimalStruct(name: "토끼", image: UIImage(systemName: "hare")!),
+        AnimalStruct(name: "토끼", image: UIImage(systemName: "hare.fill")!),
     ]
     
     private lazy var tableView: UITableView = {
@@ -74,8 +79,11 @@ extension CustomCellViewController: UITableViewDataSource {
 //        config.text = animals[indexPath.row].name
 //        config.image = animals[indexPath.row].image
 //        cell.contentConfiguration = config
-        cell.animalImageView.image = animals[indexPath.row].image
-        cell.nameLabel.text = animals[indexPath.row].name
+        
+//        cell.animalImageView.image = animals[indexPath.row].image
+//        cell.nameLabel.text = animals[indexPath.row].name
+        let animal: AnimalStruct = animals[indexPath.row]
+        cell.configure(item: animal)
         
         return cell
     }

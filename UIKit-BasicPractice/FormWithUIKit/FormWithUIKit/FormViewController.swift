@@ -8,6 +8,14 @@
 import UIKit
 
 class FormViewController: UIViewController {
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        return tableView
+    }()
+    
     let formOneLabel = UILabel()
     let formOneTextField = UITextField()
     let formTwoLabel = UILabel()
@@ -18,9 +26,11 @@ class FormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupFormOne()
-        setupFormTwo()
-        setupResults()
+//        setupFormOne()
+//        setupFormTwo()
+//        setupResults()
+        
+        view.addSubview(tableView)
         
         // 액션을 add 해주고 뷰가 사라질 때 해제를 해주지 않아 메모리가 쌓이고 누수가 생길 수 있어 잘못된 사용의 예이다.
         // 이렇게 addAction을 할 경우, removeAction을 사용해서 뷰가 사라질때 같이 Action도 제거해주어야한다! (viewDisappear?)
@@ -100,4 +110,24 @@ class FormViewController: UIViewController {
                 resultLabelTwo.text = "폼 #2 = \(textField.text ?? "")"
             }
         }
+}
+
+
+extension FormViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        3
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        
+        return cell
+    }
+    
+    
 }

@@ -64,4 +64,4 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentConfiguration = config
         return cell
     }
-    
+}

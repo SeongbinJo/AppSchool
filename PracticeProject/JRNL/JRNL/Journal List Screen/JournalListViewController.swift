@@ -46,13 +46,23 @@ class JournalListViewController: UIViewController {
 extension JournalListViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - UITableView 셀 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        SharedData.shared.numberOfJournalEntries()
+        if search.isActive {
+            return self.filteredTableData.count
+        }else {
+            return SharedData.shared.numberOfJournalEntries()
+            
+        }
     }
     
     // MARK: - UITableView 셀 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = journalTableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath) as! JournalListTableViewCell // 셀 생성
-        let journalEntry = SharedData.shared.getJournalEntry(index: indexPath.row) // 데이터 프로퍼티 생성
+        let journalEntry: JournalEntry
+        if self.search.isActive {
+            journalEntry = filteredTableData[indexPath.row]
+        }else {
+            journalEntry = SharedData.shared.getJournalEntry(index: indexPath.row) // 데이터 프로퍼티 생성
+        }
         if let photoData = journalEntry.photoData {
             cell.photoImageView.image = UIImage(data: photoData)
         }
@@ -88,7 +98,12 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
             fatalError("Could not get indexPath")
         }
         // 해당 목적지 뷰컨트롤러의 프로퍼티에 전달할 값을 담아줌.
-        let selectedJournalEntry = SharedData.shared.getJournalEntry(index: indexPath.row)
+        let selectedJournalEntry: JournalEntry
+        if self.search.isActive {
+            selectedJournalEntry = filteredTableData[indexPath.row]
+        }else {
+            selectedJournalEntry = SharedData.shared.getJournalEntry(index: indexPath.row)
+        }
         journalEntryDetailViewController.selectedJournalEntry = selectedJournalEntry
     }
     
@@ -102,6 +117,13 @@ extension JournalListViewController: UISearchResultsUpdating {
             return
         }
         print(searchBarText)
+        filteredTableData.removeAll()
+        for journalEntry in SharedData.shared.getAllJournalEntries() {
+            if journalEntry.title!.lowercased().contains(searchBarText.lowercased()) {
+                filteredTableData.append(journalEntry)
+            }
+        }
+        self.journalTableView.reloadData()
     }
     
     

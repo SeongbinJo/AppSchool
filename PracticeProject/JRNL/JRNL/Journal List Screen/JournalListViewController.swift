@@ -75,7 +75,13 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
     // MARK: - UITableView Delegate
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            SharedData.shared.removeJournalEntry(index: indexPath.row)
+            if search.isActive {
+                let selectedJournalEntry = filteredTableData[indexPath.row]
+                filteredTableData.remove(at: indexPath.row)
+                SharedData.shared.removeSelectedJournalEntry(selectedJournalEntry)
+            }else {
+                SharedData.shared.removeJournalEntry(index: indexPath.row)
+            }
             SharedData.shared.saveJournalEntriesData()
             journalTableView.reloadData()
         }

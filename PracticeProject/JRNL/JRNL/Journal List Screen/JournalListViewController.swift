@@ -10,9 +10,17 @@ import UIKit
 class JournalListViewController: UIViewController {
     @IBOutlet var journalTableView: UITableView!
     
+    let search = UISearchController(searchResultsController: nil)
+    var filteredTableData: [JournalEntry] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SharedData.shared.loadJournalEntriesData()
+        
+        search.searchResultsUpdater = self // delegate 역할
+        search.obscuresBackgroundDuringPresentation = false // 검색 결과가 나오는 창을 따로 부르는지에 대한 여부
+        search.searchBar.placeholder = "Search titles"
+        navigationItem.searchController = search
     }
 
     
@@ -90,7 +98,10 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
 extension JournalListViewController: UISearchResultsUpdating {
     //MARK: - UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
-        
+        guard let searchBarText = searchController.searchBar.text else {
+            return
+        }
+        print(searchBarText)
     }
     
     

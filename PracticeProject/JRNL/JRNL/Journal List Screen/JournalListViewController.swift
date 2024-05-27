@@ -85,3 +85,13 @@ extension JournalListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
 }
+
+
+extension JournalListViewController: UISearchResultsUpdating {
+    //MARK: - UISearchResultsUpdating
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    
+}

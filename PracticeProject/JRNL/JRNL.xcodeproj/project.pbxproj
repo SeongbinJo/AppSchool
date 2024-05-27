@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		584BBA112BEDC0CD0019474E /* JournalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BBA102BEDC0CD0019474E /* JournalListTableViewCell.swift */; };
+		584BBA112BEDC0CD0019474E /* JournalListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BBA102BEDC0CD0019474E /* JournalListCollectionViewCell.swift */; };
 		584BBA162BEDDD5A0019474E /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BBA152BEDDD5A0019474E /* AddJournalEntryViewController.swift */; };
 		585507022BEC900C00C222D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585507012BEC900C00C222D3 /* AppDelegate.swift */; };
 		585507042BEC900C00C222D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585507032BEC900C00C222D3 /* SceneDelegate.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		584BBA102BEDC0CD0019474E /* JournalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListTableViewCell.swift; sourceTree = "<group>"; };
+		584BBA102BEDC0CD0019474E /* JournalListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListCollectionViewCell.swift; sourceTree = "<group>"; };
 		584BBA152BEDDD5A0019474E /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
 		585506FE2BEC900C00C222D3 /* JRNL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JRNL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585507012BEC900C00C222D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		584BBA0D2BEDB8710019474E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				584BBA102BEDC0CD0019474E /* JournalListTableViewCell.swift */,
+				584BBA102BEDC0CD0019474E /* JournalListCollectionViewCell.swift */,
 				58A632832BF5BDBD0058BB37 /* RatingView.swift */,
 			);
 			path = View;
@@ -212,7 +212,7 @@
 				585507022BEC900C00C222D3 /* AppDelegate.swift in Sources */,
 				58A632842BF5BDBD0058BB37 /* RatingView.swift in Sources */,
 				58A632802BF588C90058BB37 /* JournalEntry.swift in Sources */,
-				584BBA112BEDC0CD0019474E /* JournalListTableViewCell.swift in Sources */,
+				584BBA112BEDC0CD0019474E /* JournalListCollectionViewCell.swift in Sources */,
 				58B5E4242BEE01D800B23644 /* JournalEntryDetailTableViewController.swift in Sources */,
 				585507042BEC900C00C222D3 /* SceneDelegate.swift in Sources */,
 				584BBA162BEDDD5A0019474E /* AddJournalEntryViewController.swift in Sources */,

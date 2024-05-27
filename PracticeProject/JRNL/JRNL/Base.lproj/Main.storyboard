@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DQx-AI-8KM">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="journalCell" id="DQx-AI-8KM" customClass="JournalListCollectionViewCell" customModule="JRNL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="c7g-gJ-mUD">
@@ -66,12 +66,20 @@
                                                 <constraint firstItem="ajv-ah-zID" firstAttribute="top" secondItem="c7g-gJ-mUD" secondAttribute="topMargin" id="mnz-Rj-ZfW"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.34463276840000001" blue="0.34463276840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="customSize" width="375" height="90"/>
                                         <connections>
+                                            <outlet property="dateLabel" destination="ajv-ah-zID" id="t6c-VW-bZS"/>
+                                            <outlet property="photoImageView" destination="fa5-44-3iT" id="UPW-ut-3sZ"/>
+                                            <outlet property="titleLabel" destination="dGW-sm-Yd3" id="ch7-DB-LPu"/>
                                             <segue destination="3Mf-d2-B3A" kind="show" identifier="entryDetail" id="Srr-9b-dze"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ta9-pR-Oea"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="riY-85-fKC"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -90,6 +98,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="journalCollectionView" destination="7kx-Ng-90v" id="eNR-G6-svX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,7 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        JournalListView()
+        TabView {
+            JournalListView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person")
+                        Text("Journal 목록")
+                    }
+                }
+            
+            MapView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "map")
+                        Text("Map")
+                    }
+                }
+        }
+
     }
 }
 

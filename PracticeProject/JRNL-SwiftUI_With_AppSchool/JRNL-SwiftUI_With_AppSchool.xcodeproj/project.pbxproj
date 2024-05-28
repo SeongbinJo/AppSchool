@@ -13,6 +13,7 @@
 		58D4E57E2C05C735000E2A84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D4E57D2C05C735000E2A84 /* Preview Assets.xcassets */; };
 		58D4E5862C05C79C000E2A84 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5852C05C79C000E2A84 /* JournalListView.swift */; };
 		58D4E5882C05C7A3000E2A84 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5872C05C7A3000E2A84 /* MapView.swift */; };
+		58D4E58A2C05CA42000E2A84 /* AddJournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5892C05CA42000E2A84 /* AddJournalEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		58D4E57D2C05C735000E2A84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		58D4E5852C05C79C000E2A84 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
 		58D4E5872C05C7A3000E2A84 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		58D4E5892C05CA42000E2A84 /* AddJournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				58D4E5852C05C79C000E2A84 /* JournalListView.swift */,
+				58D4E5892C05CA42000E2A84 /* AddJournalEntryView.swift */,
 				58D4E5872C05C7A3000E2A84 /* MapView.swift */,
 			);
 			path = View;
@@ -154,6 +157,7 @@
 				58D4E5862C05C79C000E2A84 /* JournalListView.swift in Sources */,
 				58D4E5882C05C7A3000E2A84 /* MapView.swift in Sources */,
 				58D4E5792C05C733000E2A84 /* ContentView.swift in Sources */,
+				58D4E58A2C05CA42000E2A84 /* AddJournalEntryView.swift in Sources */,
 				58D4E5772C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

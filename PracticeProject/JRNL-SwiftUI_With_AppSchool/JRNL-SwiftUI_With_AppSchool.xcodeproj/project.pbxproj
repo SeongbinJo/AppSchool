@@ -11,6 +11,8 @@
 		58D4E5792C05C733000E2A84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5782C05C733000E2A84 /* ContentView.swift */; };
 		58D4E57B2C05C735000E2A84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D4E57A2C05C735000E2A84 /* Assets.xcassets */; };
 		58D4E57E2C05C735000E2A84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D4E57D2C05C735000E2A84 /* Preview Assets.xcassets */; };
+		58D4E5862C05C79C000E2A84 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5852C05C79C000E2A84 /* JournalListView.swift */; };
+		58D4E5882C05C7A3000E2A84 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5872C05C7A3000E2A84 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		58D4E5782C05C733000E2A84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58D4E57A2C05C735000E2A84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58D4E57D2C05C735000E2A84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		58D4E5852C05C79C000E2A84 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
+		58D4E5872C05C7A3000E2A84 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			children = (
 				58D4E5762C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift */,
 				58D4E5782C05C733000E2A84 /* ContentView.swift */,
+				58D4E5842C05C791000E2A84 /* View */,
 				58D4E57A2C05C735000E2A84 /* Assets.xcassets */,
 				58D4E57C2C05C735000E2A84 /* Preview Content */,
 			);
@@ -65,6 +70,15 @@
 				58D4E57D2C05C735000E2A84 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		58D4E5842C05C791000E2A84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				58D4E5852C05C79C000E2A84 /* JournalListView.swift */,
+				58D4E5872C05C7A3000E2A84 /* MapView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D4E5862C05C79C000E2A84 /* JournalListView.swift in Sources */,
+				58D4E5882C05C7A3000E2A84 /* MapView.swift in Sources */,
 				58D4E5792C05C733000E2A84 /* ContentView.swift in Sources */,
 				58D4E5772C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift in Sources */,
 			);

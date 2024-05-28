@@ -17,9 +17,9 @@
 		5855070E2BEC900D00C222D3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5855070D2BEC900D00C222D3 /* Base */; };
 		58A6327D2BF588C20058BB37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6327B2BF588C20058BB37 /* MapViewController.swift */; };
 		58A632802BF588C90058BB37 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6327E2BF588C90058BB37 /* JournalEntry.swift */; };
-		58A632822BF588D40058BB37 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A632812BF588D40058BB37 /* SharedData.swift */; };
 		58A632842BF5BDBD0058BB37 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A632832BF5BDBD0058BB37 /* RatingView.swift */; };
 		58B5E4242BEE01D800B23644 /* JournalEntryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5E4232BEE01D800B23644 /* JournalEntryDetailTableViewController.swift */; };
+		58D4E53E2C0594E9000E2A84 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E53D2C0594E9000E2A84 /* SharedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +35,9 @@
 		5855070F2BEC900D00C222D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58A6327B2BF588C20058BB37 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		58A6327E2BF588C90058BB37 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
-		58A632812BF588D40058BB37 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		58A632832BF5BDBD0058BB37 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		58B5E4232BEE01D800B23644 /* JournalEntryDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryDetailTableViewController.swift; sourceTree = "<group>"; };
+		58D4E53D2C0594E9000E2A84 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				58A6327E2BF588C90058BB37 /* JournalEntry.swift */,
-				58A632812BF588D40058BB37 /* SharedData.swift */,
+				58D4E53D2C0594E9000E2A84 /* SharedData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,7 +207,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58A632822BF588D40058BB37 /* SharedData.swift in Sources */,
 				585507062BEC900C00C222D3 /* JournalListViewController.swift in Sources */,
 				585507022BEC900C00C222D3 /* AppDelegate.swift in Sources */,
 				58A632842BF5BDBD0058BB37 /* RatingView.swift in Sources */,
@@ -216,6 +215,7 @@
 				58B5E4242BEE01D800B23644 /* JournalEntryDetailTableViewController.swift in Sources */,
 				585507042BEC900C00C222D3 /* SceneDelegate.swift in Sources */,
 				584BBA162BEDDD5A0019474E /* AddJournalEntryViewController.swift in Sources */,
+				58D4E53E2C0594E9000E2A84 /* SharedData.swift in Sources */,
 				58A6327D2BF588C20058BB37 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

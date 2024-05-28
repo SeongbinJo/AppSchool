@@ -30,7 +30,9 @@ struct AddJournalView: View {
                 
                 HStack(spacing: 20) {
                     // 위치 버튼
-                    Toggle(isOn: $isOn) {}
+                    Toggle(isOn: $isOn) {
+                        
+                    }
                         .frame(maxWidth: 70)
                     Text("Label")
                 }

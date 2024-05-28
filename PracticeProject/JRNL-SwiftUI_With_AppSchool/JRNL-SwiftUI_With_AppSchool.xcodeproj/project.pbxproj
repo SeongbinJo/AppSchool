@@ -14,6 +14,7 @@
 		58D4E5862C05C79C000E2A84 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5852C05C79C000E2A84 /* JournalListView.swift */; };
 		58D4E5882C05C7A3000E2A84 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5872C05C7A3000E2A84 /* MapView.swift */; };
 		58D4E58A2C05CA42000E2A84 /* AddJournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5892C05CA42000E2A84 /* AddJournalEntryView.swift */; };
+		58D4E58D2C05CDAC000E2A84 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E58C2C05CDAC000E2A84 /* JournalEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		58D4E5852C05C79C000E2A84 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
 		58D4E5872C05C7A3000E2A84 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		58D4E5892C05CA42000E2A84 /* AddJournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryView.swift; sourceTree = "<group>"; };
+		58D4E58C2C05CDAC000E2A84 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				58D4E5762C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift */,
 				58D4E5782C05C733000E2A84 /* ContentView.swift */,
 				58D4E5842C05C791000E2A84 /* View */,
+				58D4E58B2C05CDA1000E2A84 /* Model */,
 				58D4E57A2C05C735000E2A84 /* Assets.xcassets */,
 				58D4E57C2C05C735000E2A84 /* Preview Content */,
 			);
@@ -82,6 +85,14 @@
 				58D4E5872C05C7A3000E2A84 /* MapView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		58D4E58B2C05CDA1000E2A84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58D4E58C2C05CDAC000E2A84 /* JournalEntry.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D4E58D2C05CDAC000E2A84 /* JournalEntry.swift in Sources */,
 				58D4E5862C05C79C000E2A84 /* JournalListView.swift in Sources */,
 				58D4E5882C05C7A3000E2A84 /* MapView.swift in Sources */,
 				58D4E5792C05C733000E2A84 /* ContentView.swift in Sources */,

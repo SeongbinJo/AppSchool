@@ -6,23 +6,29 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct JournalListView: View {
-    @State private var isOpen: Bool = false
+    @State private var isShowAddJournalView: Bool = false
+    @Query(sort:\JournalEntry.date) var journalEntries: [JournalEntry]
     
     var body: some View {
         NavigationStack {
-            List {
-                
+            List(journalEntries) { journalEntry in
+                Text(journalEntry.entryTitle)
             }
+            .listStyle(.plain)
             .navigationTitle("Journal")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        isOpen.toggle()
+                        isShowAddJournalView.toggle()
                     }) {
                         Image(systemName: "plus")
+                    }
+                    .sheet(isPresented: $isShowAddJournalView) {
+                        AddJournalEntryView()
                     }
                 }
             }
@@ -32,4 +38,5 @@ struct JournalListView: View {
 
 #Preview {
     JournalListView()
+        .modelContainer(for: JournalEntry.self, inMemory: true) // inmemory true해줘야 프리뷰 오류 안 ㄴ마.
 }

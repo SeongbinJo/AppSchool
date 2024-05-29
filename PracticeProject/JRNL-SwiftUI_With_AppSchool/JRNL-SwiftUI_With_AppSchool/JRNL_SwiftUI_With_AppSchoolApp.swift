@@ -13,5 +13,6 @@ struct JRNL_SwiftUI_With_AppSchoolApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: JournalEntry.self)
     }
 }

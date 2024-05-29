@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		583C7FBD2C06AFE000DAB6BC /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C7FBC2C06AFE000DAB6BC /* RatingView.swift */; };
+		583C7FC02C06B01D00DAB6BC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C7FBF2C06B01D00DAB6BC /* LocationManager.swift */; };
 		58D4E5772C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5762C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift */; };
 		58D4E5792C05C733000E2A84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5782C05C733000E2A84 /* ContentView.swift */; };
 		58D4E57B2C05C735000E2A84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D4E57A2C05C735000E2A84 /* Assets.xcassets */; };
@@ -18,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		583C7FBB2C06ABD200DAB6BC /* JRNL-SwiftUI-With-AppSchool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JRNL-SwiftUI-With-AppSchool-Info.plist"; sourceTree = SOURCE_ROOT; };
+		583C7FBC2C06AFE000DAB6BC /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		583C7FBF2C06B01D00DAB6BC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		58D4E5732C05C733000E2A84 /* JRNL-SwiftUI_With_AppSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JRNL-SwiftUI_With_AppSchool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D4E5762C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRNL_SwiftUI_With_AppSchoolApp.swift; sourceTree = "<group>"; };
 		58D4E5782C05C733000E2A84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		583C7FBE2C06B00100DAB6BC /* Coordinates */ = {
+			isa = PBXGroup;
+			children = (
+				583C7FBF2C06B01D00DAB6BC /* LocationManager.swift */,
+			);
+			path = Coordinates;
+			sourceTree = "<group>";
+		};
 		58D4E56A2C05C733000E2A84 = {
 			isa = PBXGroup;
 			children = (
@@ -59,8 +72,10 @@
 		58D4E5752C05C733000E2A84 /* JRNL-SwiftUI_With_AppSchool */ = {
 			isa = PBXGroup;
 			children = (
+				583C7FBB2C06ABD200DAB6BC /* JRNL-SwiftUI-With-AppSchool-Info.plist */,
 				58D4E5762C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift */,
 				58D4E5782C05C733000E2A84 /* ContentView.swift */,
+				583C7FBE2C06B00100DAB6BC /* Coordinates */,
 				58D4E5842C05C791000E2A84 /* View */,
 				58D4E58B2C05CDA1000E2A84 /* Model */,
 				58D4E57A2C05C735000E2A84 /* Assets.xcassets */,
@@ -83,6 +98,7 @@
 				58D4E5852C05C79C000E2A84 /* JournalListView.swift */,
 				58D4E5892C05CA42000E2A84 /* AddJournalEntryView.swift */,
 				58D4E5872C05C7A3000E2A84 /* MapView.swift */,
+				583C7FBC2C06AFE000DAB6BC /* RatingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,8 +185,10 @@
 				58D4E5862C05C79C000E2A84 /* JournalListView.swift in Sources */,
 				58D4E5882C05C7A3000E2A84 /* MapView.swift in Sources */,
 				58D4E5792C05C733000E2A84 /* ContentView.swift in Sources */,
+				583C7FC02C06B01D00DAB6BC /* LocationManager.swift in Sources */,
 				58D4E58A2C05CA42000E2A84 /* AddJournalEntryView.swift in Sources */,
 				58D4E5772C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift in Sources */,
+				583C7FBD2C06AFE000DAB6BC /* RatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +325,11 @@
 				DEVELOPMENT_TEAM = P95R3MRRWK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JRNL-SwiftUI-With-AppSchool-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,6 +359,11 @@
 				DEVELOPMENT_TEAM = P95R3MRRWK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JRNL-SwiftUI-With-AppSchool-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

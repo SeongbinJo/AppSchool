@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  BookRowView.swift
 //  BookShelf
 //
 //  Created by 조성빈 on 6/17/24.
@@ -7,21 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var books: [Book]
-    
-    var body: some View {
-        BookListView()
-    }
-}
-#Preview(traits: .sizeThatFitsLayout) {
-    ContentView(books: Book.sampleBooks)
-}
-
-struct ExtractedView: View {
+struct BookRowView: View {
     var book: Book
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             Image(book.mediumCoverImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -37,4 +26,8 @@ struct ExtractedView: View {
             Spacer()
         }
     }
+}
+
+#Preview {
+    BookRowView(book: Book(title: "", author: "", isbn: "", pages: 0))
 }

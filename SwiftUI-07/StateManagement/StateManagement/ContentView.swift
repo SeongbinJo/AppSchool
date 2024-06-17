@@ -7,18 +7,25 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ParentView: View {
+    @State var favoriteNumber: Int = 42
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Your favorite number is \(favoriteNumber)")
+            ChildView(number: $favoriteNumber)
         }
         .padding()
     }
 }
 
+struct ChildView: View {
+    @Binding var number: Int
+    var body: some View {
+        Text("\(number)")
+    }
+}
+
 #Preview {
-    ContentView()
+    ParentView()
 }

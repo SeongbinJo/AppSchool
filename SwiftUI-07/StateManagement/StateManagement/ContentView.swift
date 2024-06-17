@@ -23,8 +23,9 @@ struct StateStepper: View {
 
 struct ContentView: View {
     @State var color: Color = Color.accentColor
+    
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             StateStepper()
             ColorPicker("Pick a color", selection: $color)
         }
@@ -35,4 +36,3 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-

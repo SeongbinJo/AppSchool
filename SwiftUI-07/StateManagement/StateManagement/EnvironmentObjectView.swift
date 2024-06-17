@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 class UserProfile: ObservableObject {
     @Published var name: String
     @Published var favoriteProgrammingLanguage: String
@@ -20,7 +21,9 @@ class UserProfile: ObservableObject {
 }
 
 struct EnvironmentObjectView: View {
-    @StateObject var profile: UserProfile = UserProfile(name: "조성빈", favoriteProgrammingLanguage: "Swift", favoriteColor: .black)
+    @StateObject var profile = UserProfile(name: "Peter1",
+                                           favoriteProgrammingLanguage: "Swift",
+                                           favoriteColor: .pink)
     @State var isSettingShown = false
     
     var body: some View {
@@ -29,19 +32,19 @@ struct EnvironmentObjectView: View {
                 Section {
                     Text("This is just some random data")
                     Text("Let's assume this was the main screen of an app")
-                    Text("Tap the cog icon to go to fake settings screen")
+                    Text("Tap the cog icon to go to the fake settings screen")
                 }
             }
             HStack {
-                Text("sign in as \(profile.name)")
-                    .foregroundStyle(Color(uiColor: UIColor.systemBackground))
+                Text("Sign in as \(profile.name)")
+                    .foregroundStyle(Color(UIColor.systemBackground))
                 Spacer()
             }
             .padding(30)
             .background(profile.favoriteColor)
         }
         .ignoresSafeArea(edges: .bottom)
-        .navigationTitle("@EnvrionmentObject")
+        .navigationTitle("@EnvironmentObject")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: showSetting) {
@@ -53,6 +56,7 @@ struct EnvironmentObjectView: View {
             NavigationStack {
                 SettingScreen()
             }
+            .environmentObject(profile)
         }
     }
     

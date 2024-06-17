@@ -9,10 +9,20 @@ import SwiftUI
 
 struct SettingScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Form {
+                Section(header: Text("Settings")) {
+                    NavigationLink(destination: UserProfileScreen()) {
+                        Text("User Profile")
+                    }
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    SettingScreen()
+    NavigationStack {
+        SettingScreen()
+    }
 }

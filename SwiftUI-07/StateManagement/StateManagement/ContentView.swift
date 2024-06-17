@@ -7,25 +7,32 @@
 
 import SwiftUI
 
-struct ParentView: View {
-    @State var favoriteNumber: Int = 42
+class Counter: ObservableObject {
+    @Published var count = 0
+}
+
+struct StateStepper: View {
+    @StateObject var stateCounter = Counter()
     
     var body: some View {
-        VStack {
-            Text("Your favorite number is \(favoriteNumber)")
-            ChildView(number: $favoriteNumber)
+        Section(header: Text("@StateObject")) {
+            Stepper("Counter: \(stateCounter.count)", value: $stateCounter.count)
         }
-        .padding()
     }
 }
 
-struct ChildView: View {
-    @Binding var number: Int
+struct ContentView: View {
+    @State var color: Color = Color.accentColor
     var body: some View {
-        Text("\(number)")
+        VStack {
+            StateStepper()
+            ColorPicker("Pick a color", selection: $color)
+        }
+        .foregroundStyle(color)
     }
 }
 
 #Preview {
-    ParentView()
+    ContentView()
 }
+

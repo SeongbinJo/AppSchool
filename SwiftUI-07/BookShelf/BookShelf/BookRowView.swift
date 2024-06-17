@@ -11,7 +11,7 @@ struct BookRowView: View {
     var book: Book
     var body: some View {
         HStack(alignment: .top) {
-            Image(book.mediumCoverImage)
+            Image(book.mediumCoverImageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 90)
@@ -29,5 +29,5 @@ struct BookRowView: View {
 }
 
 #Preview {
-    BookRowView(book: Book(title: "", author: "", isbn: "", pages: 0))
+    BookRowView(book: Book(title: "", author: "", isbn: "", pages: 0, isRead: false))
 }

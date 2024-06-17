@@ -14,6 +14,7 @@
 		58CB0F832C1FC49300DA41E2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB0F822C1FC49300DA41E2 /* Book.swift */; };
 		58CB0F852C1FD2FE00DA41E2 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB0F842C1FD2FE00DA41E2 /* BookListView.swift */; };
 		58CB0F872C1FD30F00DA41E2 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB0F862C1FD30F00DA41E2 /* BookRowView.swift */; };
+		58CB0FE32C202AB300DA41E2 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB0FE22C202AB300DA41E2 /* BookDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		58CB0F822C1FC49300DA41E2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		58CB0F842C1FD2FE00DA41E2 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 		58CB0F862C1FD30F00DA41E2 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
+		58CB0FE22C202AB300DA41E2 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				58CB0F732C1FC2E000DA41E2 /* BookShelfApp.swift */,
 				58CB0F752C1FC2E000DA41E2 /* ContentView.swift */,
 				58CB0F842C1FD2FE00DA41E2 /* BookListView.swift */,
+				58CB0FE22C202AB300DA41E2 /* BookDetailView.swift */,
 				58CB0F862C1FD30F00DA41E2 /* BookRowView.swift */,
 				58CB0F772C1FC2E100DA41E2 /* Assets.xcassets */,
 				58CB0F792C1FC2E100DA41E2 /* Preview Content */,
@@ -158,6 +161,7 @@
 				58CB0F872C1FD30F00DA41E2 /* BookRowView.swift in Sources */,
 				58CB0F742C1FC2E000DA41E2 /* BookShelfApp.swift in Sources */,
 				58CB0F832C1FC49300DA41E2 /* Book.swift in Sources */,
+				58CB0FE32C202AB300DA41E2 /* BookDetailView.swift in Sources */,
 				58CB0F852C1FD2FE00DA41E2 /* BookListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

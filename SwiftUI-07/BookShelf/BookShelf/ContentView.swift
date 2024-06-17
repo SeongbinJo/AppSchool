@@ -22,7 +22,7 @@ struct ExtractedView: View {
     var book: Book
     var body: some View {
         HStack {
-            Image(book.mediumCoverImage)
+            Image(book.mediumCoverImageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 90)

@@ -9,28 +9,31 @@ import SwiftUI
 import SwiftData
 
 struct JournalListView: View {
-    @State private var isShowAddJournalView: Bool = false
+    @State private var isShowAddJournalView = false
     @Query(sort:\JournalEntry.date) var journalEntries: [JournalEntry]
     
     var body: some View {
         NavigationStack {
             List(journalEntries) { journalEntry in
-                Text(journalEntry.entryTitle)
+                NavigationLink(value: journalEntry) {
+                    JournalCell(journalEntry: journalEntry)
+                }
+                .navigationDestination(for: JournalEntry.self) {
+                    journalEntry in
+                    JournalEntryDetailView(journalEntry: journalEntry)
+                }
             }
-            .listStyle(.plain)
-            .navigationTitle("Journal")
+            .navigationTitle("Journal List")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        isShowAddJournalView.toggle()
-                    }) {
-                        Image(systemName: "plus")
-                    }
-                    .sheet(isPresented: $isShowAddJournalView) {
-                        AddJournalEntryView()
+                    Button("Add", systemImage: "plus") {
+                        isShowAddJournalView = true
                     }
                 }
+            }
+            .sheet(isPresented: $isShowAddJournalView) {
+                AddJournalEntryView()
             }
         }
     }
@@ -38,5 +41,5 @@ struct JournalListView: View {
 
 #Preview {
     JournalListView()
-        .modelContainer(for: JournalEntry.self, inMemory: true) // inmemory true해줘야 프리뷰 오류 안 ㄴ마.
+        .modelContainer(for: JournalEntry.self, inMemory: true)
 }

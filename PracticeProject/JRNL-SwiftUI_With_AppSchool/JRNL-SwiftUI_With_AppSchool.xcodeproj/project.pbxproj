@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		583C7FBD2C06AFE000DAB6BC /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C7FBC2C06AFE000DAB6BC /* RatingView.swift */; };
 		583C7FC02C06B01D00DAB6BC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C7FBF2C06B01D00DAB6BC /* LocationManager.swift */; };
+		583C7FC22C06B99600DAB6BC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C7FC12C06B99600DAB6BC /* ImagePicker.swift */; };
+		583C7FC42C06B9FE00DAB6BC /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C7FC32C06B9FE00DAB6BC /* JournalCell.swift */; };
+		583C7FC62C06BDA800DAB6BC /* JournalEntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C7FC52C06BDA800DAB6BC /* JournalEntryDetailView.swift */; };
+		583C7FC82C06C98500DAB6BC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C7FC72C06C98500DAB6BC /* MapView.swift */; };
 		58D4E5772C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5762C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift */; };
 		58D4E5792C05C733000E2A84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5782C05C733000E2A84 /* ContentView.swift */; };
 		58D4E57B2C05C735000E2A84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D4E57A2C05C735000E2A84 /* Assets.xcassets */; };
 		58D4E57E2C05C735000E2A84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D4E57D2C05C735000E2A84 /* Preview Assets.xcassets */; };
 		58D4E5862C05C79C000E2A84 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5852C05C79C000E2A84 /* JournalListView.swift */; };
-		58D4E5882C05C7A3000E2A84 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5872C05C7A3000E2A84 /* MapView.swift */; };
 		58D4E58A2C05CA42000E2A84 /* AddJournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E5892C05CA42000E2A84 /* AddJournalEntryView.swift */; };
 		58D4E58D2C05CDAC000E2A84 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D4E58C2C05CDAC000E2A84 /* JournalEntry.swift */; };
 /* End PBXBuildFile section */
@@ -23,13 +26,16 @@
 		583C7FBB2C06ABD200DAB6BC /* JRNL-SwiftUI-With-AppSchool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JRNL-SwiftUI-With-AppSchool-Info.plist"; sourceTree = SOURCE_ROOT; };
 		583C7FBC2C06AFE000DAB6BC /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		583C7FBF2C06B01D00DAB6BC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		583C7FC12C06B99600DAB6BC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		583C7FC32C06B9FE00DAB6BC /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
+		583C7FC52C06BDA800DAB6BC /* JournalEntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryDetailView.swift; sourceTree = "<group>"; };
+		583C7FC72C06C98500DAB6BC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		58D4E5732C05C733000E2A84 /* JRNL-SwiftUI_With_AppSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JRNL-SwiftUI_With_AppSchool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D4E5762C05C733000E2A84 /* JRNL_SwiftUI_With_AppSchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRNL_SwiftUI_With_AppSchoolApp.swift; sourceTree = "<group>"; };
 		58D4E5782C05C733000E2A84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58D4E57A2C05C735000E2A84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58D4E57D2C05C735000E2A84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		58D4E5852C05C79C000E2A84 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
-		58D4E5872C05C7A3000E2A84 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		58D4E5892C05CA42000E2A84 /* AddJournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryView.swift; sourceTree = "<group>"; };
 		58D4E58C2C05CDAC000E2A84 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				583C7FBF2C06B01D00DAB6BC /* LocationManager.swift */,
+				583C7FC12C06B99600DAB6BC /* ImagePicker.swift */,
 			);
 			path = Coordinates;
 			sourceTree = "<group>";
@@ -97,8 +104,10 @@
 			children = (
 				58D4E5852C05C79C000E2A84 /* JournalListView.swift */,
 				58D4E5892C05CA42000E2A84 /* AddJournalEntryView.swift */,
-				58D4E5872C05C7A3000E2A84 /* MapView.swift */,
 				583C7FBC2C06AFE000DAB6BC /* RatingView.swift */,
+				583C7FC32C06B9FE00DAB6BC /* JournalCell.swift */,
+				583C7FC52C06BDA800DAB6BC /* JournalEntryDetailView.swift */,
+				583C7FC72C06C98500DAB6BC /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,7 +192,10 @@
 			files = (
 				58D4E58D2C05CDAC000E2A84 /* JournalEntry.swift in Sources */,
 				58D4E5862C05C79C000E2A84 /* JournalListView.swift in Sources */,
-				58D4E5882C05C7A3000E2A84 /* MapView.swift in Sources */,
+				583C7FC42C06B9FE00DAB6BC /* JournalCell.swift in Sources */,
+				583C7FC82C06C98500DAB6BC /* MapView.swift in Sources */,
+				583C7FC22C06B99600DAB6BC /* ImagePicker.swift in Sources */,
+				583C7FC62C06BDA800DAB6BC /* JournalEntryDetailView.swift in Sources */,
 				58D4E5792C05C733000E2A84 /* ContentView.swift in Sources */,
 				583C7FC02C06B01D00DAB6BC /* LocationManager.swift in Sources */,
 				58D4E58A2C05CA42000E2A84 /* AddJournalEntryView.swift in Sources */,

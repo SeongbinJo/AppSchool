@@ -11,6 +11,8 @@
 		58CB0FD32C20035B00DA41E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB0FD22C20035B00DA41E2 /* ContentView.swift */; };
 		58CB0FD52C20035C00DA41E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CB0FD42C20035C00DA41E2 /* Assets.xcassets */; };
 		58CB0FD82C20035C00DA41E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CB0FD72C20035C00DA41E2 /* Preview Assets.xcassets */; };
+		58CB0FDF2C200F6400DA41E2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB0FDE2C200F6400DA41E2 /* Book.swift */; };
+		58CB0FE12C200FB500DA41E2 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB0FE02C200FB500DA41E2 /* BookListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		58CB0FD22C20035B00DA41E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58CB0FD42C20035C00DA41E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58CB0FD72C20035C00DA41E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		58CB0FDE2C200F6400DA41E2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		58CB0FE02C200FB500DA41E2 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				58CB0FD02C20035B00DA41E2 /* ListViewApp.swift */,
+				58CB0FDE2C200F6400DA41E2 /* Book.swift */,
 				58CB0FD22C20035B00DA41E2 /* ContentView.swift */,
+				58CB0FE02C200FB500DA41E2 /* BookListView.swift */,
 				58CB0FD42C20035C00DA41E2 /* Assets.xcassets */,
 				58CB0FD62C20035C00DA41E2 /* Preview Content */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				58CB0FD32C20035B00DA41E2 /* ContentView.swift in Sources */,
 				58CB0FD12C20035B00DA41E2 /* ListViewApp.swift in Sources */,
+				58CB0FDF2C200F6400DA41E2 /* Book.swift in Sources */,
+				58CB0FE12C200FB500DA41E2 /* BookListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

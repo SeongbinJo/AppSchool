@@ -28,16 +28,13 @@ struct ContentView: View {
                     .onChange(of: viewModel.firstName) {
                         self.dirty = true
                     }
-                    .onSubmit {
-                        viewModel.save()
-                    }
                 TextField("last name", text: $viewModel.lastName)
                     .onChange(of: viewModel.lastName) {
                         self.dirty = true
                     }
-                    .onSubmit {
-                        viewModel.save()
-                    }
+            }
+            .onSubmit {
+                viewModel.save()
             }
         }
     }

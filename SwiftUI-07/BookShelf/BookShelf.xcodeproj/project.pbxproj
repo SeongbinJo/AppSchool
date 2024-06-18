@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		582A821B2C210812009512E2 /* BookEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A821A2C210812009512E2 /* BookEditView.swift */; };
 		58CB0F742C1FC2E000DA41E2 /* BookShelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB0F732C1FC2E000DA41E2 /* BookShelfApp.swift */; };
 		58CB0F762C1FC2E000DA41E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB0F752C1FC2E000DA41E2 /* ContentView.swift */; };
 		58CB0F782C1FC2E100DA41E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CB0F772C1FC2E100DA41E2 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		582A821A2C210812009512E2 /* BookEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEditView.swift; sourceTree = "<group>"; };
 		58CB0F702C1FC2E000DA41E2 /* BookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CB0F732C1FC2E000DA41E2 /* BookShelfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfApp.swift; sourceTree = "<group>"; };
 		58CB0F752C1FC2E000DA41E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				58CB0F752C1FC2E000DA41E2 /* ContentView.swift */,
 				58CB0F842C1FD2FE00DA41E2 /* BookListView.swift */,
 				58CB0FE22C202AB300DA41E2 /* BookDetailView.swift */,
+				582A821A2C210812009512E2 /* BookEditView.swift */,
 				58CB0F862C1FD30F00DA41E2 /* BookRowView.swift */,
 				58CB0F772C1FC2E100DA41E2 /* Assets.xcassets */,
 				58CB0F792C1FC2E100DA41E2 /* Preview Content */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58CB0F762C1FC2E000DA41E2 /* ContentView.swift in Sources */,
+				582A821B2C210812009512E2 /* BookEditView.swift in Sources */,
 				58CB0F872C1FD30F00DA41E2 /* BookRowView.swift in Sources */,
 				58CB0F742C1FC2E000DA41E2 /* BookShelfApp.swift in Sources */,
 				58CB0F832C1FC49300DA41E2 /* Book.swift in Sources */,

@@ -19,17 +19,20 @@ struct BookDetailView: View {
                 .scaledToFit()
                 .shadow(radius: 10)
                 .onAppear()
-            Label(book.author, systemImage: "person.crop.rectangle")
-            Label("ISBN: \(book.isbn)", systemImage: "number")
-            Label("\(book.pages) pages", systemImage: "book")
-            Toggle("Read", isOn: .constant(book.isRead))
             Button(action: {
                 showEditBookView.toggle()
             }) {
                 Label("Edit", systemImage: "pencil")
             }
+            Label(book.author, systemImage: "person.crop.rectangle")
+            Label("ISBN: \(book.isbn)", systemImage: "number")
+            Label("\(book.pages) pages", systemImage: "book")
+            Toggle("Read", isOn: .constant(book.isRead))
         }
         .navigationTitle(book.title)
+        .sheet(isPresented: $showEditBookView) {
+            BookEditView(book: $book)
+        }
     }
 }
 

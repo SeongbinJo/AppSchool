@@ -20,3 +20,13 @@ Just("Combine") // 문자열을 Just를 사용해서 흘려보내면 문자열 �
     .sink { value in
         print("\(value), Hello")
     }
+
+let num = 123
+num.words.publisher
+    .sink { value in
+        print("\(value)") // 123
+    }
+num.description.publisher
+    .sink { value in
+        print("\(value)") // 1\n 2\n 3\n
+    }

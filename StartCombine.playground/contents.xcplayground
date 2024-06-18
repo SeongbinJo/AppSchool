@@ -4,5 +4,7 @@
         <page name='Delete'/>
         <page name='Simple Publisher'/>
         <page name='Pizza Ordering'/>
+        <page name='Pizza Ordering 2'/>
+        <page name='Pizza Ordering 3'/>
     </pages>
 </playground>

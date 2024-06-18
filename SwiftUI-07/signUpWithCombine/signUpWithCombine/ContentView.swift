@@ -15,6 +15,14 @@ class SignUpFormViewModel: ObservableObject {
     @Published var usernameMessage: String = ""
     @Published var passwordMessage: String = ""
     @Published var isValid: Bool = false
+    
+    init() {
+        // @Published 이므로 $을 붙이고 Operator와 Subscriber를 사용할 수 있다.
+        $username.map { $0.count >= 3 }
+            .assign(to: &$isValid) // 3이상일 경우 isValid = true
+        $username.map { $0.count >= 3 ? "" : "Username must be at least 3 characters."}
+            .assign(to: &$usernameMessage)
+    }
 }
 
 struct ContentView: View {

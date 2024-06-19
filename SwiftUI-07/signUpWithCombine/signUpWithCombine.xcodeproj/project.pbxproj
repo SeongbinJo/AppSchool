@@ -11,6 +11,7 @@
 		58370A212C21691400138D3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58370A202C21691400138D3A /* ContentView.swift */; };
 		58370A232C21691500138D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58370A222C21691500138D3A /* Assets.xcassets */; };
 		58370A262C21691500138D3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58370A252C21691500138D3A /* Preview Assets.xcassets */; };
+		58B5725F2C225D8D00329F02 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5725E2C225D8D00329F02 /* AuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		58370A202C21691400138D3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58370A222C21691500138D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58370A252C21691500138D3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		58B5725E2C225D8D00329F02 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				58370A1E2C21691400138D3A /* signUpWithCombineApp.swift */,
 				58370A202C21691400138D3A /* ContentView.swift */,
+				58B5725E2C225D8D00329F02 /* AuthenticationService.swift */,
 				58370A222C21691500138D3A /* Assets.xcassets */,
 				58370A242C21691500138D3A /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B5725F2C225D8D00329F02 /* AuthenticationService.swift in Sources */,
 				58370A212C21691400138D3A /* ContentView.swift in Sources */,
 				58370A1F2C21691400138D3A /* signUpWithCombineApp.swift in Sources */,
 			);

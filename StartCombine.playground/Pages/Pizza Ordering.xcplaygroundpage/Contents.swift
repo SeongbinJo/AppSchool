@@ -19,16 +19,19 @@ pizzaOrderPublisher.map { notification in
     print("Order status [\(orderStatus)]")
 }
 
-// 4) 주문받은 값을 assign으로 담아냄!
+//// 4) 주문받은 값을 assign으로 담아냄!
 pizzaOrderPublisher.compactMap { notification in
     notification.userInfo?["status"] as? OrderStatus
 }
-.assign(to: \.status, on: pizzaOrder)
+.assign(to: \.status, on: pizzaOrder) // pizzaOrder.status = notification
+
+var number = 10
+number = 20
 
 
 // 2) didUpdateOrderStatus 라는 피자집에 들어가서, ["status": OrderStatus.processing]라는 주문을 넣을 예정!
 NotificationCenter.default.post(name: .didUpdateOrderStatus, object: pizzaOrder, userInfo: ["status": OrderStatus.processing])
-NotificationCenter.default.post(name: .didUpdateOrderStatus, object: pizzaOrder, userInfo: ["status": OrderStatus.delivered])
+//NotificationCenter.default.post(name: .didUpdateOrderStatus, object: pizzaOrder, userInfo: ["status": OrderStatus.delivered])
 
 print("Order: \(pizzaOrder.status)")
 

@@ -8,7 +8,21 @@
 import SwiftUI
 import Combine
 
+extension Publisher {
+    func asResult() -> AnyPublisher<Result<Output, Failure>, Never> {
+        self.map(Result.success)
+            .catch { error in
+                Just(.failure(error))
+            }
+            .eraseToAnyPublisher()
+    }
+}
+
 class SignUpFormViewModel: ObservableObject {
+    typealias Available = Result<Bool, Error>
+    
+    
+    // @Published 퍼블리셔들은 Failure의 타입이 Never이므로 에러 핸들링이 반드시 필요하다! ex) Just(false) 등
     @Published var username: String = ""
     @Published var password: String = ""
     @Published var passwordConfirmation: String = ""
@@ -50,10 +64,17 @@ class SignUpFormViewModel: ObservableObject {
     
     private lazy var isFormValidPublisher: AnyPublisher<Bool, Never> = {
         Publishers.CombineLatest3(isUsernameLengthValidPublisher, isUsernameAvailablePublisher, isPasswordValidPublisher)
-                    .map { $0 && $1 && $2 }
-                    .eraseToAnyPublisher()
-        }()
-  
+            .map { isUsernameLengthValid, isUsernameAvailable, isPasswordValid in
+                switch isUsernameAvailable {
+                case .success(let isAvailable):
+                    return isUsernameLengthValid && isAvailable && isPasswordValid
+                case .failure:
+                    return false
+                }
+            }
+            .eraseToAnyPublisher()
+    }()
+    
     // 컴바인 활용할 때는 사용하지 않음!
 //    func checkUserNameAvailable(_ userName: String) {
 //        authenticationService.checkUserNameAvailableWithClosure(userName: userName) { [weak self] result in
@@ -71,16 +92,13 @@ class SignUpFormViewModel: ObservableObject {
 //    }
     
     // 컴바인 사용할 경우!
-    private lazy var isUsernameAvailablePublisher: AnyPublisher<Bool, Never> = {
+    private lazy var isUsernameAvailablePublisher: AnyPublisher<Available, Never> = {
         $username
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates() // 중복 제거
-            .flatMap { username -> AnyPublisher<Bool, Never> in
+            .flatMap { username -> AnyPublisher<Available, Never> in
                 self.authenticationService.checkUserNameAvailableNaive(userName: username)
-                    .catch { error in
-                         return Just(false)
-                    }
-                    .eraseToAnyPublisher()
+                    .asResult()
             }
             .receive(on: DispatchQueue.main)
             .share()
@@ -108,14 +126,18 @@ class SignUpFormViewModel: ObservableObject {
         isFormValidPublisher.assign(to: &$isValid)
         //        isUsernameLengthValidPublisher.map { $0 ? "" : "Username must be at least 3 characters."}.assign(to: &$usernameMessage)
         
-        Publishers.CombineLatest(isUsernameLengthValidPublisher, $isUserNameAvailable)
+        Publishers.CombineLatest(isUsernameLengthValidPublisher, isUsernameAvailablePublisher)
             .map { isUsernameLengthValid, isUserNameAvailable in
-                if !isUsernameLengthValid {
+                switch (isUsernameLengthValid, isUserNameAvailable) {
+                case (false, _):
                     return "Username must be at least three characters!"
-                } else if !isUserNameAvailable {
+                case (_, .failure(let error)): // 서버가 연결이 안되어 확인이 불가!
+                    return "Error checking username availability: \(error.localizedDescription)"
+                case (_, .success(false)): // 서버에 연결이 되었지만 이미 존재함!
                     return "This username is already taken."
+                default:
+                    return ""
                 }
-                return ""
             }
             .assign(to: &$usernameMessage)
         
@@ -163,6 +185,9 @@ struct ContentView: View {
         }
     }
 }
+
+
+
     
     #Preview {
         ContentView()

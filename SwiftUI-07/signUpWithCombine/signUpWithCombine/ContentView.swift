@@ -77,6 +77,10 @@ class SignUpFormViewModel: ObservableObject {
             .removeDuplicates() // 중복 제거
             .flatMap { username -> AnyPublisher<Bool, Never> in
                 self.authenticationService.checkUserNameAvailableNaive(userName: username)
+                    .catch { error in
+                         return Just(false)
+                    }
+                    .eraseToAnyPublisher()
             }
             .receive(on: DispatchQueue.main)
             .share()

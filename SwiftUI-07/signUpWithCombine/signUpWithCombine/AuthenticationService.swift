@@ -22,6 +22,10 @@ enum NetworkError: Error {
     case encodingError(Error)
 }
 
+enum APIError: LocalizedError {
+    case inValidRequestError(String)
+}
+
 class AuthenticationService {
     // @escaping을 사용한 비동기 처리
     func checkUserNameAvailableWithClosure(userName: String, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
@@ -62,9 +66,10 @@ class AuthenticationService {
     
     
     // Combine 퍼블리셔를 사용한 비동기 처리
-    func checkUserNameAvailableNaive(userName: String) -> AnyPublisher<Bool, Never> {
+    func checkUserNameAvailableNaive(userName: String) -> AnyPublisher<Bool, Error> {
         guard let url = URL(string: "http://127.0.0.1:8080/isUserNameAvailable?userName=\(userName)") else {
-            return Just(false).eraseToAnyPublisher() // 퍼블리셔를 리턴해야함으로 false를 넣은 Just 퍼블리셔를 리턴!
+//            return Just(false).eraseToAnyPublisher() // 퍼블리셔를 리턴해야함으로 false를 넣은 Just 퍼블리셔를 리턴! -> 에러를 무시하는 Never일 경우에만!
+            return Fail(error: APIError.inValidRequestError("URL invalid")).eraseToAnyPublisher()
         }
         
         //MARK: - 옛날 버전
@@ -86,7 +91,7 @@ class AuthenticationService {
             .map(\.data) // data를 가져와서!
             .decode(type: UserNameAvailableMessage.self, decoder: JSONDecoder()) // 가져온 data를 JSONDecoder()로 UserNameAvailableMessage 타입으로 decoding 하고!
             .map(\.isAvailable) // decoding된 값들의 .isAvailable만을 가져와서!
-            .replaceError(with: false) // 흐름(스트림)에 오류가 발생했을 경우 with의 지정해둔 값을 리턴!
+//            .replaceError(with: false) // 흐름(스트림)에 오류가 발생했을 경우 with의 지정해둔 값을 리턴! -> 에러를 무시하는 Never일 경우에만!
             .eraseToAnyPublisher() // AnyPublisher로 바꾼다!!
     }
 }

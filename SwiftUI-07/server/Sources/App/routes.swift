@@ -13,5 +13,3 @@ func routes(_ app: Application) throws {
     let userName: String = req.query["userName"] ?? "unknown"
     let isAvailable = !["bin", "peterfriese", "johnnyappleseed", "page", "johndoe"].contains(userName)
     return UserAvailable(isAvailable: isAvailable, userName: userName )
-  }
-}

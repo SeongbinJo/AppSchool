@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 struct UserNameAvailableMessage: Codable {
     var isAvailable: Bool
@@ -22,9 +23,11 @@ enum NetworkError: Error {
 }
 
 class AuthenticationService {
+    // @escaping을 사용한 비동기 처리
     func checkUserNameAvailableWithClosure(userName: String, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         let url = URL(string: "http://127.0.0.1:8080/isUserNameAvailable?userName=\(userName)")!
         
+        // 비동기 작업 생성
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             
             //MARK: - 안전하게 하기위한 에러 처리
@@ -55,5 +58,26 @@ class AuthenticationService {
         }
         
         task.resume() // task 수행코드
+    }
+    
+    
+    // Combine 퍼블리셔를 사용한 비동기 처리
+    func checkUserNameAvailableNaive(userName: String) -> AnyPublisher<Bool, Never> {
+        guard let url = URL(string: "http://127.0.0.1:8080/isUserNameAvailable?userName=\(userName)") else {
+            return Just(false).eraseToAnyPublisher() // 퍼블리셔를 리턴해야함으로 false를 넣은 Just 퍼블리셔를 리턴!
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { data, response in
+                do {
+                    let decoder = JSONDecoder()
+                    let userAvailableMessage = try decoder.decode(UserNameAvailableMessage.self, from: data)
+                    return userAvailableMessage.isAvailable
+                } catch {
+                    return false
+                }
+            }
+            .replaceError(with: false) // 흐름(스트림)에 오류가 발생했을 경우 with의 지정해둔 값을 리턴!
+            .eraseToAnyPublisher()
     }
 }

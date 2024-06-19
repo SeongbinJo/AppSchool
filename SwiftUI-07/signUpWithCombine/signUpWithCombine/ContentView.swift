@@ -25,7 +25,7 @@ class SignUpFormViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     
-    
+    var testArray: Array<String> = []
     
     // Bool = Boolean으로 반환, Never = '나는 에러 절대 안낼거야!' 라는 확증
     private lazy var isUsernameLengthValidPublisher: AnyPublisher<Bool, Never> = {
@@ -53,29 +53,45 @@ class SignUpFormViewModel: ObservableObject {
                 .map { $0 && $1 && $2 }
                 .eraseToAnyPublisher()
         }()
+  
+    // 컴바인 활용할 때는 사용하지 않음!
+//    func checkUserNameAvailable(_ userName: String) {
+//        authenticationService.checkUserNameAvailableWithClosure(userName: userName) { [weak self] result in
+//            DispatchQueue.main.async {
+////                print(result)
+//                switch result {
+//                case .success(let isAvailable):
+//                    self?.isUserNameAvailable = isAvailable
+//                case .failure(let error):
+//                    print("error: \(error)")
+//                    self?.isUserNameAvailable = false
+//                }
+//            }
+//        }
+//    }
     
-    func checkUserNameAvailable(_ userName: String) {
-        authenticationService.checkUserNameAvailableWithClosure(userName: userName) { [weak self] result in
-            DispatchQueue.main.async {
-//                print(result)
-                switch result {
-                case .success(let isAvailable):
-                    self?.isUserNameAvailable = isAvailable
-                case .failure(let error):
-                    print("error: \(error)")
-                    self?.isUserNameAvailable = false
-                }
+    // 컴바인 사용할 경우!
+    private lazy var isUserNameAvailablePublisher: AnyPublisher<Bool, Never> = {
+        $username
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .removeDuplicates() // 중복 제거
+            .flatMap { username -> AnyPublisher<Bool, Never> in
+                self.authenticationService.checkUserNameAvailableNaive(userName: username)
             }
-        }
-    }
+            .receive(on: DispatchQueue.main)
+            .share()
+            .eraseToAnyPublisher()
+    }()
     
     init() {
         // debounce -> 오퍼레이터, 특정 시간(초)마다 요청을 보낸다. for : 시간
-        $username.debounce(for: 0.5, scheduler: DispatchQueue.main)
-            .sink { [weak self] userName in
-                self?.checkUserNameAvailable(userName)
-            }
-            .store(in: &cancellables)
+        // @escaping 사용할 경우
+//        $username.debounce(for: 0.5, scheduler: DispatchQueue.main)
+//            .sink { [weak self] userName in
+//                self?.checkUserNameAvailable(userName)
+//            }
+//            .store(in: &cancellables)
+        
         
         // Reactive 패턴
         // @Published 이므로 $을 붙이고 Operator와 Subscriber를 사용할 수 있다.

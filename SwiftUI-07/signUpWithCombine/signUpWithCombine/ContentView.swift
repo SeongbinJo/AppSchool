@@ -49,14 +49,15 @@ class SignUpFormViewModel: ObservableObject {
     }()
     
     private lazy var isFormValidPublisher: AnyPublisher<Bool, Never> = {
-        Publishers.CombineLatest(isUsernameLengthValidPublisher, isPasswordValidPublisher)
-            .map { $0 && $1 }
-            .eraseToAnyPublisher()
-    }()
+            Publishers.CombineLatest3(isUsernameLengthValidPublisher, $isUserNameAvailable, isPasswordValidPublisher)
+                .map { $0 && $1 && $2 }
+                .eraseToAnyPublisher()
+        }()
     
     func checkUserNameAvailable(_ userName: String) {
         authenticationService.checkUserNameAvailableWithClosure(userName: userName) { [weak self] result in
             DispatchQueue.main.async {
+//                print(result)
                 switch result {
                 case .success(let isAvailable):
                     self?.isUserNameAvailable = isAvailable
@@ -85,7 +86,18 @@ class SignUpFormViewModel: ObservableObject {
         
         // 위와 동일
         isFormValidPublisher.assign(to: &$isValid)
-        isUsernameLengthValidPublisher.map { $0 ? "" : "Username must be at least 3 characters."}.assign(to: &$usernameMessage)
+        //        isUsernameLengthValidPublisher.map { $0 ? "" : "Username must be at least 3 characters."}.assign(to: &$usernameMessage)
+        
+        Publishers.CombineLatest(isUsernameLengthValidPublisher, $isUserNameAvailable)
+            .map { isUsernameLengthValid, isUserNameAvailable in
+                if !isUsernameLengthValid {
+                    return "Username must be at least three characters!"
+                } else if !isUserNameAvailable {
+                    return "This username is already taken."
+                }
+                return ""
+            }
+            .assign(to: &$usernameMessage)
         
         Publishers.CombineLatest(isPasswordEmptyPublisher, isPasswordMatchingPublisher)
             .map { isPasswordEmpty, isPasswordMatching in

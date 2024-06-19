@@ -17,6 +17,16 @@ class SignUpFormViewModel: ObservableObject {
     @Published var passwordMessage: String = ""
     @Published var isValid: Bool = false
     
+    //MARK: - 서버 연결을 위한 프로퍼티
+    @Published var isUserNameAvailable: Bool = false
+    
+    private let authenticationService = AuthenticationService()
+    
+    private var cancellables: Set<AnyCancellable> = []
+    
+    
+    
+    
     // Bool = Boolean으로 반환, Never = '나는 에러 절대 안낼거야!' 라는 확증
     private lazy var isUsernameLengthValidPublisher: AnyPublisher<Bool, Never> = {
         $username.map { $0.count >= 3 }.eraseToAnyPublisher()
@@ -44,7 +54,28 @@ class SignUpFormViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }()
     
+    func checkUserNameAvailable(_ userName: String) {
+        authenticationService.checkUserNameAvailableWithClosure(userName: userName) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let isAvailable):
+                    self?.isUserNameAvailable = isAvailable
+                case .failure(let error):
+                    print("error: \(error)")
+                    self?.isUserNameAvailable = false
+                }
+            }
+        }
+    }
+    
     init() {
+        // debounce -> 오퍼레이터, 특정 시간(초)마다 요청을 보낸다. for : 시간
+        $username.debounce(for: 0.5, scheduler: DispatchQueue.main)
+            .sink { [weak self] userName in
+                self?.checkUserNameAvailable(userName)
+            }
+            .store(in: &cancellables)
+        
         // Reactive 패턴
         // @Published 이므로 $을 붙이고 Operator와 Subscriber를 사용할 수 있다.
 //        $username.map { $0.count >= 3 }

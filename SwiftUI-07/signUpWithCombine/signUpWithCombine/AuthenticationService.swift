@@ -67,17 +67,26 @@ class AuthenticationService {
             return Just(false).eraseToAnyPublisher() // 퍼블리셔를 리턴해야함으로 false를 넣은 Just 퍼블리셔를 리턴!
         }
         
+        //MARK: - 옛날 버전
+//        return URLSession.shared.dataTaskPublisher(for: url)
+//            .map { data, response in
+//                do {
+//                    let decoder = JSONDecoder()
+//                    let userAvailableMessage = try decoder.decode(UserNameAvailableMessage.self, from: data)
+//                    return userAvailableMessage.isAvailable
+//                } catch {
+//                    return false
+//                }
+//            }
+//            .replaceError(with: false) // 흐름(스트림)에 오류가 발생했을 경우 with의 지정해둔 값을 리턴!
+//            .eraseToAnyPublisher()
+        
+        //MARK: - 쌈뽕한 최신 버전 -> 단지 예쁨?
         return URLSession.shared.dataTaskPublisher(for: url)
-            .map { data, response in
-                do {
-                    let decoder = JSONDecoder()
-                    let userAvailableMessage = try decoder.decode(UserNameAvailableMessage.self, from: data)
-                    return userAvailableMessage.isAvailable
-                } catch {
-                    return false
-                }
-            }
+            .map(\.data) // data를 가져와서!
+            .decode(type: UserNameAvailableMessage.self, decoder: JSONDecoder()) // 가져온 data를 JSONDecoder()로 UserNameAvailableMessage 타입으로 decoding 하고!
+            .map(\.isAvailable) // decoding된 값들의 .isAvailable만을 가져와서!
             .replaceError(with: false) // 흐름(스트림)에 오류가 발생했을 경우 with의 지정해둔 값을 리턴!
-            .eraseToAnyPublisher()
+            .eraseToAnyPublisher() // AnyPublisher로 바꾼다!!
     }
 }

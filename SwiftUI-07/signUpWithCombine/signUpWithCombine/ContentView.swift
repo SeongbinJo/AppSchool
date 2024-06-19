@@ -49,9 +49,9 @@ class SignUpFormViewModel: ObservableObject {
     }()
     
     private lazy var isFormValidPublisher: AnyPublisher<Bool, Never> = {
-            Publishers.CombineLatest3(isUsernameLengthValidPublisher, $isUserNameAvailable, isPasswordValidPublisher)
-                .map { $0 && $1 && $2 }
-                .eraseToAnyPublisher()
+        Publishers.CombineLatest3(isUsernameLengthValidPublisher, isUsernameAvailablePublisher, isPasswordValidPublisher)
+                    .map { $0 && $1 && $2 }
+                    .eraseToAnyPublisher()
         }()
   
     // 컴바인 활용할 때는 사용하지 않음!
@@ -71,7 +71,7 @@ class SignUpFormViewModel: ObservableObject {
 //    }
     
     // 컴바인 사용할 경우!
-    private lazy var isUserNameAvailablePublisher: AnyPublisher<Bool, Never> = {
+    private lazy var isUsernameAvailablePublisher: AnyPublisher<Bool, Never> = {
         $username
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates() // 중복 제거

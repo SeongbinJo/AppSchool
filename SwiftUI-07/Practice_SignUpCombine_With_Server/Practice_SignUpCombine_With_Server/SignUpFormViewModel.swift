@@ -22,8 +22,8 @@ class SignUpFormViewModel: ObservableObject {
     
     private lazy var isUsernameAvailablePublisher: AnyPublisher<Available, Never> = {
         $username
-            .debounce(for: 0.5, scheduler: RunLoop.main)
-            .removeDuplicates()
+            .debounce(for: 0.5, scheduler: RunLoop.main) // 특정 이벤트가 여러번 나타날때(username의 키보드 입력) 이벤트 입력으로부터 0.5초가 지나면 그 이벤트를 처리!
+            .removeDuplicates() // 새로운 마지막 이벤트가 이전의 username과 동일하면 무시해버림!
             .flatMap { username -> AnyPublisher<Available, Never> in
                 self.authenticationService.checkUserNameAvailablePublisher(userName: username)
                     .asResult()
@@ -45,5 +45,18 @@ class SignUpFormViewModel: ObservableObject {
                 }
             }
             .assign(to: &$isValid)
+        
+        
+        isUsernameAvailablePublisher.map { result in
+                    switch result {
+                    case .success(let isAvailable):
+                        return isAvailable ? "" : "This username is not available."
+                    case .failure(let error):
+                        return error.localizedDescription
+                    }
+                }
+                .assign(to: &$usernameMessage)
         }
+    
+    
 }

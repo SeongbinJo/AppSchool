@@ -38,9 +38,6 @@ class SignUpFormViewModel: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    
-    var testArray: Array<String> = []
-    
     // Bool = Boolean으로 반환, Never = '나는 에러 절대 안낼거야!' 라는 확증
     private lazy var isUsernameLengthValidPublisher: AnyPublisher<Bool, Never> = {
         $username.map { $0.count >= 3 }.eraseToAnyPublisher()
@@ -115,7 +112,6 @@ class SignUpFormViewModel: ObservableObject {
 //            .store(in: &cancellables)
         
         
-        // Reactive 패턴
         // @Published 이므로 $을 붙이고 Operator와 Subscriber를 사용할 수 있다.
 //        $username.map { $0.count >= 3 }
 //            .assign(to: &$isValid) // 3이상일 경우 isValid = true
@@ -186,9 +182,6 @@ struct ContentView: View {
     }
 }
 
-
-
-    
     #Preview {
         ContentView()
     }

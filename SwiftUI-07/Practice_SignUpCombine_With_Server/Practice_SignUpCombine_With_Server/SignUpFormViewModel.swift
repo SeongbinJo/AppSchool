@@ -37,7 +37,7 @@ class SignUpFormViewModel: ObservableObject {
     }()
     
     init() {
-        // isUsernameAvailablePublisher 가 두번 사용되었는데, share()가 있어서! isUsernameAvailablePublisher가 수차례 불려도 서버에서 값을 가져오는건 한 번만 가져와진다!! 수차례 불린 퍼블리셔의 오퍼레이터와 섭스크라이버만 수차례 실행됨!!!
+        // isUsernameAvailablePublisher 가 두번 사용되었는데, share()가 있어서! isUsernameAvailablePublisher가 수차례 불려도 서버에서 값을 가져오는건 한 번만 가져와진다!! 수차례 불린 퍼블리셔의 오퍼레이터와 섭스크라이버만 수차례 실행됨!
         isUsernameAvailablePublisher.map { result in
             switch result {
             case .success(let isAvailable):

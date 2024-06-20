@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 
-
-class AuthenticationService {
-    
+struct AuthenticationService {
+    func checkUserNameAvailablePublisher(userName: String) -> AnyPublisher<Bool, Error> {
+        return Fail(error: APIError.invalidResponse).eraseToAnyPublisher() // 임시 퍼블리셔 반환
+    }
 }

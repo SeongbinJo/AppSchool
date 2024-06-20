@@ -9,15 +9,19 @@ import Foundation
 import Combine
 
 extension Publisher {
-    func retry<T, E> (_ retryCount: Int, withDelay delay: Int, condition: ((E) -> Bool)? = nil) -> Publishers.TryCatch<Self, AnyPublisher<T, E>> where T == Self.Output, E == Self.Failure {
+    func retry<T, E> (_ retryCount: Int, withBackoff initialBackoff: Int, condition: ((E) -> Bool)? = nil) -> Publishers.TryCatch<Self, AnyPublisher<T, E>> where T == Self.Output, E == Self.Failure {
         return self.tryCatch { error -> AnyPublisher<T, E> in
             if condition?(error) == true {
+                var backOff = initialBackoff
                 return Just(Void())
-                    .delay(for: .init(integerLiteral: delay), scheduler: DispatchQueue.global())
-                    .flatMap { _ in
-                        return self
+                    .flatMap { _ -> AnyPublisher<T, E> in
+                        let result = Just(Void())
+                            .delay(for: .init(integerLiteral: backOff), scheduler: DispatchQueue.global())
+                            .flatMap { _ in return self }
+                        backOff = backOff * 2
+                        return result.eraseToAnyPublisher()
                     }
-                    .retry(retryCount)
+                    .retry(retryCount - 1)
                     .eraseToAnyPublisher()
             } else {
                 throw error

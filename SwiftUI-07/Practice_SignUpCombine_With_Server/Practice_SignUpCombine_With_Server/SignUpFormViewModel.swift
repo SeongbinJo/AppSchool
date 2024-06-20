@@ -30,33 +30,35 @@ class SignUpFormViewModel: ObservableObject {
             }
             .receive(on: DispatchQueue.main)
                        .print("before share")
+                       // init() 내부에 isUsernameAvailablePublisher가 두번 사용되는데, 서버에서 값을 가져오는 것을 share함으로써 한 번만 실행되고, 이 가져온 값으로 assign하는걸 두번 하게됨.
                        .share()//서버코드가 들어가있기 때문에 모든 퍼블리셔가 같은 만드는 것 보다 결과를 공유하는게 낫다.
                        .print("share")
                        .eraseToAnyPublisher()
     }()
     
     init() {
-            isUsernameAvailablePublisher.map { result in
-                switch result {
-                case .success(let isAvailable):
-                    return isAvailable
-                case .failure(_):
-                    return false
-                }
+        // isUsernameAvailablePublisher 가 두번 사용되었는데, share()가 있어서! isUsernameAvailablePublisher가 수차례 불려도 서버에서 값을 가져오는건 한 번만 가져와진다!! 수차례 불린 퍼블리셔의 오퍼레이터와 섭스크라이버만 수차례 실행됨!!!
+        isUsernameAvailablePublisher.map { result in
+            switch result {
+            case .success(let isAvailable):
+                return isAvailable
+            case .failure(_):
+                return false
             }
-            .assign(to: &$isValid)
+        }
+        .assign(to: &$isValid)
         
         
         isUsernameAvailablePublisher.map { result in
-                    switch result {
-                    case .success(let isAvailable):
-                        return isAvailable ? "" : "This username is not available."
-                    case .failure(let error):
-                        return error.localizedDescription
-                    }
-                }
-                .assign(to: &$usernameMessage)
+            switch result {
+            case .success(let isAvailable):
+                return isAvailable ? "" : "This username is not available."
+            case .failure(let error):
+                return error.localizedDescription
+            }
         }
+        .assign(to: &$usernameMessage)
+    }
     
     
 }

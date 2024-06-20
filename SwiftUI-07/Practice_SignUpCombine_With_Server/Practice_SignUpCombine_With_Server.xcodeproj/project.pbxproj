@@ -14,6 +14,8 @@
 		58A120272C23067B00B8F734 /* SignUpFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A120262C23067B00B8F734 /* SignUpFormViewModel.swift */; };
 		58A120292C23102800B8F734 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A120282C23102800B8F734 /* AuthenticationService.swift */; };
 		58BECBF22C23AB740099FBAE /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BECBF12C23AB740099FBAE /* Helper.swift */; };
+		58BECBF42C2404890099FBAE /* Publisher+Dump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BECBF32C2404890099FBAE /* Publisher+Dump.swift */; };
+		58BECBF62C240BE00099FBAE /* Publisher+Retry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BECBF52C240BE00099FBAE /* Publisher+Retry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		58A120262C23067B00B8F734 /* SignUpFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewModel.swift; sourceTree = "<group>"; };
 		58A120282C23102800B8F734 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		58BECBF12C23AB740099FBAE /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		58BECBF32C2404890099FBAE /* Publisher+Dump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Dump.swift"; sourceTree = "<group>"; };
+		58BECBF52C240BE00099FBAE /* Publisher+Retry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Retry.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 			isa = PBXGroup;
 			children = (
 				58A120172C23045F00B8F734 /* Practice_SignUpCombine_With_Server */,
+				58BECBF32C2404890099FBAE /* Publisher+Dump.swift */,
+				58BECBF52C240BE00099FBAE /* Publisher+Retry.swift */,
 				58A120162C23045F00B8F734 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,7 +154,9 @@
 			files = (
 				58A1201B2C23045F00B8F734 /* ContentView.swift in Sources */,
 				58A120272C23067B00B8F734 /* SignUpFormViewModel.swift in Sources */,
+				58BECBF42C2404890099FBAE /* Publisher+Dump.swift in Sources */,
 				58BECBF22C23AB740099FBAE /* Helper.swift in Sources */,
+				58BECBF62C240BE00099FBAE /* Publisher+Retry.swift in Sources */,
 				58A120192C23045F00B8F734 /* Practice_SignUpCombine_With_ServerApp.swift in Sources */,
 				58A120292C23102800B8F734 /* AuthenticationService.swift in Sources */,
 			);

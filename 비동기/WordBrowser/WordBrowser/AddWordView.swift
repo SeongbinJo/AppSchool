@@ -8,11 +8,46 @@
 import SwiftUI
 
 struct AddWordView: View {
+    @Environment(\.dismiss) private var dismiss
+    @State private var word: String = ""
+    
+    var onAddWord: (String) -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("Word", text: $word)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+        }
+        .navigationTitle("Add New")
+        .onSubmit(handleOnAddWord)
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel") {
+                    dismiss()
+                }
+            }
+            
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Done", action: handleOnAddWord)
+                    .disabled(word.isEmpty)
+            }
+        }
+    }
+    
+    private func handleOnAddWord() {
+        onAddWord(word)
+        dismiss()
     }
 }
 
 #Preview {
-    AddWordView()
+    NavigationStack {
+//        AddWordView(onAddWord:  { word in
+//            print(word)
+//        })
+        AddWordView { word in
+            print(word)
+        }
+    }
 }

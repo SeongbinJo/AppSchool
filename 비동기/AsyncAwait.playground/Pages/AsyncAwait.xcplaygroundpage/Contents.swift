@@ -35,16 +35,16 @@ func makeSandwich(bread: String, ingredients: [String], condiments: [String]) as
     sandwichMakerSays("Preparing your sandwich...")
 
     print("전")
-    let toasted = await toastBread(bread)
-    let sliced = await slice(ingredients)
+    async let toasted = await toastBread(bread)
+    async let sliced = await slice(ingredients)
     print("후")
     
-    sandwichMakerSays("Spreading \(condiments.joined(separator: ", and ")) om \(toasted)")
-    sandwichMakerSays("Layering \(sliced.joined(separator: ", "))")
+    sandwichMakerSays("Spreading \(condiments.joined(separator: ", and ")) om \(await toasted)")
+    sandwichMakerSays("Layering \(await sliced.joined(separator: ", "))")
     sandwichMakerSays("Putting lettuce on top")
     sandwichMakerSays("Putting another slice of bread on top")
     
-    return "\(ingredients.joined(separator: ", ")), \(condiments.joined(separator: ", ")) on \(toasted)"
+    return "\(ingredients.joined(separator: ", ")), \(condiments.joined(separator: ", ")) on \(await toasted)"
 
 }
 

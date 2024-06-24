@@ -13,6 +13,7 @@
 		58EF422C2C292945007B0E95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58EF422B2C292945007B0E95 /* Preview Assets.xcassets */; };
 		58EF42352C292E1C007B0E95 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF42342C292E1C007B0E95 /* LibraryViewModel.swift */; };
 		58EF42372C293602007B0E95 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF42362C293602007B0E95 /* AddWordView.swift */; };
+		58EF42392C293DE0007B0E95 /* WordAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF42382C293DE0007B0E95 /* WordAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		58EF42332C292A7B007B0E95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		58EF42342C292E1C007B0E95 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		58EF42362C293602007B0E95 /* AddWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordView.swift; sourceTree = "<group>"; };
+		58EF42382C293DE0007B0E95 /* WordAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				58EF42242C292944007B0E95 /* WordBrowserApp.swift */,
 				58EF42262C292944007B0E95 /* ContentView.swift */,
 				58EF42342C292E1C007B0E95 /* LibraryViewModel.swift */,
+				58EF42382C293DE0007B0E95 /* WordAPI.swift */,
 				58EF42362C293602007B0E95 /* AddWordView.swift */,
 				58EF42322C2929A4007B0E95 /* Config.xcconfig */,
 				58EF42282C292945007B0E95 /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 				58EF42272C292944007B0E95 /* ContentView.swift in Sources */,
 				58EF42352C292E1C007B0E95 /* LibraryViewModel.swift in Sources */,
 				58EF42252C292944007B0E95 /* WordBrowserApp.swift in Sources */,
+				58EF42392C293DE0007B0E95 /* WordAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

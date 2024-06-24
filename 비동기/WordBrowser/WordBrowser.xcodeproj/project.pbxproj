@@ -14,6 +14,8 @@
 		58EF42352C292E1C007B0E95 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF42342C292E1C007B0E95 /* LibraryViewModel.swift */; };
 		58EF42372C293602007B0E95 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF42362C293602007B0E95 /* AddWordView.swift */; };
 		58EF42392C293DE0007B0E95 /* WordAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF42382C293DE0007B0E95 /* WordAPI.swift */; };
+		58EF423B2C295B55007B0E95 /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF423A2C295B55007B0E95 /* WordDetailView.swift */; };
+		58EF423D2C295B79007B0E95 /* WordDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF423C2C295B79007B0E95 /* WordDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		58EF42342C292E1C007B0E95 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		58EF42362C293602007B0E95 /* AddWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordView.swift; sourceTree = "<group>"; };
 		58EF42382C293DE0007B0E95 /* WordAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordAPI.swift; sourceTree = "<group>"; };
+		58EF423A2C295B55007B0E95 /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
+		58EF423C2C295B79007B0E95 /* WordDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				58EF42342C292E1C007B0E95 /* LibraryViewModel.swift */,
 				58EF42382C293DE0007B0E95 /* WordAPI.swift */,
 				58EF42362C293602007B0E95 /* AddWordView.swift */,
+				58EF423A2C295B55007B0E95 /* WordDetailView.swift */,
+				58EF423C2C295B79007B0E95 /* WordDetailViewModel.swift */,
 				58EF42322C2929A4007B0E95 /* Config.xcconfig */,
 				58EF42282C292945007B0E95 /* Assets.xcassets */,
 				58EF422A2C292945007B0E95 /* Preview Content */,
@@ -153,7 +159,9 @@
 				58EF42372C293602007B0E95 /* AddWordView.swift in Sources */,
 				58EF42272C292944007B0E95 /* ContentView.swift in Sources */,
 				58EF42352C292E1C007B0E95 /* LibraryViewModel.swift in Sources */,
+				58EF423B2C295B55007B0E95 /* WordDetailView.swift in Sources */,
 				58EF42252C292944007B0E95 /* WordBrowserApp.swift in Sources */,
+				58EF423D2C295B79007B0E95 /* WordDetailViewModel.swift in Sources */,
 				58EF42392C293DE0007B0E95 /* WordAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,8 @@
 import Foundation
 
+// 동기 프로그래밍
+// 빵을 다 굽고(5초) 오이를 썰 수 있다 => 7초 정도 걸림
+
 public func customerSays(_ message: String) {
     print("[Customer] \(message)")
 }

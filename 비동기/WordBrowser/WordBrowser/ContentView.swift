@@ -55,6 +55,7 @@ struct ContentView: View {
             NavigationStack {
                 AddWordView { word in
                     print(word)
+                    viewModel.addFavorite(word)
                 }
             }
         }

@@ -42,6 +42,9 @@ struct ContentView: View {
         .searchable(text: $viewModel.searchText)
         .textInputAutocapitalization(.never)
         .navigationTitle("Library")
+        .refreshable {
+            await viewModel.refresh()
+        }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button(action: {

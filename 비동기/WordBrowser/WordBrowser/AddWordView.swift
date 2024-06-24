@@ -17,37 +17,41 @@ struct AddWordView: View {
         Form {
             TextField("Word", text: $word)
                 .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
+                .autocorrectionDisabled() // 자동완성 끔
         }
         .navigationTitle("Add New")
         .onSubmit(handleOnAddWord)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
+                Button(action: {
                     dismiss()
+                }) {
+                    
                 }
             }
-            
             ToolbarItem(placement: .confirmationAction) {
-                Button("Done", action: handleOnAddWord)
-                    .disabled(word.isEmpty)
+                Button(action: {
+                    handleOnAddWord()
+                }) {
+                    Text("Done")
+                }
+                .disabled(word.isEmpty)
             }
         }
     }
+    
     
     private func handleOnAddWord() {
         onAddWord(word)
         dismiss()
     }
+    
 }
 
 #Preview {
     NavigationStack {
-//        AddWordView(onAddWord:  { word in
-//            print(word)
-//        })
         AddWordView { word in
-            print(word)
+            
         }
     }
 }

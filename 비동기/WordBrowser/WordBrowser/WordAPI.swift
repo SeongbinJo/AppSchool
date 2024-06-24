@@ -42,6 +42,11 @@ extension Definition: Identifiable {
   var id: String { self.definition }
 }
 
+//MARK: - Error
+enum WordsAPIError: Error {
+  case invalidServerResponse
+}
+
 // MARK: - API Keys
 struct WordsAPISecrets {
   static let apiKeyHeader = "x-rapidapi-key"
@@ -55,8 +60,8 @@ struct WordsAPISecrets {
       }
       // 2
       let plist = NSDictionary(contentsOfFile: filePath)
-      guard let value = plist?.object(forKey: "API_KEY") as? String else {
-        fatalError("Couldn't find key 'API_KEY' in 'WordsAPI-Info.plist'.")
+      guard let value = plist?.object(forKey: "Api_KEY") as? String else {
+        fatalError("Couldn't find key 'Api_KEY' in 'WordsAPI-Info.plist'.")
       }
       // 3
       if (value.starts(with: "_")) {
@@ -74,8 +79,8 @@ struct WordsAPISecrets {
       }
       // 2
       let plist = NSDictionary(contentsOfFile: filePath)
-      guard let value = plist?.object(forKey: "API_HOST") as? String else {
-        fatalError("Couldn't find key 'API_HOST' in 'WordsAPI-Info.plist'.")
+      guard let value = plist?.object(forKey: "Api_HOST") as? String else {
+        fatalError("Couldn't find key 'Api_HOST' in 'WordsAPI-Info.plist'.")
       }
       // 3
       if (value.starts(with: "_")) {

@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  WordBrowser
+//
+//  Created by 조성빈 on 6/24/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = 5277d2f6e5mshfee1d167e01b4b4p1ee60ajsn3244cc635ee7
+API_HOST = wordsapiv1.p.rapidapi.com
+

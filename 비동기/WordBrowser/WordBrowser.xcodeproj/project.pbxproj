@@ -11,6 +11,7 @@
 		58EF42272C292944007B0E95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF42262C292944007B0E95 /* ContentView.swift */; };
 		58EF42292C292945007B0E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58EF42282C292945007B0E95 /* Assets.xcassets */; };
 		58EF422C2C292945007B0E95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58EF422B2C292945007B0E95 /* Preview Assets.xcassets */; };
+		58EF42352C292E1C007B0E95 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF42342C292E1C007B0E95 /* LibraryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,9 @@
 		58EF42262C292944007B0E95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58EF42282C292945007B0E95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58EF422B2C292945007B0E95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		58EF42322C2929A4007B0E95 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		58EF42332C292A7B007B0E95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		58EF42342C292E1C007B0E95 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,11 @@
 		58EF42232C292944007B0E95 /* WordBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				58EF42332C292A7B007B0E95 /* Info.plist */,
 				58EF42242C292944007B0E95 /* WordBrowserApp.swift */,
 				58EF42262C292944007B0E95 /* ContentView.swift */,
+				58EF42342C292E1C007B0E95 /* LibraryViewModel.swift */,
+				58EF42322C2929A4007B0E95 /* Config.xcconfig */,
 				58EF42282C292945007B0E95 /* Assets.xcassets */,
 				58EF422A2C292945007B0E95 /* Preview Content */,
 			);
@@ -138,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58EF42272C292944007B0E95 /* ContentView.swift in Sources */,
+				58EF42352C292E1C007B0E95 /* LibraryViewModel.swift in Sources */,
 				58EF42252C292944007B0E95 /* WordBrowserApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +155,7 @@
 /* Begin XCBuildConfiguration section */
 		58EF422D2C292945007B0E95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58EF42322C2929A4007B0E95 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -274,6 +283,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WordBrowser/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordBrowser/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,6 +304,7 @@
 		};
 		58EF42312C292945007B0E95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58EF42322C2929A4007B0E95 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +313,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WordBrowser/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordBrowser/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

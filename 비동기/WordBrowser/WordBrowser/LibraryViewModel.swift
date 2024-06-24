@@ -58,7 +58,8 @@ class LibraryViewModel: ObservableObject {
         }
     }
     
-    
+    // randomWord = result.word 와 같은 UI를 변경할 수 있는 코드가 포함된 async 메서드를 await으로 실행할 때에는 해당 메서드에 MainActor를 붙여 메인스레드에서 실행하는 것으로 변경해주어야한다!
+    @MainActor
     func refresh() async {
         let result = await fetchRandomWord()
         randomWord = result.word
@@ -68,3 +69,4 @@ class LibraryViewModel: ObservableObject {
         favorites.append(word)
     }
 }
+

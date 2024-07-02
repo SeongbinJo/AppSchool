@@ -12,7 +12,7 @@ struct CoreDataAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(coreDM: CoreDataManager())
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

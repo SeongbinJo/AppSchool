@@ -13,6 +13,7 @@
 		589D136A2C339C3E0006DB7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589D13692C339C3E0006DB7D /* Preview Assets.xcassets */; };
 		589D136C2C339C3E0006DB7D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589D136B2C339C3E0006DB7D /* Persistence.swift */; };
 		589D136F2C339C3E0006DB7D /* CoreDataApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 589D136D2C339C3E0006DB7D /* CoreDataApp.xcdatamodeld */; };
+		589D13762C339DCE0006DB7D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589D13752C339DCE0006DB7D /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		589D13692C339C3E0006DB7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		589D136B2C339C3E0006DB7D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		589D136E2C339C3E0006DB7D /* CoreDataApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataApp.xcdatamodel; sourceTree = "<group>"; };
+		589D13752C339DCE0006DB7D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				589D136B2C339C3E0006DB7D /* Persistence.swift */,
 				589D136D2C339C3E0006DB7D /* CoreDataApp.xcdatamodeld */,
 				589D13682C339C3E0006DB7D /* Preview Content */,
+				589D13752C339DCE0006DB7D /* CoreDataManager.swift */,
 			);
 			path = CoreDataApp;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				589D136F2C339C3E0006DB7D /* CoreDataApp.xcdatamodeld in Sources */,
 				589D136C2C339C3E0006DB7D /* Persistence.swift in Sources */,
 				589D13652C339C3B0006DB7D /* ContentView.swift in Sources */,
+				589D13762C339DCE0006DB7D /* CoreDataManager.swift in Sources */,
 				589D13632C339C3B0006DB7D /* CoreDataAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,8 +11,6 @@
 		58B7D4392C36245C00EDAB84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7D4382C36245C00EDAB84 /* ContentView.swift */; };
 		58B7D43B2C36245D00EDAB84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B7D43A2C36245D00EDAB84 /* Assets.xcassets */; };
 		58B7D43E2C36245D00EDAB84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B7D43D2C36245D00EDAB84 /* Preview Assets.xcassets */; };
-		58B7D4402C36245D00EDAB84 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7D43F2C36245D00EDAB84 /* Persistence.swift */; };
-		58B7D4432C36245D00EDAB84 /* MapApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58B7D4412C36245D00EDAB84 /* MapApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +19,6 @@
 		58B7D4382C36245C00EDAB84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58B7D43A2C36245D00EDAB84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58B7D43D2C36245D00EDAB84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		58B7D43F2C36245D00EDAB84 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		58B7D4422C36245D00EDAB84 /* MapApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +54,6 @@
 				58B7D4362C36245C00EDAB84 /* MapAppApp.swift */,
 				58B7D4382C36245C00EDAB84 /* ContentView.swift */,
 				58B7D43A2C36245D00EDAB84 /* Assets.xcassets */,
-				58B7D43F2C36245D00EDAB84 /* Persistence.swift */,
-				58B7D4412C36245D00EDAB84 /* MapApp.xcdatamodeld */,
 				58B7D43C2C36245D00EDAB84 /* Preview Content */,
 			);
 			path = MapApp;
@@ -143,9 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58B7D4402C36245D00EDAB84 /* Persistence.swift in Sources */,
 				58B7D4392C36245C00EDAB84 /* ContentView.swift in Sources */,
-				58B7D4432C36245D00EDAB84 /* MapApp.xcdatamodeld in Sources */,
 				58B7D4372C36245C00EDAB84 /* MapAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,19 +344,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		58B7D4412C36245D00EDAB84 /* MapApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				58B7D4422C36245D00EDAB84 /* MapApp.xcdatamodel */,
-			);
-			currentVersion = 58B7D4422C36245D00EDAB84 /* MapApp.xcdatamodel */;
-			path = MapApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 58B7D42B2C36245C00EDAB84 /* Project object */;
 }

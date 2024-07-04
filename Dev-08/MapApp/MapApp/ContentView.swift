@@ -79,6 +79,9 @@ struct ContentView: View {
                             .clipShape(Circle())
                     }
                 }
+                MapPolygon(coordinates: [.arcDeTriomphe, .eiffelTower, .louvre, .notreDame, .paris, .sacreCoeur])
+                    .stroke(.purple.opacity(0.7), lineWidth: 5)
+                    .foregroundStyle(.purple.opacity(0.7))
             }
             
             TextEditor(text: $message)

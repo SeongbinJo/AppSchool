@@ -34,3 +34,5 @@ struct ViewMe: UIViewRepresentable {
     func updateUIView(_ uiView: PDFView, context: Context) {
     }
 }
+
+// PDF 파일은 .gitigore에 추가.

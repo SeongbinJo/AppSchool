@@ -17,8 +17,42 @@ struct ContentView: View {
     
     @State var message = ""
     @State var buttonStatus = true
+    @State var newColor: Color = .white
+        
+    var body: some View {
+        VStack (spacing: 25) {
+            Button {
+                recognizeSpeech()
+            } label: {
+                Text("Start recording")
+            }
+            TextField("Spoken text appears here", text: $message)
+            Button {
+                message = ""
+                newColor = .white
+                stopSpeech()
+            } label: {
+                Text("Stop recording")
+            }
+        }
+        .background(newColor)
+    }
     
-    func startRecording() {
+    // MARK: - Methods
+    func checkSpokenCommand(commandString: String) {
+        switch commandString {
+        case "보라색":
+            newColor = .purple
+        case "초록색":
+            newColor = .green
+        case "노란색":
+            newColor = .yellow
+        default:
+            newColor = .white
+        }
+    }
+    
+    func recognizeSpeech() {
         message = "Start recording"
         let node = audioEngine.inputNode
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
@@ -43,36 +77,20 @@ struct ContentView: View {
             if let result = result {
                 let transcribedString = result.bestTranscription.formattedString
                 message = transcribedString
+                checkSpokenCommand(commandString: transcribedString)
             } else if let error = error {
                 print(error)
             }
         })
     }
     
-    func stopRecording() {
+    func stopSpeech() {
         audioEngine.stop()
+        recognitionRequest?.endAudio()
         recognitionTask?.cancel()
         audioEngine.inputNode.removeTap(onBus: 0)
-        recognitionRequest?.endAudio()
     }
-    
-    var body: some View {
-        VStack {
-            TextEditor(text: $message)
-                .frame(width: 350, height: 400)
-            Button(buttonStatus ? "Start recording" : "Stop recording", action: {
-                buttonStatus.toggle()
-                if buttonStatus {
-                    stopRecording()
-                } else {
-                    startRecording()
-                }
-            })
-            .padding()
-            .background(buttonStatus ? Color.green : Color.red)
-        }
-        .padding()
-    }
+
 }
 
 #Preview {

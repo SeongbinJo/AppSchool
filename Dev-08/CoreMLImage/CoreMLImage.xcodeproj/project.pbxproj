@@ -11,6 +11,8 @@
 		588186DF2C3CF1A50017B9DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588186DE2C3CF1A50017B9DA /* ContentView.swift */; };
 		588186E12C3CF1A60017B9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588186E02C3CF1A60017B9DA /* Assets.xcassets */; };
 		588186E42C3CF1A60017B9DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588186E32C3CF1A60017B9DA /* Preview Assets.xcassets */; };
+		588186EC2C3CF23C0017B9DA /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 588186EA2C3CF23C0017B9DA /* SqueezeNet.mlmodel */; };
+		588186ED2C3CF23C0017B9DA /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 588186EB2C3CF23C0017B9DA /* MobileNetV2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		588186DE2C3CF1A50017B9DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		588186E02C3CF1A60017B9DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		588186E32C3CF1A60017B9DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		588186EA2C3CF23C0017B9DA /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SqueezeNet.mlmodel; path = ../../../../../Downloads/SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		588186EB2C3CF23C0017B9DA /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MobileNetV2.mlmodel; path = ../../../../../Downloads/MobileNetV2.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,8 @@
 		588186D02C3CF1A50017B9DA = {
 			isa = PBXGroup;
 			children = (
+				588186EB2C3CF23C0017B9DA /* MobileNetV2.mlmodel */,
+				588186EA2C3CF23C0017B9DA /* SqueezeNet.mlmodel */,
 				588186DB2C3CF1A50017B9DA /* CoreMLImage */,
 				588186DA2C3CF1A50017B9DA /* Products */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				588186DF2C3CF1A50017B9DA /* ContentView.swift in Sources */,
+				588186EC2C3CF23C0017B9DA /* SqueezeNet.mlmodel in Sources */,
+				588186ED2C3CF23C0017B9DA /* MobileNetV2.mlmodel in Sources */,
 				588186DD2C3CF1A50017B9DA /* CoreMLImageApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

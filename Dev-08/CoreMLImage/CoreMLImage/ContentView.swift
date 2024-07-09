@@ -65,7 +65,8 @@ struct ContentView: View {
                 return
             }
         
-        let modelFile = try? MobileNetV2(configuration: MLModelConfiguration())
+//        let modelFile = try? MobileNetV2(configuration: MLModelConfiguration())
+        let modelFile = try? SqueezeNet(configuration: MLModelConfiguration())
         let model = try! VNCoreMLModel(for: modelFile!.model)
         
         let handler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])

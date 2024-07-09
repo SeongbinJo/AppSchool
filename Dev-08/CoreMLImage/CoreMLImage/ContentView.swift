@@ -15,7 +15,7 @@ struct ContentView: View {
     @State var arrayIndex = 0
     @State var image: UIImage = UIImage(named: "cat")!
     
-    let photoArray = ["cat", "plane", "banana", "car"]
+    let photoArray = ["pizza", "gecko", "gecko2", "cat", "plane", "banana", "car"]
     
     var body: some View {
         VStack {
@@ -25,9 +25,11 @@ struct ContentView: View {
                 .frame(width: 250, height: 250)
             TextEditor(text: $message)
                 .padding()
-            Button(action: {}) {
+            Button {
+                useAI(sentImage: photoArray[arrayIndex])
+            } label: {
                 Text("Analyze Image")
-            }
+            }.padding()
             
             HStack {
                 Button {
@@ -52,11 +54,43 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "chevron.right.square.fill")
                 }
-                
             }
-            .padding()
         }
         .padding()
+    }
+    
+    func useAI(sentImage: String) {
+        guard let image = UIImage(named: sentImage) else {
+                message = "Image not found: \(sentImage)"
+                return
+            }
+        
+        let modelFile = try? MobileNetV2(configuration: MLModelConfiguration())
+        let model = try! VNCoreMLModel(for: modelFile!.model)
+        
+        let handler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
+        
+        let request = VNCoreMLRequest(model: model, completionHandler: findResults)
+        
+        try! handler.perform([request])
+    }
+    
+    func findResults(request: VNRequest, error: Error?) {
+        guard let results = request.results as? [VNClassificationObservation] else {
+            fatalError("Unable to get results")
+        }
+        
+        var bestGuess = ""
+        var bestConfidence: VNConfidence = 0
+        
+        for classification in results {
+            if classification.confidence > bestConfidence {
+                bestConfidence = classification.confidence
+                bestGuess = classification.identifier
+            }
+        }
+        
+        message = "Image is: \(bestGuess) with confidence \(bestConfidence) out of 1"
     }
 }
 
